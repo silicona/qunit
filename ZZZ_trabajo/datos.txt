@@ -1,0 +1,30 @@
+datos de Cliente
+
+tab 1
+id_cliente
+nombre
+apellido 1
+apellido 2
+email
+telefono
+empresa
+actividad - text
+cif
+direccion - text
+cp
+poblacion
+
+tab2
+certificacion
+frescos
+envasados
+tipo
+provincias
+paises
+
+tab3
+iban ?  ¿Por partes?
+aceptar_condiciones
+
+
+datos de usuario

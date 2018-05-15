@@ -1,0 +1,31 @@
+/*==================================================
+custom style
+==================================================*/
+
+
+.logo_oclem{
+	clear: both;
+}
+
+.mayusculas{
+	text-transform: uppercase;
+	font-size: 36px;
+}
+
+.dosis{
+	font-family: "Dosis","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+	letter-spacing: 1.5px;
+	font-size: 18px;
+}
+
+blockquote{
+	font-family: "Libre Baskerville",Georgia,"Times New Roman",Times,serif;
+	letter-spacing: 1.5px;
+	width: 100%;
+	text-align: center;
+	border: 0;	
+}
+
+.letter{
+	margin-top: -50px;
+}
