@@ -1,6 +1,6 @@
-define([
+define(//[
 
-	'jquery',
+	//'jquery',
 	/*
 	'underscore',
 	'backbone',
@@ -9,19 +9,19 @@ define([
 	'app/merca',*/
 	// 'app/app',
 	// 'mustache',
-	'app/views/inicio/inicioView',
-	'app/views/inicio/html/inicioViewHtml',
+	//'app/views/inicio/inicioView',
+	//'app/views/inicio/html/inicioViewHtml',
 
 
 //],function (require) {
-],function (
-	$, //_, Backbone, Fx, Config, Merca, 
-	InicioView
+/*],*/function ( require
+	//$, //_, Backbone, Fx, Config, Merca, 
+	//InicioView
 	//, InicioviewHtml
 	){
 
 	// Import depdendencies (note you can use relative paths here)
-	//var InicioView = require("./inicioView");
+	var InicioView = require("../js/app/views/inicio/inicioView"), $ = jQuery;
 
 	var q = QUnit.module("Modulo inicioView", function(hooks){
 		//QUnit.start();
