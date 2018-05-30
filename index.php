@@ -1,12 +1,12 @@
 <?php
     
-    include 'lib/config.php';
+    /*include 'lib/config.php';
 
     $seccion = $_GET['seccion'];
 
     if($seccion == ''){
         $seccion = 'inicio';
-    }
+    }*/
     
 ?>
 
@@ -47,7 +47,7 @@
     <body>
       
 
-        <?php echo $div_pruebas;?>
+        <?php //echo $div_pruebas;?>
 
         <div id="app"></div>
         
@@ -58,15 +58,17 @@
         
 
         <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-         
-          ga('create', 'UA-69484740-1', 'auto', {'allowLinker': true});
-          ga('require', 'linker');
-          ga('linker:autoLink', ['oclemconcursospublicos.com'] );
-          ga('send', 'pageview');
+            /*
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-69484740-1', 'auto', {'allowLinker': true});
+            ga('require', 'linker');
+            ga('linker:autoLink', ['oclemconcursospublicos.com'] );
+            ga('send', 'pageview');
+            */
          
         </script>
         

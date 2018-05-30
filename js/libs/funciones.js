@@ -1,7 +1,7 @@
 define([
 	
-  'jquery',
-  'app/config'
+    'jquery',
+    'app/config'
 
 ], function($, Config){
 
@@ -55,10 +55,11 @@ define([
 			if( input_group === '' || input_group === 'true'){
 				return [
 					'<div class="form-group div_' + id + '">',
+
 						'<div class="input-group ' + col_bs_input + '">',
 							html_boton,	
-							'</div>',
-						'</div>'
+						'</div>',
+					'</div>'
 				].join('');
 			
 			}else{
@@ -80,36 +81,32 @@ define([
 		devuelve_clase: function(e){
 
 			// coge el evento y devuelve la clase
-			if( typeof e != 'object' ){return '';}
+			if( typeof e != 'object' ){ return ''; }
+
 			return e.currentTarget.className;
 
 		},
 
 		is_numeric: function(n){
+
 	      return !isNaN(parseFloat(n)) && isFinite(n);
 	    },
 
 	    is_integer: function(val){
-	      if(val==null)
-	      {
-	          return false;
-	      }
-	      if (val.length==0)
-	      {
-	          return false;
-	      }
-	      for (var i = 0; i < val.length; i++) 
-	      {
+	      
+          if(val==null){ return false; }
+
+	      if (val.length==0){ return false; }
+
+	      for (var i = 0; i < val.length; i++){
+
 	          var ch = val.charAt(i)
-	          if (i == 0 && ch == "-")
-	          {
-	              continue;
-	          }
-	          if (ch < "0" || ch > "9")
-	          {
-	              return false;
-	          }
+
+	          if (i == 0 && ch == "-"){ continue; }
+
+	          if (ch < "0" || ch > "9"){ return false; }
 	      }
+
 	      return true;
 	    },
 
@@ -139,15 +136,11 @@ define([
 			}
 
 			return '';
-			
-
 		},
 
 		string_a_obj: function(string, separador){
 
-			if(string == ''){
-				return {};
-			}
+			if(string == ''){ return {}; }
 
 			// convierte una cadena tipo aaa, bbb, cccc en {0: 'aaa', 1: 'bbb', 2: 'ccc'}
 			var separador = separador || ',',
@@ -541,6 +534,42 @@ define([
 			return arr_html.join('');
 			
 		},
+
+        form_input_check: function(obj_datos){
+       
+            var label          = obj_datos.label || '',
+                id             = obj_datos.id    || '',
+                checked        = obj_datos.checked || '',
+                //ayuda          = obj_datos.ayuda || '',
+                disabled       = obj_datos.disabled     || '',
+                atributos      = obj_datos.atributos   || {},
+                clase          = obj_datos.clase || '',
+                //texto_si       = obj_datos.texto_si || 'Sí',
+                //texto_no       = obj_datos.texto_no || 'No',
+
+                col_bs_label   = obj_datos.col_bs_label || '',
+                col_bs_input   = obj_datos.col_bs_input || '',
+
+                title          = obj_datos.title || '',
+                //boton_info     = '';
+
+            if( (checked == 1) || (checked == "checked") ){ checked = 'checked="checked"'; }
+
+            // if(ayuda != ''){
+            //     boton_info = '<span class="badge ayuda"><i class="i_ayuda fa fa-question" data-toggle="tooltip" title="' + ayuda + '"></i></span> ';
+            // }
+
+            var arr_html = [
+                '<div class="form-group div_' + id + '">',
+                    '<div class="input-group">',
+                        '<input title="' + title + '" ' + this.objeto_a_string(atributos) + disabled + ' id="' + id + '" class="' + clase +  ' ' + col_bs_input + '" type="checkbox" name="' + id + '" ' + checked + ' >',
+                    '</div>',
+                    '<label for="' + id + '" title="' + titulo + '" class="'+ col_bs_label + ' control-label">' + boton_info + label + '</label>',
+                '</div>'
+            ];
+
+            return arr_html.join('');
+        }
 
 		form_input_fecha: function(obj_datos){
 
@@ -1064,8 +1093,7 @@ define([
 
 		},
 
-		
-		
+			
 		dif_dias: function(fecha1, fecha2, hora_minuto1, hora_minuto2, horas_cortesia) {
 
 			// Devuelve la diferencia en días entre 2 fechas, con hora de cortesía,
@@ -1326,268 +1354,274 @@ define([
 		},
 
 
-
 		// PHPJS.ORG
 		strtotime: function(text, now) {
-	  //  discuss at: http://phpjs.org/functions/strtotime/
-	  //     version: 1109.2016
-	  // original by: Caio Ariede (http://caioariede.com)
-	  // improved by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
-	  // improved by: Caio Ariede (http://caioariede.com)
-	  // improved by: A. Matías Quezada (http://amatiasq.com)
-	  // improved by: preuter
-	  // improved by: Brett Zamir (http://brett-zamir.me)
-	  // improved by: Mirko Faber
-	  //    input by: David
-	  // bugfixed by: Wagner B. Soares
-	  // bugfixed by: Artur Tchernychev
-	  //        note: Examples all have a fixed timestamp to prevent tests to fail because of variable time(zones)
-	  //   example 1: strtotime('+1 day', 1129633200);
-	  //   returns 1: 1129719600
-	  //   example 2: strtotime('+1 week 2 days 4 hours 2 seconds', 1129633200);
-	  //   returns 2: 1130425202
-	  //   example 3: strtotime('last month', 1129633200);
-	  //   returns 3: 1127041200
-	  //   example 4: strtotime('2009-05-04 08:30:00 GMT');
-	  //   returns 4: 1241425800
+			//  discuss at: http://phpjs.org/functions/strtotime/
+			//     version: 1109.2016
+			// original by: Caio Ariede (http://caioariede.com)
+			// improved by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+			// improved by: Caio Ariede (http://caioariede.com)
+			// improved by: A. Matías Quezada (http://amatiasq.com)
+			// improved by: preuter
+			// improved by: Brett Zamir (http://brett-zamir.me)
+			// improved by: Mirko Faber
+			//    input by: David
+			// bugfixed by: Wagner B. Soares
+			// bugfixed by: Artur Tchernychev
+			//        note: Examples all have a fixed timestamp to prevent tests to fail because of variable time(zones)
+			//   example 1: strtotime('+1 day', 1129633200);
+			//   returns 1: 1129719600
+			//   example 2: strtotime('+1 week 2 days 4 hours 2 seconds', 1129633200);
+			//   returns 2: 1130425202
+			//   example 3: strtotime('last month', 1129633200);
+			//   returns 3: 1127041200
+			//   example 4: strtotime('2009-05-04 08:30:00 GMT');
+			//   returns 4: 1241425800
 
-	  var parsed, match, today, year, date, days, ranges, len, times, regex, i, fail = false;
+			var parsed, match, today, year, date, days, ranges, len, times, regex, i, fail = false;
 
-	  if (!text) {
-	    return fail;
-	  }
+			if (!text) { return fail; }
 
-	  // Unecessary spaces
-	  text = text.replace(/^\s+|\s+$/g, '')
-	    .replace(/\s{2,}/g, ' ')
-	    .replace(/[\t\r\n]/g, '')
-	    .toLowerCase();
+			// Unecessary spaces
+			text = text.replace(/^\s+|\s+$/g, '')
+				.replace(/\s{2,}/g, ' ')
+				.replace(/[\t\r\n]/g, '')
+				.toLowerCase();
 
-	  // in contrast to php, js Date.parse function interprets:
-	  // dates given as yyyy-mm-dd as in timezone: UTC,
-	  // dates with "." or "-" as MDY instead of DMY
-	  // dates with two-digit years differently
-	  // etc...etc...
-	  // ...therefore we manually parse lots of common date formats
-	  match = text.match(
-	    /^(\d{1,4})([\-\.\/\:])(\d{1,2})([\-\.\/\:])(\d{1,4})(?:\s(\d{1,2}):(\d{2})?:?(\d{2})?)?(?:\s([A-Z]+)?)?$/);
+			// in contrast to php, js Date.parse function interprets:
+			// dates given as yyyy-mm-dd as in timezone: UTC,
+			// dates with "." or "-" as MDY instead of DMY
+			// dates with two-digit years differently
+			// etc...etc...
+			// ...therefore we manually parse lots of common date formats
+		    match = text.match(/^(\d{1,4})([\-\.\/\:])(\d{1,2})([\-\.\/\:])(\d{1,4})(?:\s(\d{1,2}):(\d{2})?:?(\d{2})?)?(?:\s([A-Z]+)?)?$/);
 
-	  if (match && match[2] === match[4]) {
-	    if (match[1] > 1901) {
-	      switch (match[2]) {
-	        case '-':
-	          { // YYYY-M-D
-	            if (match[3] > 12 || match[5] > 31) {
-	              return fail;
-	            }
+		  	if (match && match[2] === match[4]) {
 
-	            return new Date(match[1], parseInt(match[3], 10) - 1, match[5],
-	              match[6] || 0, match[7] || 0, match[8] || 0, match[9] || 0) / 1000;
-	          }
-	        case '.':
-	          { // YYYY.M.D is not parsed by strtotime()
-	            return fail;
-	          }
-	        case '/':
-	          { // YYYY/M/D
-	            if (match[3] > 12 || match[5] > 31) {
-	              return fail;
-	            }
+			    if (match[1] > 1901) {
 
-	            return new Date(match[1], parseInt(match[3], 10) - 1, match[5],
-	              match[6] || 0, match[7] || 0, match[8] || 0, match[9] || 0) / 1000;
-	          }
-	      }
-	    } else if (match[5] > 1901) {
-	      switch (match[2]) {
-	        case '-':
-	          { // D-M-YYYY
-	            if (match[3] > 12 || match[1] > 31) {
-	              return fail;
-	            }
+			      	switch (match[2]) {
+						case '-':
+						  { // YYYY-M-D
+						    if (match[3] > 12 || match[5] > 31) {
+						      return fail;
+						    }
 
-	            return new Date(match[5], parseInt(match[3], 10) - 1, match[1],
-	              match[6] || 0, match[7] || 0, match[8] || 0, match[9] || 0) / 1000;
-	          }
-	        case '.':
-	          { // D.M.YYYY
-	            if (match[3] > 12 || match[1] > 31) {
-	              return fail;
-	            }
+						    return new Date(match[1], parseInt(match[3], 10) - 1, match[5],
+						      match[6] || 0, match[7] || 0, match[8] || 0, match[9] || 0) / 1000;
+						  }
+						case '.':
+						  { // YYYY.M.D is not parsed by strtotime()
+						    return fail;
+						  }
+						case '/':
+						  { // YYYY/M/D
+						    if (match[3] > 12 || match[5] > 31) {
+						      return fail;
+						    }
 
-	            return new Date(match[5], parseInt(match[3], 10) - 1, match[1],
-	              match[6] || 0, match[7] || 0, match[8] || 0, match[9] || 0) / 1000;
-	          }
-	        case '/':
-	          { // M/D/YYYY
-	            if (match[1] > 12 || match[3] > 31) {
-	              return fail;
-	            }
+						    return new Date(match[1], parseInt(match[3], 10) - 1, match[5],
+						      match[6] || 0, match[7] || 0, match[8] || 0, match[9] || 0) / 1000;
+						  }
+			      	}
 
-	            return new Date(match[5], parseInt(match[1], 10) - 1, match[3],
-	              match[6] || 0, match[7] || 0, match[8] || 0, match[9] || 0) / 1000;
-	          }
-	      }
-	    } else {
-	      switch (match[2]) {
-	        case '-':
-	          { // YY-M-D
-	            if (match[3] > 12 || match[5] > 31 || (match[1] < 70 && match[1] > 38)) {
-	              return fail;
-	            }
+			    } else if (match[5] > 1901) {
 
-	            year = match[1] >= 0 && match[1] <= 38 ? +match[1] + 2000 : match[1];
-	            return new Date(year, parseInt(match[3], 10) - 1, match[5],
-	              match[6] || 0, match[7] || 0, match[8] || 0, match[9] || 0) / 1000;
-	          }
-	        case '.':
-	          { // D.M.YY or H.MM.SS
-	            if (match[5] >= 70) { // D.M.YY
-	              if (match[3] > 12 || match[1] > 31) {
-	                return fail;
-	              }
+			        switch (match[2]) {
+				        case '-':
+				            { // D-M-YYYY
+					            if (match[3] > 12 || match[1] > 31) {
+					              return fail;
+					            }
 
-	              return new Date(match[5], parseInt(match[3], 10) - 1, match[1],
-	                match[6] || 0, match[7] || 0, match[8] || 0, match[9] || 0) / 1000;
-	            }
-	            if (match[5] < 60 && !match[6]) { // H.MM.SS
-	              if (match[1] > 23 || match[3] > 59) {
-	                return fail;
-	              }
+					            return new Date(match[5], parseInt(match[3], 10) - 1, match[1],
+					              match[6] || 0, match[7] || 0, match[8] || 0, match[9] || 0) / 1000;
+				            }
 
-	              today = new Date();
-	              return new Date(today.getFullYear(), today.getMonth(), today.getDate(),
-	                match[1] || 0, match[3] || 0, match[5] || 0, match[9] || 0) / 1000;
-	            }
+				        case '.':
+				            { // D.M.YYYY
+					            if (match[3] > 12 || match[1] > 31) {
+					              return fail;
+					            }
 
-	            return fail; // invalid format, cannot be parsed
-	          }
-	        case '/':
-	          { // M/D/YY
-	            if (match[1] > 12 || match[3] > 31 || (match[5] < 70 && match[5] > 38)) {
-	              return fail;
-	            }
+					            return new Date(match[5], parseInt(match[3], 10) - 1, match[1],
+					              match[6] || 0, match[7] || 0, match[8] || 0, match[9] || 0) / 1000;
+				            }
 
-	            year = match[5] >= 0 && match[5] <= 38 ? +match[5] + 2000 : match[5];
-	            return new Date(year, parseInt(match[1], 10) - 1, match[3],
-	              match[6] || 0, match[7] || 0, match[8] || 0, match[9] || 0) / 1000;
-	          }
-	        case ':':
-	          { // HH:MM:SS
-	            if (match[1] > 23 || match[3] > 59 || match[5] > 59) {
-	              return fail;
-	            }
+				        case '/':
+			          		{ // M/D/YYYY
+					            if (match[1] > 12 || match[3] > 31) {
+					              return fail;
+					            }
 
-	            today = new Date();
-	            return new Date(today.getFullYear(), today.getMonth(), today.getDate(),
-	              match[1] || 0, match[3] || 0, match[5] || 0) / 1000;
-	          }
-	      }
-	    }
-	  }
+					            return new Date(match[5], parseInt(match[1], 10) - 1, match[3],
+					              match[6] || 0, match[7] || 0, match[8] || 0, match[9] || 0) / 1000;
+			          		}
+			        }
 
-	  // other formats and "now" should be parsed by Date.parse()
-	  if (text === 'now') {
-	    return now === null || isNaN(now) ? new Date()
-	      .getTime() / 1000 | 0 : now | 0;
-	  }
-	  if (!isNaN(parsed = Date.parse(text))) {
-	    return parsed / 1000 | 0;
-	  }
+			    } else {
 
-	  date = now ? new Date(now * 1000) : new Date();
-	  days = {
-	    'sun': 0,
-	    'mon': 1,
-	    'tue': 2,
-	    'wed': 3,
-	    'thu': 4,
-	    'fri': 5,
-	    'sat': 6
-	  };
-	  ranges = {
-	    'yea': 'FullYear',
-	    'mon': 'Month',
-	    'day': 'Date',
-	    'hou': 'Hours',
-	    'min': 'Minutes',
-	    'sec': 'Seconds'
-	  };
+			      	switch (match[2]) {
 
-	  function lastNext(type, range, modifier) {
-	    var diff, day = days[range];
+				        case '-':
+				            { // YY-M-D
+					            if (match[3] > 12 || match[5] > 31 || (match[1] < 70 && match[1] > 38)) {
+					              return fail;
+					            }
 
-	    if (typeof day !== 'undefined') {
-	      diff = day - date.getDay();
+					            year = match[1] >= 0 && match[1] <= 38 ? +match[1] + 2000 : match[1];
+					            return new Date(year, parseInt(match[3], 10) - 1, match[5],
+					              match[6] || 0, match[7] || 0, match[8] || 0, match[9] || 0) / 1000;
+				            }
 
-	      if (diff === 0) {
-	        diff = 7 * modifier;
-	      } else if (diff > 0 && type === 'last') {
-	        diff -= 7;
-	      } else if (diff < 0 && type === 'next') {
-	        diff += 7;
-	      }
+				        case '.':
+				          	{ // D.M.YY or H.MM.SS
+					            if (match[5] >= 70) { // D.M.YY
+					              if (match[3] > 12 || match[1] > 31) {
+					                return fail;
+					              }
 
-	      date.setDate(date.getDate() + diff);
-	    }
-	  }
+					              return new Date(match[5], parseInt(match[3], 10) - 1, match[1],
+					                match[6] || 0, match[7] || 0, match[8] || 0, match[9] || 0) / 1000;
+					            }
+					            if (match[5] < 60 && !match[6]) { // H.MM.SS
+					              if (match[1] > 23 || match[3] > 59) {
+					                return fail;
+					              }
 
-	  function process(val) {
-	    var splt = val.split(' '), // Todo: Reconcile this with regex using \s, taking into account browser issues with split and regexes
-	      type = splt[0],
-	      range = splt[1].substring(0, 3),
-	      typeIsNumber = /\d+/.test(type),
-	      ago = splt[2] === 'ago',
-	      num = (type === 'last' ? -1 : 1) * (ago ? -1 : 1);
+					              today = new Date();
+					              return new Date(today.getFullYear(), today.getMonth(), today.getDate(),
+					                match[1] || 0, match[3] || 0, match[5] || 0, match[9] || 0) / 1000;
+					            }
 
-	    if (typeIsNumber) {
-	      num *= parseInt(type, 10);
-	    }
+					            return fail; // invalid format, cannot be parsed
+				          	}
 
-	    if (ranges.hasOwnProperty(range) && !splt[1].match(/^mon(day|\.)?$/i)) {
-	      return date['set' + ranges[range]](date['get' + ranges[range]]() + num);
-	    }
+				        case '/':
+				            { // M/D/YY
+					            if (match[1] > 12 || match[3] > 31 || (match[5] < 70 && match[5] > 38)) {
+					              return fail;
+					            }
 
-	    if (range === 'wee') {
-	      return date.setDate(date.getDate() + (num * 7));
-	    }
+					            year = match[5] >= 0 && match[5] <= 38 ? +match[5] + 2000 : match[5];
+					            return new Date(year, parseInt(match[1], 10) - 1, match[3],
+					              match[6] || 0, match[7] || 0, match[8] || 0, match[9] || 0) / 1000;
+				            }
 
-	    if (type === 'next' || type === 'last') {
-	      lastNext(type, range, num);
-	    } else if (!typeIsNumber) {
-	      return false;
-	    }
+				        case ':':
+				            { // HH:MM:SS
+					            if (match[1] > 23 || match[3] > 59 || match[5] > 59) {
+					              return fail;
+					            }
 
-	    return true;
-	  }
+					            today = new Date();
+					            return new Date(today.getFullYear(), today.getMonth(), today.getDate(),
+					              match[1] || 0, match[3] || 0, match[5] || 0) / 1000;
+				            }
+			      	}
+			    }
+		  	}
 
-	  times = '(years?|months?|weeks?|days?|hours?|minutes?|min|seconds?|sec' +
-	    '|sunday|sun\\.?|monday|mon\\.?|tuesday|tue\\.?|wednesday|wed\\.?' +
-	    '|thursday|thu\\.?|friday|fri\\.?|saturday|sat\\.?)';
-	  regex = '([+-]?\\d+\\s' + times + '|' + '(last|next)\\s' + times + ')(\\sago)?';
+		    // other formats and "now" should be parsed by Date.parse()
+		    if (text === 'now') {
+		        return now === null || isNaN(now) ? new Date()
+		      		.getTime() / 1000 | 0 : now | 0;
+		  	}
 
-	  match = text.match(new RegExp(regex, 'gi'));
-	  if (!match) {
-	    return fail;
-	  }
+			if (!isNaN(parsed = Date.parse(text))) {
+				return parsed / 1000 | 0;
+			}
 
-	  for (i = 0, len = match.length; i < len; i++) {
-	    if (!process(match[i])) {
-	      return fail;
-	    }
-	  }
+			date = now ? new Date(now * 1000) : new Date();
+			days = {
+				'sun': 0,
+				'mon': 1,
+				'tue': 2,
+				'wed': 3,
+				'thu': 4,
+				'fri': 5,
+				'sat': 6
+			};
+			ranges = {
+				'yea': 'FullYear',
+				'mon': 'Month',
+				'day': 'Date',
+				'hou': 'Hours',
+				'min': 'Minutes',
+				'sec': 'Seconds'
+			};
 
-	  // ECMAScript 5 only
-	  // if (!match.every(process))
-	  //    return false;
+		    function lastNext(type, range, modifier) {
+			    var diff, day = days[range];
 
-	  return (date.getTime() / 1000);
-	}
+			    if (typeof day !== 'undefined') {
+			      diff = day - date.getDay();
 
+			      if (diff === 0) {
+			        diff = 7 * modifier;
+			      } else if (diff > 0 && type === 'last') {
+			        diff -= 7;
+			      } else if (diff < 0 && type === 'next') {
+			        diff += 7;
+			      }
 
-		
+			      date.setDate(date.getDate() + diff);
+			    }
+		    }
+
+		    function process(val) {
+			    var splt = val.split(' '), // Todo: Reconcile this with regex using \s, taking into account browser issues with split and regexes
+			      type = splt[0],
+			      range = splt[1].substring(0, 3),
+			      typeIsNumber = /\d+/.test(type),
+			      ago = splt[2] === 'ago',
+			      num = (type === 'last' ? -1 : 1) * (ago ? -1 : 1);
+
+			    if (typeIsNumber) {
+			      num *= parseInt(type, 10);
+			    }
+
+			    if (ranges.hasOwnProperty(range) && !splt[1].match(/^mon(day|\.)?$/i)) {
+			      return date['set' + ranges[range]](date['get' + ranges[range]]() + num);
+			    }
+
+			    if (range === 'wee') {
+			      return date.setDate(date.getDate() + (num * 7));
+			    }
+
+			    if (type === 'next' || type === 'last') {
+			      lastNext(type, range, num);
+			    } else if (!typeIsNumber) {
+			      return false;
+			    }
+
+			    return true;
+		    }
+
+			times = '(years?|months?|weeks?|days?|hours?|minutes?|min|seconds?|sec' +
+				'|sunday|sun\\.?|monday|mon\\.?|tuesday|tue\\.?|wednesday|wed\\.?' +
+				'|thursday|thu\\.?|friday|fri\\.?|saturday|sat\\.?)';
+			regex = '([+-]?\\d+\\s' + times + '|' + '(last|next)\\s' + times + ')(\\sago)?';
+
+			match = text.match(new RegExp(regex, 'gi'));
+			
+			if (!match) { return fail; }
+
+			for (i = 0, len = match.length; i < len; i++) {
+
+				if (!process(match[i])) { return fail; }
+			}
+
+			// ECMAScript 5 only
+			// if (!match.every(process))
+			//    return false;
+
+			return (date.getTime() / 1000);
+		}
+	
 	};
 
 	return Fx;
 
 });
+

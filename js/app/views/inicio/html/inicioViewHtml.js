@@ -10,28 +10,28 @@ define([
 
             '<div class="col-sm-12">',
                 '<div class="titulo">',
-                    '<p class="lead"><br>Bienvenido a la Plataforma de MercaMadrid del Grupo Oclem</p>',
+                    '<p class="lead"><br>Bienvenido a la Plataforma del departamento de Calidad del Grupo Oclem</p>',
                 '</div>',
             '</div>',
 
-      '</div>',
+        '</div>',
 
 			'<div class="row botones_inicio">',
 
+				'<div class="col-sm-3" id="boton_lopd">',
+					'<a href="#lopd" class="boton_inicio" title="Accede al cuestionario de la LOPD">',
+						'<i class="fa fa-university fa-4x"></i>',
+						'<span>LOPD</span>',
+					'</a>',
+				'</div>',
+
 				'<div class="col-sm-3" id="boton_soporte">',
-					'<a href="#soporte" class="boton_inicio" title="Contacta con Oclem MercaMadrid">',
+					'<a href="#soporte" class="boton_inicio" title="Consulta a OclemCalidad">',
 						'<i class="fa fa-desktop fa-4x"></i>',
 						'<span>Soporte</span>',
 					'</a>',
 				'</div>',
-
-				'<div class="col-sm-3" id="boton_clientes">',
-					'<a href="#clientes" class="boton_inicio" title="Ver todos los clientes">',
-						'<i class="fa fa-users fa-4x"></i>',
-						'<span>Ver todos los clientes</span>',
-					'</a>',
-				'</div>',
-
+				/*
 				'<div class="col-sm-3" id="boton_cliente">',
 					'<a href="#clientes/misdatos" class="boton_inicio" title="Ver los datos de tu empresa">',
 						'<i class="fa fa-user fa-4x"></i>',
@@ -67,7 +67,7 @@ define([
 						'<span>Web de MercaMadrid</span>',
 					'</a>',
 				'</div>',
-
+				*/
 			'</div>',
 
 	].join('');
