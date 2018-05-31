@@ -4,10 +4,10 @@ define([
 	'backbone',
 	'app/templates',
 	'funciones',
-	'app/merca',
+	'app/calidad',
 	'app/views/modalView'
 
-], function($, _, Backbone, Templates, Fx, Merca, ModalView){
+], function($, _, Backbone, Templates, Fx, Calidad, ModalView){
 
 	'use strict';
 

@@ -15,23 +15,22 @@ define([
 			// ''                         : 'goToLogin',
 			''                               : 'goToInicio',
 			'login'                          : 'goToLogin',
-			'politica'                       : 'goToPolitica',
+			//'politica'                       : 'goToPolitica',
 			'inicio'                         : 'goToInicio',
 
-			'clientes'                       : 'goToClientes',
-			'clientes/:id_cliente'           : 'goToClienteDetalle',
+			//'clientes'                       : 'goToClientes',
+			//'clientes/:id_cliente'           : 'goToClienteDetalle',
 			
+			':lopd'							 : 'goToSection',
 			'soporte'                        : 'goToSoporte',
 			
 			//'adjudicaciones'                 : 'goToAdjudicaciones',
-			'alta'                           : 'goToAlta',
+			// 'alta'                           : 'goToAlta',
 
-			'usuarios'                       : 'goToUsuarios',
-			'usuarios/:id_usuario'           : 'goToUsuarioDetalle',
+			// 'usuarios'                       : 'goToUsuarios',
+			// 'usuarios/:id_usuario'           : 'goToUsuarioDetalle',
 			//'usuarios/0/:opcion'             : 'goToUsuarioDetalle',
 
-			'test'													 : 'goToTest',
-			
 			'*path'                          : 'goToNoEncontrado'
 
 			// 'concursos/revision'             : 'goToConcursos',
@@ -127,6 +126,8 @@ define([
 		},
 
 		goToSection: function(seccion, parametro){
+
+			console.log('Router - Sección:' , seccion);
 
 			var parametro = parametro || '';
 			this.appView.setPage(seccion, parametro);

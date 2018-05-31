@@ -4,8 +4,8 @@
 		
 		PARA LANZAR LA COMPILACIÓN:
 
-		1.- cd /Applications/XAMPP/htdocs/oclem
-		2.- node ../r.js -o /Applications/XAMPP/htdocs/oclem/js/app.build.js
+		1.- cd /Applications/XAMPP/htdocs/oclemcalidad
+		2.- node ../r.js -o /Applications/XAMPP/htdocs/oclemcalidad/js/app.build.js
 
 	*/
 
@@ -19,7 +19,7 @@
 		'funciones'                  : 'libs/funciones',
 		'iban'                       : 'libs/iban',
 		'config'                     : 'app/config',
-		'oclem'                      : 'app/oclem',
+		'calidad'                    : 'app/calidad',
 		'validar_formulario'         : 'libs/validar_formulario',
 
 		'datatables'                 : 'libs/jquery.dataTables.min',
@@ -72,8 +72,8 @@
 			exports: 'IBAN'
 		},
 
-		'oclem': {
-			exports: 'Oclem'
+		'calidad': {
+			exports: 'Calidad'
 		},
 
 		'config': {
@@ -154,7 +154,7 @@
 
 	appDir: "../",
 	baseUrl: "js",
-	dir: "../../oclem-build",
+	dir: "../../oclemcalidad-build",
 	optimizeCss: 'standard',
 	removeCombined: true,
 	modules: [

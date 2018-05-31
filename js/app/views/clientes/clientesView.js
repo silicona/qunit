@@ -5,12 +5,12 @@ define([
 	'backbone',
 	'funciones',
 	'app/config',
-	'app/merca',
+	'app/calidad',
 	'app/views/clientes/html/clientesViewHtml',
 	'app/views/clientes/tablaClientesView',
 	'app/views/clientes/detalleClienteView'
 
-], function($, _, Backbone, Fx, Config, Merca, ClientesViewHtml, TablaClientesView, DetalleClienteView){
+], function($, _, Backbone, Fx, Config, Calidad, ClientesViewHtml, TablaClientesView, DetalleClienteView){
 
 	'use strict';
 
@@ -34,7 +34,7 @@ define([
 
 		initialize: function(){
 
-			Merca.cleanUp(this);
+			Calidad.cleanUp(this);
 
 		},
 
@@ -118,7 +118,7 @@ define([
 				this.$('#mensaje_tabla_clientes').text('Mostrando todos los clientes.');
 			}
 
-			this.$('#btn_excel').attr('href', Config.base_ajax + 'excel.php?opcion=tabla_clientes&param=' + this.opcion + '&hash=' + Merca.hash() );
+			this.$('#btn_excel').attr('href', Config.base_ajax + 'excel.php?opcion=tabla_clientes&param=' + this.opcion + '&hash=' + Calidad.hash() );
 
 		},
 

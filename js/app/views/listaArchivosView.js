@@ -8,11 +8,11 @@ define([
 	'app/config',
 	'app/templates',
 	'app/formulario',
-	'app/merca',
+	'app/calidad',
 	'app/views/confirmView',
 	'swal'
 	
-], function($, _, Backbone, Fx, Mustache, Config, Templates, formulario, Merca, ConfirmView, Swal){
+], function($, _, Backbone, Fx, Mustache, Config, Templates, formulario, Calidad, ConfirmView, Swal){
 
 	'use strict';
 
@@ -38,7 +38,7 @@ define([
 				arr_archivos = [];
 
 
-			$.when( Merca.cargar_soporte( esto.model.id_soporte ) )
+			$.when( Calidad.cargar_soporte( esto.model.id_soporte ) )
 				
 				.then(function(mi_json){
 
@@ -87,7 +87,7 @@ define([
 					esto.$el.html(esto.html);
 					
 
-					if( Merca.es_cliente() ){
+					if( Calidad.es_cliente() ){
 						esto.$('.eliminar_archivo').remove();
 					}
 

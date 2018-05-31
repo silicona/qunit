@@ -1,5 +1,7 @@
 require.config({
 
+	// Comprobar RequireJS Config.options
+
 	paths: {
 
 		'jquery'                     : 'libs/jquery-3.1.1.min',
@@ -10,7 +12,7 @@ require.config({
 		'funciones'                  : 'libs/funciones',
 		'iban'                       : 'libs/iban',
 		'config'                     : 'app/config',
-		'merca'                      : 'app/merca',
+		'calidad'                    : 'app/calidad',
 		'validar_formulario'         : 'libs/validar_formulario',
 
 		'datatables'                 : 'libs/jquery.dataTables.min',
@@ -65,8 +67,8 @@ require.config({
 		},
 		
 
-		'merca': {
-			exports: 'Merca'
+		'calidad': {
+			exports: 'Calidad'
 		},
 
 		'config': {
@@ -97,6 +99,7 @@ require.config({
 				'bootstrap'
 			]
 		},
+
 		'bs-select':{
 			deps: [
 				'bootstrap'
@@ -144,7 +147,9 @@ require.config({
 		*/
 	},
 
-	urlArgs: "v=" + (new Date()).getTime()
+	urlArgs: "v=" + (new Date()).getTime(),
+
+	//waitSeconds: 0,
 
 });
 

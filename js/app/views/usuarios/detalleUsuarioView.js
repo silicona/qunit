@@ -5,14 +5,14 @@ define([
 	'funciones',
 	'app/config',
 	'app/templates',
-	'app/merca',
+	'app/calidad',
 	'app/formulario',
 	'app/views/confirmView',
 	'app/views/anadirArchivosView',
 	'app/views/listaArchivosView',
 	'app/views/usuarios/html/detalleUsuarioViewHtml'
 
-], function($, _, Backbone, Fx, Config, Templates, Merca, Formulario, ConfirmView, AnadirArchivosView, ListaArchivosView, DetalleUsuarioViewHtml){
+], function($, _, Backbone, Fx, Config, Templates, Calidad, Formulario, ConfirmView, AnadirArchivosView, ListaArchivosView, DetalleUsuarioViewHtml){
 
 	'use strict';
 
@@ -49,8 +49,8 @@ define([
 
 			var arr_hash = [];
 
-			Merca.cleanUp(this);
-			Merca.cargar_obj_clientes();
+			Calidad.cleanUp(this);
+			Calidad.cargar_obj_clientes();
 
 			arr_hash = window.location.hash.split('/');
 			this.id_usuario = arr_hash[1];
@@ -67,7 +67,7 @@ define([
 
 			if(this.id_usuario > 0){
 				
-				$.when( Merca.cargar_usuario(this.id_usuario) )
+				$.when( Calidad.cargar_usuario(this.id_usuario) )
 				
 					.then(function(json_usuario){
 						
@@ -97,7 +97,7 @@ define([
 			}
 
 
-			if( !Merca.es_admin() ){
+			if( !Calidad.es_admin() ){
 				esto.$('.div_id_cliente, .div_cliente_admin').hide();		
 			}
 
@@ -149,7 +149,7 @@ define([
 				esto.$('.div_comercial, .div_tecnico').hide();
 
 
-				if( Merca.es_admin() ){
+				if( Calidad.es_admin() ){
 					// Poner
 					$.each( Config.obj_clientes, function(index, value){
 
@@ -197,7 +197,7 @@ define([
 			this.obj_usuario.id_usuario = this.id_usuario;
 
 
-			if(!Merca.es_admin()){
+			if(!Calidad.es_admin()){
 				this.obj_usuario.id_cliente = Config.obj_usuario.id_cliente;
 			}
 
@@ -217,7 +217,7 @@ define([
 			
 			if( Fx.validar_formulario( esto.$('#form_anadir_usuario') ) ){
 				
-				Merca.spinner(this, '#resp_guardar_usuario');
+				Calidad.spinner(this, '#resp_guardar_usuario');
 
 				// Validaciones de campos obligatorios
 				var arr_campos_oblig = ['nombre','login','password'];

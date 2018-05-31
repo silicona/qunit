@@ -5,14 +5,14 @@ define([
     'backbone',
     'funciones',
     'app/config',
-    'app/merca',
+    'app/calidad',
     'app/views/datatablesView',
     'app/views/confirmView',
     'app/views/usuarios/detalleUsuarioView',
     'swal'
 
 
-], function($, _, Backbone, Fx, Config, Merca, DatatablesView, ConfirmView, DetalleUsuarioView, Swal ){
+], function($, _, Backbone, Fx, Config, Calidad, DatatablesView, ConfirmView, DetalleUsuarioView, Swal ){
 
     'use strict';
     
@@ -50,7 +50,7 @@ define([
 
         initialize: function(options){
 
-            Merca.cleanUp(this);
+            Calidad.cleanUp(this);
 
             var esto = this;
 
@@ -69,7 +69,7 @@ define([
                                     '<th>Password</th>'
                             ].join('');
 
-            if( ( Merca.es_admin() ) && (options.opcion == 'empleados') ){
+            if( ( Calidad.es_admin() ) && (options.opcion == 'empleados') ){
                 
                 encabezado += [
                     '<th>Comercial</th>',
@@ -137,7 +137,7 @@ define([
 
             var id_usuario = e.currentTarget.attributes['data-id_usuario'].value;
 
-            if( Merca.es_admin() ){
+            if( Calidad.es_admin() ){
 
                 Swal({
                     title: "Está seguro?",   
@@ -257,7 +257,7 @@ define([
                 ]
             };
 
-            if (Merca.es_admin() && (esto.options.opcion == 'empleados')) {   
+            if (Calidad.es_admin() && (esto.options.opcion == 'empleados')) {   
 
                 esto.options.columns.push({data: null, title: 'Comercial', 
                     render: function(data, type, full){

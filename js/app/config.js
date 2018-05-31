@@ -25,7 +25,7 @@ define([
 
 		obj_provincias: {
 			0: '',
-	    1: 'Álava',
+	    	1: 'Álava',
 			2: 'Albacete',
 			3: 'Alicante',
 			4: 'Almería',
@@ -130,7 +130,6 @@ define([
 			5: 'No perecederos',
 		},
 
-
 		obj_clientes:{},
 
 		obj_usuario: {}
@@ -139,16 +138,16 @@ define([
 
 	if( window.location.href.indexOf('localhost') > -1 ){
 		
-		Config.base_url   =    '//localhost/merca/';
-		Config.base_ajax  =    '//localhost/merca/api/';
+		Config.base_url   =    '//localhost/oclemcalidad/';
+		Config.base_ajax  =    '//localhost/oclemcalidad/api/';
 
 		Config.servidor = 'localhost';
 
 		//console.info('Info Config', Config);
 
 		//console.log('Log Config:',Config);
-
 	}
+	
 	/*
 	if( window.location.href.indexOf('localhost:8888') > -1 ){
 		

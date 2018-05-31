@@ -6,12 +6,11 @@ require.config({
 		'underscore'                 : '../js/libs/underscore-1.8.3',
 		'backbone'                   : '../js/libs/backbone-1.3.3',
 		'bootstrap'                  : '../js/libs/bootstrap-3.3.7',
-		//'qunit'											 : 'libs/qunit-2.6.0', 
 		'mustache'                   : '../js/libs/mustache',
 		'funciones'                  : '../js/libs/funciones',
 		'iban'                       : '../js/libs/iban',
 		'config'                     : '../js/app/config',
-		'merca'                      : '../js/app/merca',
+		'calidad'                    : '../js/app/calidad',
 		'validar_formulario'         : '../js/libs/validar_formulario',
 
 		'datatables'                 : '../js/libs/jquery.dataTables.min',
@@ -54,12 +53,6 @@ require.config({
 			]
 		},
 
-		// 'qunit': {
-		// 	deps: [
-		// 		'jquery'
-		// 	],
-		// 	exports: 'Qunit'
-		// },
 		
 		'funciones': {
 			exports: 'Fx'
@@ -74,8 +67,8 @@ require.config({
 		},
 		
 
-		'merca': {
-			exports: 'Merca'
+		'calidad': {
+			exports: 'Calidad'
 		},
 
 		'config': {

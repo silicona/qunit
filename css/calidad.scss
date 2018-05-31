@@ -1,0 +1,144 @@
+/* Variables */
+	$negro: #160F05;
+	$blanco: #FFFFFF;
+	$verde_pruebas: #6DFF65;
+
+	$gris_claro: #BEC5C2;
+	$gris_oscuro: #424442;
+
+	
+
+/* App */
+
+	html, body {
+		height: 100%;
+		/*font-size: 13px;
+		line-height: 1.2em;
+		font-family: roboto;*/
+	}
+
+	#app {
+		/*height: inherit;*/
+	}
+
+	#header {
+		height: 65px;
+		background-color: $negro;
+		padding-top: .3ex;
+		padding-bottom: .3ex;
+
+		.div_logo {
+			float: left;
+			height: 100%;
+
+			.logo {
+				display: inline-block;
+				margin-right: 20px;
+				height: inherit;
+
+				img { height: inherit; }
+			}
+
+			.nombre_app {
+				display: inline-block;
+				height: 100%;
+				font-size: 1.5em;
+				/*line-height: 1.2em;*/
+				color: $blanco;
+			}
+		}
+
+		.menu_botones {
+			list-style: none;
+			float: right;
+			height: 100%;
+
+			li {
+				display: inline-block;
+				float: left;
+			}
+		}
+	}
+
+	/*	
+	.lateral {
+		background-color: $negro;
+
+		.logo {
+
+			img { width: 100px; }
+		}
+
+		ul {
+			list-style: none;
+			background-color: #fff;
+		
+		}
+		
+	}
+	*/
+
+	.sep50 {
+		margin-top: 50px;
+	}
+
+	footer {
+		/*
+		position: absolute;
+		bottom: 0;
+		*/
+	}
+
+	#pruebas {
+		background: $verde_pruebas none repeat scroll 0 0;
+		border-top: 2px solid grey;
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		z-index: 10000;
+		text-align: center;
+		padding: 10px 0;
+
+		color: $negro;
+		font-weight: bold;
+	}
+
+/* Inicio */
+
+	.boton_inicio {
+		position: relative;
+		background: $blanco;
+		border-radius: 10px;
+		text-align: center;
+		margin: 20px 0;
+		padding: 2ex;
+		box-shadow: 1px 1px 2px $gris_oscuro;
+		font-size: 18px;
+		width: 100%;
+		
+		a { 
+			color: $negro; 
+
+			span {
+				display: block;
+				padding-top: .5ex;
+			}
+		}
+
+	}
+
+/* LOPD */
+
+	.block-header {
+		padding: 20px;
+		margin-bottom: 30px;
+		background: $negro;
+
+		h2 {
+			color: $blanco;
+		}
+	}
+
+
+
+

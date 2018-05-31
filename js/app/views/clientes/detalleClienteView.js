@@ -5,11 +5,11 @@ define([
 	'app/templates',
 	'funciones',
 	'app/config',
-	'app/merca',
+	'app/calidad',
 	'app/formulario',
 	'app/views/clientes/html/detalleClienteViewHtml'
 
-], function($, _, Backbone, Templates, Fx, Config, Merca, Formulario, DetalleClienteViewHtml){
+], function($, _, Backbone, Templates, Fx, Config, Calidad, Formulario, DetalleClienteViewHtml){
 
 	'use strict';
 
@@ -31,7 +31,7 @@ define([
 
 			this.id_cliente = options.id_cliente;
 			
-			Merca.cleanUp(this);
+			Calidad.cleanUp(this);
 		
 		},
 
@@ -39,7 +39,7 @@ define([
 
 			var esto = this;
 			
-			$.when( Merca.cargar_cliente(esto.id_cliente) )
+			$.when( Calidad.cargar_cliente(esto.id_cliente) )
 			
 				.then(function(json_cliente){
 
@@ -61,7 +61,7 @@ define([
 						esto.$('#h2_cliente').text( esto.obj_cliente.expediente + ' - ' + Fx.cambiaf_a_normal(esto.obj_cliente.f_entrada) + ' - ' + Fx.euros(esto.obj_cliente.importe) );
 					}
 					
-					if( Merca.es_cliente() ){
+					if( Calidad.es_cliente() ){
 						
 						esto.$('#volver').hide();
 						esto.$('#iban, #cods_clasificaciones, #cods_cpv, #cods_cpv_ignorar, #comercial, #f_alta' ).prop('disabled','disabled');
@@ -70,7 +70,7 @@ define([
 						
 					}
 
-					if( Merca.es_admin() || Merca.es_tecnico() || json_cliente.id_tipo_contrato == 0 ){
+					if( Calidad.es_admin() || Calidad.es_tecnico() || json_cliente.id_tipo_contrato == 0 ){
 						esto.$('#btn_descargar_contrato').remove();
 					}
 
@@ -87,11 +87,11 @@ define([
 
 			this.$el.html(this.html);
 
-			if( !Merca.es_admin() && !Merca.es_comercial() ){
+			if( !Calidad.es_admin() && !Calidad.es_comercial() ){
 				esto.$('.div_iban').remove();
 			}
 
-			if( Merca.es_comercial() ){
+			if( Calidad.es_comercial() ){
 				this.$('.div_guardar').remove();
 			}
 
@@ -139,7 +139,7 @@ define([
 
 			Formulario(this);
 
-			Merca.actualizar_combos(esto);
+			Calidad.actualizar_combos(esto);
 			//Oclem.actualizar_fechas(esto);
 
 		},	

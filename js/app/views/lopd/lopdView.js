@@ -3,7 +3,7 @@ define([
 	'jquery',
 	'underscore',
 	'backbone',
-	'calidad',
+	'app/calidad',
 
 	'app/views/lopd/html/lopdViewHtml'
 
@@ -17,7 +17,10 @@ define([
 
 		views: [],
 
-		events: {},
+		events: {
+
+			
+		},
 
 		initialize: function(){
 
@@ -29,7 +32,9 @@ define([
 		render: function(){
 
 			var esto = this;
-			this.el.html(this.html);
+			this.$el.html(this.html);
+
+			return this;
 
 		},
 

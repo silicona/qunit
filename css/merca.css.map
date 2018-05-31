@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,eAAe;AAGf,SAAS;AAER,SAAU;EACT,MAAM,EAAE,IAAI;EACZ,gBAAgB,EANT,OAAO;EAQd,YAAG;IACF,UAAU,EAAE,IAAI;;AAMlB,QAAS;EACR,gBAAgB,EAhBT,OAAO;EAkBd,WAAG;IACF,UAAU,EAAE,IAAI;IAIf,qBAAI;MAAE,MAAM,EAAE,IAAI",
-"sources": ["merca.scss"],
-"names": [],
-"file": "merca.css"
-}

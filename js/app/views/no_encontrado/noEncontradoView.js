@@ -3,12 +3,12 @@ define([
 	'jquery',
 	'underscore',
 	'backbone',
-	'app/merca',
+	'app/calidad',
 	'funciones',
 	'app/views/no_encontrado/html/noEncontradoViewHtml'
 	//'app/templates', /*Templates,*/
 	
-], function( $, _, Backbone, Merca, Fx, NoEncontradoViewHtml ){
+], function( $, _, Backbone, Calidad, Fx, NoEncontradoViewHtml ){
 
 	'use strict';
 
@@ -22,7 +22,7 @@ define([
 
 		initialize: function(){
 
-			Merca.cleanUp(this);
+			Calidad.cleanUp(this);
 
 		},
 

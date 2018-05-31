@@ -4,11 +4,11 @@ define([
 	'backbone',
 	'funciones',
 	'app/config',
-	'app/merca',
+	'app/calidad',
 	'app/views/modalView',
 	'fileinput'
 
-], function($, _, Backbone, Fx, Config, Merca, ModalView, FileInput){
+], function($, _, Backbone, Fx, Config, Calidad, ModalView, FileInput){
 
 	'use strict';
 

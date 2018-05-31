@@ -7,65 +7,79 @@ define([
 	var AppViewHtml = {};
 
 	AppViewHtml['vista_app'] = [
+
 		'<main class="container-fluid">',
 
 			'<div class="row">',
 
-				'<header class="superior col-sm-12">',
+				'<header id="header" class="col-sm-12">',
 
-					'<ul class="barra_superior">',
+					'<div class="div_logo">',
+					
+						'<a href="#inicio" title="Ir a Inicio" class="logo">',
+							'<img src="media/logo.png" alt="Ir a Inicio de Departamente de Calidad, Grupo Oclem ">',
+						'</a>',
+
+						'<span class="nombre_app hidden-xs">',
+
+							'Departamento de Calidad, Grupo Oclem.',
+
+						'<span>',
+					
+					'</div>',
+
+					'<ul class="menu_botones">',
 						
-						'<li class="menu_botones pull-right">',
+						'<li  id="btn_usuario" class="dropdown">',
 
-							'<ul class="top-menu">',
+							'<a title="Desplegar opciones de usuario" data-toggle="dropdown"  href="" aria-expanded="false">',
+								'<span class="icono_header"><i class="fa fa-user fa-3x"></i></span>',
+							'</a>',
 
-								'<li  id="btn_usuario" class="dropdown">',
-									'<a title="Desplegar opciones de usuario" data-toggle="dropdown"  href="" aria-expanded="false">',
-										'<span class="icono_header"><i class="fa fa-user fa-3x"></i>&nbsp;</span>',
-									'</a>',
+							'<div class="dropdown-menu dropdown-menu-lg pull-right">',
+								'<a href="#usuarios/perfil" title="Accede a tu perfil">Ver Perfil</a>',
+								'<br>',
+								'<a href="promociones" title="Promociones de Oclem Mercamadrid">Promociones (wip)</a>',            
+							'</div>',
 
-									'<div class="dropdown-menu dropdown-menu-lg pull-right">',
-										'<a href="#usuarios/perfil" title="Accede a tu perfil">Ver Perfil</a>',
-										'<br>',
-										'<a href="promociones" title="Promociones de Oclem Mercamadrid">Promociones (wip)</a>',            
-									'</div>',
+						'</li>',
 
-								'</li>',
-
-								'<li id="btn_salir">',
-									'<a title="Cerrar sesión" href="" class="boton_salir">',
-									'<span class="icono_header"><i class="fa fa-power-off fa-3x" >&nbsp;</i></span>',
-									'</a>',
-								'</li>',
-
-							'</ul>',
-
-						'<li>',
+						'<li id="btn_salir">',
+							'<a title="Cerrar sesión" href="" class="boton_salir">',
+								'<span class="icono_header"><i class="fa fa-power-off fa-3x" >&nbsp;</i></span>',
+							'</a>',
+						'</li>',
 
 					'</ul>',
 
 				'</header>',
-			'</div>',	// Fin de Row header
+
+			'</div>',
 
 			'<div class="row">',
 
-				'<aside class="lateral col-sm-2">',
-				
-					'<div class="logo">',
-							'<a href="#inicio" title="Ir a la Landing">',
-								'<img src="media/logo.png" alt="Ir a Inicio de Oclem Mercadona">',
-							'</a>',
-					'</div>',
+				// '<aside class="lateral col-sm-2">',
+				// 	'<ul class="lista_opciones">',
+				// 		'<li>Opcion Uno - Admin</li>',
+				// 		'<li>Opcion Dos - Tecnico</li>',
+				// 		'<li>Opcion Tres - Cliente</li>',
+				// 	'</ul>',
+				// '</aside>',
 
-					'<ul class="lista_opciones">',
-						'<li>Opcion Uno - Admin</li>',
-						'<li>Opcion Dos - Tecnico</li>',
-						'<li>Opcion Tres - Cliente</li>',
-					'</ul>',
-				'</aside>',
+				'<div id="vista_general" class="col-sm-12"></div>',
 
-				'<div id="vista_general" class="col-md-10"></div>',
-				//'<div id="vista_general" class="col-md-10"><b>VISTA GENERAL VACÍA</b></div>',
+				// '<footer id="footer_login">',
+
+		  //           '<h3>Footer</h3>',
+		  //           '<a href="#politica">Política de privacidad</a>',
+
+		  //       '</footer>', 
+
+		        '<footer>',
+
+		        	'<p>Grupo Oclem, Departamento de calidad</p>',
+
+		        '</footer>',
 
 			'</div>', // Fin de Row
 

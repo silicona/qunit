@@ -5,14 +5,14 @@ define([
         'backbone',
         'funciones',
         'app/config',
-        'app/merca',
+        'app/calidad',
         'app/views/datatablesView',
         'app/views/confirmView',
         'app/views/soportes/detalleSoporteView',
         'swal'
     
     
-    ], function($, _, Backbone, Fx, Config, Merca, DatatablesView, ConfirmView, DetalleSoporteView, Swal ){
+    ], function($, _, Backbone, Fx, Config, Calidad, DatatablesView, ConfirmView, DetalleSoporteView, Swal ){
     
         'use strict';
         
@@ -52,7 +52,7 @@ define([
     
             initialize: function(options){
     
-                Merca.cleanUp(this);
+                Calidad.cleanUp(this);
     
                 var esto = this,
                     titulo_fila = '',
@@ -62,7 +62,7 @@ define([
 
                 esto.$el.html(esto.html);
     
-                Merca.spinner(this, '#tabla_soportes');
+                Calidad.spinner(this, '#tabla_soportes');
 
                 esto.options = options;
     
@@ -74,7 +74,7 @@ define([
                   type: 'POST',
                   url: Config.base_ajax + 'soportes.php',
                   data: {
-                          hash: Merca.hash(),
+                          hash: Calidad.hash(),
                           accion: 'consultar',
                           parametro: esto.parametro
                     }
@@ -122,7 +122,7 @@ define([
     
                 var id_soporte = e.currentTarget.attributes['data-id_soporte'].value;
     
-                if( Merca.es_admin() ){
+                if( Calidad.es_admin() ){
     
                     Swal({
                         title: "Está seguro?",   
@@ -156,7 +156,7 @@ define([
                     url: Config.base_ajax + 'soportes.php',
                     type: 'POST',
                     data: {
-                        hash: Merca.hash(),
+                        hash: Calidad.hash(),
                         accion: 'eliminar',
                         id_soporte: id_soporte
                     }
@@ -363,7 +363,7 @@ define([
     
                 };
 
-                if (Merca.es_admin() ||Merca.es_tecnico()) {          
+                if (Calidad.es_admin() ||Calidad.es_tecnico()) {          
                     
                     esto.options.columns.push(
                         
@@ -433,7 +433,7 @@ define([
 
                 }});
                 
-                if (Merca.es_admin() || Merca.es_tecnico()) {
+                if (Calidad.es_admin() || Calidad.es_tecnico()) {
                     esto.options.order = [ [5, 'desc'] ];
                 }else{
                     esto.options.order = [ [1, 'desc'] ];

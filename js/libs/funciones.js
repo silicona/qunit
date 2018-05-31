@@ -551,7 +551,7 @@ define([
                 col_bs_input   = obj_datos.col_bs_input || '',
 
                 title          = obj_datos.title || '',
-                //boton_info     = '';
+                boton_info     = '';
 
             if( (checked == 1) || (checked == "checked") ){ checked = 'checked="checked"'; }
 
@@ -564,12 +564,12 @@ define([
                     '<div class="input-group">',
                         '<input title="' + title + '" ' + this.objeto_a_string(atributos) + disabled + ' id="' + id + '" class="' + clase +  ' ' + col_bs_input + '" type="checkbox" name="' + id + '" ' + checked + ' >',
                     '</div>',
-                    '<label for="' + id + '" title="' + titulo + '" class="'+ col_bs_label + ' control-label">' + boton_info + label + '</label>',
+                    '<label for="' + id + '" title="' + title + '" class="'+ col_bs_label + ' control-label">' + boton_info + label + '</label>',
                 '</div>'
             ];
 
             return arr_html.join('');
-        }
+        },
 
 		form_input_fecha: function(obj_datos){
 

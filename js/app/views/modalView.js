@@ -7,9 +7,9 @@ define([
 	'bootstrap',
 	'mustache',
 	'funciones',
-	'app/merca',
+	'app/calidad',
 
-], function($, _, Backbone, Templates, Bootstrap, Mustache, Fx, Merca){
+], function($, _, Backbone, Templates, Bootstrap, Mustache, Fx, Calidad){
 
 	'use strict';
 

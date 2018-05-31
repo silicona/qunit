@@ -1,18 +1,17 @@
 define([
 	
-	
 	'jquery',
 	'underscore',
 	'backbone',
 	'app/config',
 	'funciones',
 	'app/formulario',
-	'app/merca',
+	'app/calidad',
 	'datatables',
 	'datatables-responsive',
 	'app/views/datatablesViewHtml'
 
-], function($, _, Backbone, Config, Fx, Formulario, Merca, Datatables, DatatablesResponsive, DatatablesViewHtml){
+], function($, _, Backbone, Config, Fx, Formulario, Calidad, Datatables, DatatablesResponsive, DatatablesViewHtml){
 
 	'use strict';
 
@@ -44,8 +43,8 @@ define([
 				createdRow	= this.options.createdRow 	|| false,
 				rowCallback = this.options.createdRow 	|| false;
 
-			Merca.cleanUp( this );
-			Merca.spinner( this, target);
+			Calidad.cleanUp( this );
+			Calidad.spinner( this, target);
 			
 			
 			// CARGA DEL HTML
@@ -157,7 +156,7 @@ define([
 
 		    this.$('table').css('width','100%');
 
-		    Merca.quitar_spinner();
+		    Calidad.quitar_spinner();
 
 		},
 

@@ -5,10 +5,10 @@ define([
 	'backbone',
 	'funciones',
 	'app/config',
-	'app/merca',
+	'app/calidad',
 	'app/views/inicio/html/inicioViewHtml'
 
-], function( $, _, Backbone, Fx, Config, Merca, InicioViewHtml ){
+], function( $, _, Backbone, Fx, Config, Calidad, InicioViewHtml ){
 	
 	var InicioView = Backbone.View.extend({
 
@@ -20,7 +20,7 @@ define([
 
 		initialize: function(){
 
-			Merca.cleanUp(this);
+			Calidad.cleanUp(this);
 
 			var esto = this;
 

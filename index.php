@@ -20,12 +20,14 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>OclemMercamadrid - Index</title>
+
+        <title>OclemCalidad - Inicio</title>
         
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
         
         <link href="js/libs/bootstrap-datepicker/css/datepicker.css" rel="stylesheet" />
         <link href="js/libs/summernote/summernote-bs3.css" rel="stylesheet" />
+        
         <link href="css/jquery.dataTables.min.css" rel="stylesheet">
         <link href="css/jquery.dataTables.responsive.css" rel="stylesheet">
         <link href="css/fileinput.min.css" rel="stylesheet" >
@@ -35,10 +37,9 @@
         
         <!-- <link href="css/normalize.min.css" rel="stylesheet"> -->
         <link href="css/bootstrap-3.3.7.css" rel="stylesheet">
-        <link href="css/qunit-2.6.0.css" rel="stylesheet">
 
-        <!-- <link href="css/oclem.css?v=<?php echo time();?>" rel="stylesheet"> -->
-        <link href="css/merca.css?v=<?php echo time();?>" rel="stylesheet">
+        <link href="css/app.min.css?v=<?php echo time();?>" rel="stylesheet">
+        <link href="css/calidad.css?v=<?php echo time();?>" rel="stylesheet">
 
         <script data-main="js/main" src="js/libs/require.js?v=<?php echo time();?>"></script>
 
@@ -50,12 +51,10 @@
         <?php //echo $div_pruebas;?>
 
         <div id="app"></div>
-        
-        <div id="footer_login">
-            <h3>Footer</h3>
-            <a href="#politica">Política de privacidad</a>
-        </div>  
-        
+
+        <!-- <footer>
+            <p>Grupo Oclem, Departamento de calidad</p>
+        </footer>     -->
 
         <script>
             /*

@@ -6,10 +6,10 @@ define([
 	'funciones',
 	'app/config',
 	'app/templates',
-	'app/merca',
+	'app/calidad',
 	'app/views/login/html/loginViewHtml'
 	
-], function($, _, Backbone, Fx, Config, Templates, Merca, LoginViewHtml){
+], function($, _, Backbone, Fx, Config, Templates, Calidad, LoginViewHtml){
 
 	'use strict';
 

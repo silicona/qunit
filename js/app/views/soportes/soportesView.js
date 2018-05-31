@@ -4,12 +4,12 @@ define([
 	'underscore',
 	'backbone',
 	'funciones',
-	'app/merca',
+	'app/calidad',
 	'app/views/soportes/html/soportesViewHtml',
 	'app/views/soportes/tablaSoportesView',
 	'app/views/soportes/detalleSoporteView'
 
-], function($, _, Backbone, Fx, Merca, SoportesViewHtml, TablaSoportesView, DetalleSoporteView){
+], function($, _, Backbone, Fx, Calidad, SoportesViewHtml, TablaSoportesView, DetalleSoporteView){
 
 	'use strict';
 
@@ -26,14 +26,14 @@ define([
 
 		initialize: function(){
 
-			Merca.cleanUp(this);			
-			Merca.cargar_obj_clientes();
+			Calidad.cleanUp(this);			
+			Calidad.cargar_obj_clientes();
 
 		},
 
 		render: function(){
 
-			Merca.cleanUp(this);
+			Calidad.cleanUp(this);
 			
 			var texto_aux = '';
 			
@@ -57,7 +57,7 @@ define([
 
 			this.mostrar_tabla_soportes();
 
-			if( Merca.es_admin() || Merca.es_tecnico() ){
+			if( Calidad.es_admin() || Calidad.es_tecnico() ){
 				this.$('#anadir_soporte').remove();
 			}
 

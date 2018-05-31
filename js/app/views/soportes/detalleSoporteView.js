@@ -5,7 +5,7 @@ define([
 	'funciones',
 	'app/config',
 	'app/templates',
-	'app/merca',
+	'app/calidad',
 	'app/formulario',
 	'app/views/confirmView',
 	'app/views/anadirArchivosView',
@@ -14,7 +14,7 @@ define([
 	'summernote',
 	'swal'
 
-], function($, _, Backbone, Fx, Config, Templates, Merca, Formulario, ConfirmView, AnadirArchivosView, ListaArchivosView, DetalleSoporteViewHtml, Summernote, Swal){
+], function($, _, Backbone, Fx, Config, Templates, Calidad, Formulario, ConfirmView, AnadirArchivosView, ListaArchivosView, DetalleSoporteViewHtml, Summernote, Swal){
 
 	'use strict';
 

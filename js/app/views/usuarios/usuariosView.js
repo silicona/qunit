@@ -5,12 +5,12 @@ define([
 	'backbone',
 	'funciones',
 	'app/config',
-	'app/merca',
+	'app/calidad',
 	'app/views/usuarios/html/usuariosViewHtml',
 	'app/views/usuarios/tablaUsuariosView',
 	'app/views/usuarios/detalleUsuarioView'
 
-], function($, _, Backbone, Fx, Config, Merca, UsuariosViewHtml, TablaUsuariosView, DetalleUsuarioView){
+], function($, _, Backbone, Fx, Config, Calidad, UsuariosViewHtml, TablaUsuariosView, DetalleUsuarioView){
 
 	'use strict';
 
@@ -31,26 +31,26 @@ define([
 
 		initialize: function(){
 
-			Oclem.cleanUp(this);
+			Calidad.cleanUp(this);
 			
 		},
 
 		render: function(){
 
-			Merca.cleanUp(this);
+			Calidad.cleanUp(this);
 			
 			this.$el.html(this.html);
 
 			// Salir si el cliente no tiene permisos para ver esto
 			
-			if( !Oclem.es_admin() ){
+			if( !Calidad.es_admin() ){
 
 				if( typeof Config.obj_usuario.cliente_admin == 'undefined'){
-					Merca.ir_a_login();
+					Calidad.ir_a_login();
 				}
 
 				if( Config.obj_usuario.cliente_admin != '1' ){
-					Merca.ir_a_login();
+					Calidad.ir_a_login();
 				}
 
 				if( Config.obj_usuario.cliente_admin == 1){
@@ -72,7 +72,7 @@ define([
 			this.views['tablaUsuariosView'] = new TablaUsuariosView({
 				id: 'tablaUsuarios',
 				className: 'tablaUsuarios',
-				hash: Merca.hash(),
+				hash: Calidad.hash(),
 				opcion: this.opcion
 			});
 

@@ -5,40 +5,43 @@ define([
 	'funciones',
 	'app/config',
 	'app/templates',
-	'app/merca',
+	'app/calidad',
 	'app/router/router',
 
 	'app/views/app/html/appViewHtml',
 
 	'app/views/login/loginView',
-	'app/views/login/verPoliticaView',
+	//'app/views/login/verPoliticaView',
 
 	'app/views/inicio/inicioView',
 
-	'app/views/clientes/clientesView',
-	'app/views/clientes/detalleClienteView',
+	// 'app/views/clientes/clientesView',
+	// 'app/views/clientes/detalleClienteView',
 	
 	'app/views/soportes/soportesView',
 	'app/views/soportes/detalleSoporteView',
 
-	'app/views/alta/altaView',
+	// 'app/views/alta/altaView',
 
-	'app/views/usuarios/usuariosView',
-	'app/views/usuarios/detalleUsuarioView',
+	// 'app/views/usuarios/usuariosView',
+	// 'app/views/usuarios/detalleUsuarioView',
+
+	'app/views/lopd/lopdView',
 
 	'app/views/no_encontrado/noEncontradoView',
 
-], function($, _, Backbone, Fx, Config, Templates, Merca, Router, 
+], function($, _, Backbone, Fx, Config, Templates, Calidad, Router, 
 
 		AppViewHtml,
 
-		LoginView, VerPoliticaView,
+		LoginView, 
+		//VerPoliticaView,
 		InicioView, 
-		ClientesView, DetalleClienteView,
+		//ClientesView, DetalleClienteView,
 		SoportesView, DetalleSoporteView, 
-		AltaView,
-		UsuariosView,
-		DetalleUsuarioView,
+		//AltaView,
+		//UsuariosView, DetalleUsuarioView,
+		LopdView,
 		NoEncontradoView
   ){
 
@@ -49,7 +52,6 @@ define([
 		id: 'app-view',
 
 		html: AppViewHtml['vista_app'],
-		// html: Templates['app'],
 
 		events: {
 			
@@ -81,13 +83,13 @@ define([
 			
 			_.bindAll(this, 'toggle_footer');
 		    // bind to window
-		  $(window).scroll(this.toggle_footer);
+		  	
+		  	$(window).scroll(this.toggle_footer);
 
-			Merca.cleanUp(this);
+			Calidad.cleanUp(this);
 
 			var esto = this;
 
-			this.$el.html(this.html);
 			//console.log('Lugar: ', this.$el);
 
 			// if( Oclem.es_cliente() ){
@@ -100,6 +102,28 @@ define([
 
 			var esto = this;
 
+			this.$el.html(this.html);
+
+			$.when( Calidad.establecer_entorno() )
+
+			.then( function(json){
+
+				if( json != '' ){
+
+					var datos = $.parseJSON( json );
+
+					console.log( 'Datos', datos );
+
+					if( datos !== null && datos.status !== 'ko' ){
+
+						if( datos.entorno === 'pruebas' ){
+
+							esto.$('#vista_general').append( '<div id="pruebas"><span>Estás en el entorno de pruebas</span></div>' );
+						}
+					}
+				}
+			});
+			
 			return this;
 			
 		},
@@ -111,7 +135,7 @@ define([
 			var vista = '',
 				eq = 0;
 
-			// this.$('#contenido_seccion').html( Templates['spinner'] );
+			this.$('#contenido_seccion').html( Templates['spinner'] );
 
 			if( (window.localStorage.getItem('hash') != null) && ( typeof window.localStorage.getItem('hash') != 'undefined') ){
 				
@@ -133,11 +157,11 @@ define([
 				}
 			}
 
-			//Merca.check_login();
+			//Calidad.check_login();
 
-			Merca.cleanUp(this);
-			Merca.actualizar_nombre_usuario();
-			Merca.mostrar_footer_si_no_scroll();
+			Calidad.cleanUp(this);
+			Calidad.actualizar_nombre_usuario();
+			Calidad.mostrar_footer_si_no_scroll();
 
 			
 
@@ -147,7 +171,7 @@ define([
 			}
 
 			
-			if( Merca.es_admin() ){
+			if( Calidad.es_admin() ){
 				
 				this.$('#menu_clientes')
 					.attr('href','#clientes')
@@ -159,7 +183,7 @@ define([
 				this.$('#btn_menu_adjudicaciones').show();
 			}
 
-			if( Merca.es_cliente() ){
+			if( Calidad.es_cliente() ){
 				
 				this.$('#menu_clientes')
 					.attr('href','#clientes/mis_datos' )
@@ -171,18 +195,18 @@ define([
 
 			}
 
-			if( Merca.es_cliente_no_admin() ){
+			if( Calidad.es_cliente_no_admin() ){
 
 				this.$('#btn_menu_clientes').remove();
 			
 			}
 
-			if( Merca.es_tecnico() ){
+			if( Calidad.es_tecnico() ){
 				this.$('#empresa span.empresa').text( 'Oclem Concursos - Técnico' );
 				this.$('#btn_menu_clientes, #btn_menu_adjudicaciones').remove();
 			}
 
-			if( Merca.es_comercial() ){
+			if( Calidad.es_comercial() ){
 				this.$('#empresa span.empresa').text( 'Oclem Concursos - Comercial' );
 				this.$('#btn_menu_adjudicaciones, #btn_menu_baja, #btn_menu_tecnico, #btn_menu_administrativo, #btn_menu_juridico,#btn_menu_adjudicaciones').remove();
 			}
@@ -236,7 +260,7 @@ define([
 
 			if(seccion == 'inicio'){
 
-				//Merca.actualizar_spans_totales();
+				//Calidad.actualizar_spans_totales();
 
 				// Cargar sección de inicio
 				this.views['inicioView'] = new InicioView({
@@ -249,7 +273,7 @@ define([
 
 			}
 
-
+			/*
 			if(seccion == 'clientes'){
 
 				if(parametro == ''){
@@ -277,11 +301,12 @@ define([
 				// this.$('ul.main-menu li').eq('6').addClass('selected');
 
 			}
+			*/
 
 			if(seccion == 'soporte'){
 
 				if( parametro == '' ){
-					Merca.actualizar_spans_totales();
+					Calidad.actualizar_spans_totales();
 					// Cargar tabla de soportes
 					this.views['soportesView'] = new SoportesView({
 						id: 'seccion_soportes',
@@ -310,55 +335,61 @@ define([
 
 			}
 
-			
-			if(seccion == 'alta'){
+			if(seccion == 'lopd'){
 
 				// Cargar sección de alta web
-				this.views['altaView'] = new AltaClienteWebView({
-					id: 'seccion_alta',
-					className: 'alta'
+				this.views['lopdView'] = new LopdView({
+					id: 'seccion_lopd',
+					className: 'lopd'
 				});
 				
-				vista = 'alta';
+				vista = 'lopd';
 
 			}
 
-			if(seccion == 'usuarios'){
+			/*
+				if(seccion == 'alta'){
 
-				if(parametro == ''){
-
-					// Cargar tabla de usuarios
-					this.views['usuariosView'] = new UsuariosView({
-						id: 'seccion_usuarios',
-						className: 'seccion_usuarios'
+					// Cargar sección de alta web
+					this.views['altaView'] = new AltaClienteWebView({
+						id: 'seccion_alta',
+						className: 'alta'
 					});
-
-					vista = 'usuarios';
-
-				}else{
-
-					this.views['detalleUsuarioView'] = new DetalleUsuarioView({
-						id: 'seccion_detalle_usuario',
-						className: 'seccion_detalle_usuario',
-						id_usuario: parametro
-					});
-
-					vista = 'detalleUsuario';
+					
+					vista = 'alta';
 
 				}
 				
-			}
 
-			if( seccion == 'test' ){
+				
+				if(seccion == 'usuarios'){
 
-				this.views['testView'] = new TestView({
-					id: 'seccion_test',
-					className: 'seccion_test',
-				});
+					if(parametro == ''){
 
-				vista = 'test';
-			}
-			/*
+						// Cargar tabla de usuarios
+						this.views['usuariosView'] = new UsuariosView({
+							id: 'seccion_usuarios',
+							className: 'seccion_usuarios'
+						});
+
+						vista = 'usuarios';
+
+					}else{
+
+						this.views['detalleUsuarioView'] = new DetalleUsuarioView({
+							id: 'seccion_detalle_usuario',
+							className: 'seccion_detalle_usuario',
+							id_usuario: parametro
+						});
+
+						vista = 'detalleUsuario';
+
+					}
+					
+				}
+			
+
+			
 				if(seccion == 'concursos'){
 
 					if(parametro == ''){
@@ -528,9 +559,9 @@ define([
 			}
 			*/
 			
-			// this.$(contenedor).html(this.views[vista + 'View'].render().$el);
+			this.$(contenedor).html(this.views[vista + 'View'].render().$el);
 
-			this.$('#btn_solicitar_baja_menu, #btn_solicitar_soporte_tecnico_menu, #btn_solicitar_soporte_administrativo_menu, #btn_solicitar_soporte_juridico_menu').hide();
+			//this.$('#btn_solicitar_baja_menu, #btn_solicitar_soporte_tecnico_menu, #btn_solicitar_soporte_administrativo_menu, #btn_solicitar_soporte_juridico_menu').hide();
 
 			$(document).scrollTop(0);
 		
@@ -544,9 +575,9 @@ define([
 			// Direccionar a Portada
 
 				// Por hacer...
-			Merca.ir_a_portada();
+			Calidad.ir_a_portada();
 
-			Merca.ir_a_login();
+			Calidad.ir_a_login();
 
 		},
 
