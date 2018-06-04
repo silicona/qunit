@@ -135,7 +135,7 @@ define([
                                     titulo: '<b>¿Su organización trata datos personales de clientes (personas físicas)?</b>',
                                     subtitulo: 'Se refiere a datos personales de aquellas personas con las que usted mantiene una relación comercial.',
                                     id: 'tipo_sino',
-                                    clase: 'lopd-sino',
+                                    clase_grupo: 'lopd-sino',
                                     inline: true,
 
                                     col_bs_label: 'col-sm-12',
@@ -980,16 +980,51 @@ define([
     
                             */
 
+                            Fx.form_select({
+                                label            : 'Aceptar condiciones',
+                                id               : 'aceptar_condiciones',
+                                clase            : 'form-control',
+                                col_bs_label     : 'col-sm-3',
+                                col_bs_select    : 'col-sm-6',
+                                json_valores_et  : {
+                                    0: 'No, no acepto',
+                                    1: 'Sí, acepto'
+                                }
+                            }),
+
+                            '<div class="form-group">',
+
+                                //'<label class="col-sm-3 control-label" for="" title="">&nbsp;</label>',
+
+                                '<div class="input-group col-sm-6">',
+                                    '<button id="btn_procesar" class="btn bgm-green waves-effect"><i class="fa fa-pencil fa-lg"></i>Procesar los datos</button>',
+                                    
+                                    //'<a id="btn_descargar_contrato" target="_blank" download="Contratación de la Plataforma de Concurso Público del Grupo Oclem" href="#" class="btn-large btn bgm-blue waves-effect oculto"><i class="fa fa-download fa-lg"></i> &nbsp;Descargar contrato&nbsp;</a>&nbsp;',
+                                '</div>',
+
+                            '</div>',
+
+                            '<div id="resp_guardar_cliente" class="resp_detalle sep30"></div>',
+
                         '</div>',
 
                         '<div id="botones_ant_sig">',
                             '<ul class="fw-footer pagination">',
-                                '<li class="previous first"><a class="a-prevent" href="#lopd"><i class="md md-more-horiz"></i></a></li>',
-                                '<li class="previous"><a class="a-prevent" href="#lopd"><i class="md md-chevron-left"></i></a></li>',
-                                '<li class="next"><a class="a-prevent" href="#lopd"><i class="md md-chevron-right"></i></a></li>',
-                                '<li class="next last"><a class="a-prevent" href="#lopd"><i class="md md-more-horiz"></i></a></li>',
+                                '<li class="previous first"><a class="a-prevent"><i class="md md-more-horiz"></i></a></li>',
+                                '<li class="previous"><a class="a-prevent"><i class="md md-chevron-left"></i></a></li>',
+                                '<li class="next"><a class="a-prevent"><i class="md md-chevron-right"></i></a></li>',
+                                '<li class="next last"><a class="a-prevent"><i class="md md-more-horiz"></i></a></li>',
                             '</ul>',
                         '</div>',
+
+                        // '<div id="botones_ant_sig">',
+                        //     '<ul class="fw-footer pagination">',
+                        //         '<li class="previous first"><a class="a-prevent" href="#lopd"><i class="md md-more-horiz"></i></a></li>',
+                        //         '<li class="previous"><a class="a-prevent" href="#lopd"><i class="md md-chevron-left"></i></a></li>',
+                        //         '<li class="next"><a class="a-prevent" href="#lopd"><i class="md md-chevron-right"></i></a></li>',
+                        //         '<li class="next last"><a class="a-prevent" href="#lopd"><i class="md md-more-horiz"></i></a></li>',
+                        //     '</ul>',
+                        // '</div>',
 
                     '</div>',
                         

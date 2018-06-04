@@ -56,10 +56,11 @@ define([
 		goToSection: function(seccion, parametro){
 
 			console.log('Router - Sección:' , seccion);
+			console.log('Router - Parametro:' , parametro);
 
 			var parametro = parametro || '';
 
-			if(seccion == 'lopd'){ parametro = '' }
+			//if(seccion == 'lopd'){ parametro = '' }
 				
 			this.appView.setPage(seccion, parametro);
 			
