@@ -8,65 +8,56 @@ define([
 
 	AppViewHtml['vista_app'] = [
 
-		'<main class="container-fluid">',
+	
+			'<header id="header">',
 
-			'<div class="row">',
+				'<div class="div_logo">',
+				
+					'<a href="#inicio" title="Ir a Inicio" class="logo">',
+						'<img src="media/logo.png" alt="Ir a Inicio de Departamente de Calidad, Grupo Oclem ">',
+					'</a>',
 
-				'<header id="header" class="col-sm-12">',
+					'<span class="nombre_app hidden-xs">',
 
-					'<div class="div_logo">',
+						'Departamento de Calidad, Grupo Oclem.',
+
+					'<span>',
+				
+				'</div>',
+
+				'<ul class="menu_botones">',
 					
-						'<a href="#inicio" title="Ir a Inicio" class="logo">',
-							'<img src="media/logo.png" alt="Ir a Inicio de Departamente de Calidad, Grupo Oclem ">',
+					'<li  id="btn_usuario" class="dropdown">',
+
+						'<a title="Desplegar opciones de usuario" data-toggle="dropdown"  href="" aria-expanded="false">',
+							'<span class="icono_header"><i class="fa fa-user fa-3x"></i></span>',
 						'</a>',
 
-						'<span class="nombre_app hidden-xs">',
+						'<div class="dropdown-menu dropdown-menu-lg pull-right">',
+							'<a href="#usuarios/perfil" title="Accede a tu perfil">Ver Perfil</a>',
+							'<br>',
+							'<a href="promociones" title="Promociones de Oclem Mercamadrid">Promociones (wip)</a>',            
+						'</div>',
 
-							'Departamento de Calidad, Grupo Oclem.',
+					'</li>',
 
-						'<span>',
-					
-					'</div>',
+					'<li id="btn_salir">',
+						'<a title="Cerrar sesión" href="" class="boton_salir">',
+							'<span class="icono_header"><i class="fa fa-power-off fa-3x" >&nbsp;</i></span>',
+						'</a>',
+					'</li>',
 
-					'<ul class="menu_botones">',
-						
-						'<li  id="btn_usuario" class="dropdown">',
+				'</ul>',
 
-							'<a title="Desplegar opciones de usuario" data-toggle="dropdown"  href="" aria-expanded="false">',
-								'<span class="icono_header"><i class="fa fa-user fa-3x"></i></span>',
-							'</a>',
+			'</header>',
 
-							'<div class="dropdown-menu dropdown-menu-lg pull-right">',
-								'<a href="#usuarios/perfil" title="Accede a tu perfil">Ver Perfil</a>',
-								'<br>',
-								'<a href="promociones" title="Promociones de Oclem Mercamadrid">Promociones (wip)</a>',            
-							'</div>',
+			'<section id="main">',
 
-						'</li>',
+				'<div id="content">',
 
-						'<li id="btn_salir">',
-							'<a title="Cerrar sesión" href="" class="boton_salir">',
-								'<span class="icono_header"><i class="fa fa-power-off fa-3x" >&nbsp;</i></span>',
-							'</a>',
-						'</li>',
+					'<div id="vista_general" class="container"></div>',
 
-					'</ul>',
-
-				'</header>',
-
-			'</div>',
-
-			'<div class="row">',
-
-				// '<aside class="lateral col-sm-2">',
-				// 	'<ul class="lista_opciones">',
-				// 		'<li>Opcion Uno - Admin</li>',
-				// 		'<li>Opcion Dos - Tecnico</li>',
-				// 		'<li>Opcion Tres - Cliente</li>',
-				// 	'</ul>',
-				// '</aside>',
-
-				'<div id="vista_general" class="col-sm-12"></div>',
+				'</div>',
 
 				// '<footer id="footer_login">',
 
@@ -75,13 +66,13 @@ define([
 
 		  //       '</footer>', 
 
-		        '<footer>',
+		        // '<footer>',
 
-		        	'<p>Grupo Oclem, Departamento de calidad</p>',
+		        // 	'<p>Grupo Oclem, Departamento de calidad</p>',
 
-		        '</footer>',
+		        // '</footer>',
 
-			'</div>', // Fin de Row
+			'</section>', // Fin de Row
 
 		'</main>'
 

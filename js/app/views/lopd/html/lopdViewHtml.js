@@ -15,7 +15,7 @@ define([
             '<div class="sep50"></div>',
 
             '<div class="block-header">',
-                '<h2>Cuestionario de LOPD</h2>',
+                '<h2 id="h2">Cuestionario de LOPD</h2>',
             '</div>',
 
             '<div class="card-body card-padding">',
@@ -28,12 +28,13 @@ define([
                     '<li ><a href="#tab3" data-pos="3" data-toggle="tab">Futuros clientes</a></li>',
                     '<li ><a href="#tab4" data-pos="4" data-toggle="tab">Empleados</a></li>',
                     '<li ><a href="#tab5" data-pos="5" data-toggle="tab">Candidatos</a></li>',
-                    '<li ><a href="#tab5" data-pos="6" data-toggle="tab">Proveedores</a></li>',
-                    '<li ><a href="#tab5" data-pos="7" data-toggle="tab">videovigilancia</a></li>',
-                    '<li ><a href="#tab5" data-pos="8" data-toggle="tab">Empresas externas</a></li>',
+                    '<li ><a href="#tab6" data-pos="6" data-toggle="tab">Proveedores</a></li>',
+                    '<li ><a href="#tab7" data-pos="7" data-toggle="tab">videovigilancia</a></li>',
+                    '<li ><a href="#tab8" data-pos="8" data-toggle="tab">Empresas externas</a></li>',
+                    '<li ><a href="#tab9" data-pos="9" data-toggle="tab">Infraestructura</a></li>',
                 '</ul>',
                     
-                '<form role="form" id="form_anadir_cliente_web" class="mi_form form-horizontal">',   
+                '<form role="form" id="form_lopd" class="mi_form form-horizontal">',   
                     
                     '<div class="tab-content">',
 
@@ -88,6 +89,29 @@ define([
                                 col_bs_input: 'col-sm-4',
                             }),
 
+                            Fx.form_textarea({
+                                label: 'Descripción de la empresa:',
+                                id: 'descripcion',
+                                placeholder: 'Describa brevemente a qué se dedica su empresa',
+                                clase: 'texto',
+                                min_char: '3',
+                                col_bs_label: 'col-sm-3',
+                                col_bs_textarea: 'col-sm-6',
+                            }),
+
+                            // // Si o no
+                            //     'Disponen de un responsable de seguridad',
+                            //     // si
+                            //     'Nombre del responsable',
+                            //     'email del responsable',
+                            //     // no
+                            //     'cuenta de correo para atender cuestiones relativas a la LOPD'
+
+                            // // 
+                            // 'su empresa maneja datos '                            
+
+
+
                             Fx.form_input({
                                 label: 'Dirección de correo electrónico',
                                 id: 'email',
@@ -99,178 +123,190 @@ define([
                                 col_bs_label: 'col-sm-3',
                                 col_bs_input: 'col-sm-6',
                             }),
-
-                            Fx.form_textarea({
-                                label: 'Descripción de la empresa:',
-                                id: 'descripcion',
-                                placeholder: 'Describa brevemente a qué se dedica su empresa',
-                                clase: 'texto',
-                                min_char: '3',
-                                col_bs_label: 'col-sm-3',
-                                col_bs_textarea: 'col-sm-6',
-                            }),
                             
                         '</div>',
 
                         // Datos de clientes
                         '<div class="tab-pane fade" id="tab2">',
 
-                            '<div class="sep50"></div>',
+                            '<div class="col-sm-offset-1 col-sm-10 campo">',
 
-                            //'<div class="row">',
-                            Fx.form_sino({
-                            	label: '¿Su organización trata datos personales de clientes (personas físicas)?',
-                            	id: 'tipo_datos',
-                            	ayuda: 'Se refiere a datos personales de aquellas personas con las que usted mantiene una relación comercial.',
-                            	class: 'caja_sino',
-                            	col_bs_label: 'col-sm-12',
-                            	col_bs_input: 'col-sm-12',
-                            }),
+                                Fx.form_input_radio({
+                                    titulo: '<b>¿Su organización trata datos personales de clientes (personas físicas)?</b>',
+                                    subtitulo: 'Se refiere a datos personales de aquellas personas con las que usted mantiene una relación comercial.',
+                                    id: 'tipo_sino',
+                                    clase: 'lopd-sino',
+                                    inline: true,
 
-                            //'</div>',
+                                    col_bs_label: 'col-sm-12',
+                                    col_bs_radio: 'col-sm-6',
+                                    opciones_json: {
+                                        0: 'si',
+                                        1: 'no'
+                                    }
+
+                                }),
+
+                            '</div>',
 
                             '<div id="tipo_extra" class="col-sm-12">',
 
-                            	'<div class="row">',
+                            	'<div class="row clearfix">',
                             	
-                                	'<div id="tipo_tipo" class="col-sm-6">',
+                                	'<div id="tipo_tipo" class="col-sm-6 campo">',
 
-                                		'<p><b>A continuación marque qué datos personales trata de sus clientes</b></p>',
+                                		'<p><b>A continuación, marque qué datos personales trata de sus clientes:</b></p>',
 
-                                		Fx.form_input_check({
-                                			label: 'Identificación (nombre, apellidos, NIF, dirección postal, teléfono, email)',
-		                                	id: 'tipo_identificacion',
-		                                	class: '',
-		                                	col_bs_label: 'col-sm-8',
-		                                	col_bs_select: 'col-sm-2',
-		                                }),
+                                		'<div class="checkbox">',
+      
+                                            Fx.form_input_check({
+                                    			label: 'Identificación (nombre, apellidos, NIF, dirección postal, teléfono, email)',
+    		                                	id: 'tipo_identificacion',
+    		                                	class: 'opciones',
+    		                                	col_bs_label: 'col-sm-12',
+    		                                }),
 
-                                		Fx.form_input_check({
-                                			label: 'Características personales (estado civil, fecha y lugar de nacimiento, edad, sexo, nacionalidad)',
-		                                	id: 'tipo_caracteristicas',
-		                                	class: '',
-		                                	col_bs_label: 'col-sm-8',
-		                                	col_bs_select: 'col-sm-2',
-		                                }),
+                                    		Fx.form_input_check({
+                                    			label: 'Características personales (estado civil, fecha y lugar de nacimiento, edad, sexo, nacionalidad)',
+    		                                	id: 'tipo_caracteristicas',
+    		                                	class: 'opciones',
+    		                                	col_bs_label: 'col-sm-12',
+    		                                	
+    		                                }),
 
-                                		Fx.form_input_check({
-                                			label: 'Datos académicos',
-		                                	id: 'tipo_academicos',
-		                                	class: '',
-		                                	col_bs_label: 'col-sm-8',
-		                                	col_bs_select: 'col-sm-2',
-		                                }),
+                                    		Fx.form_input_check({
+                                    			label: 'Datos académicos',
+    		                                	id: 'tipo_academicos',
+    		                                	class: 'opciones',
+    		                                	col_bs_label: 'col-sm-12',
+    		                                	// col_bs_select: 'col-sm-1',
+    		                                }),
 
-                                		Fx.form_input_check({
-                                			label: 'Datos bancarios',
-		                                	id: 'tipo_bancarios',
-		                                	class: '',
-		                                	col_bs_label: 'col-sm-8',
-		                                	col_bs_select: 'col-sm-2',
-		                                }),
+                                    		Fx.form_input_check({
+                                    			label: 'Datos bancarios',
+    		                                	id: 'tipo_bancarios',
+    		                                	class: 'opciones',
+    		                                	col_bs_label: 'col-sm-12',
+    		                                	// col_bs_select: 'col-sm-2',
+    		                                }),
+
+                                        '</div>',
 
 		                            '</div>',
 
-                                	'<div id="tipo_uso"  class="col-sm-6">',
+                                	'<div id="tipo_uso"  class="col-sm-6 campo">',
 
                                 		'<p><b>Marque para qué utiliza los datos personales que solicita a sus clientes</b></p>',
 
-                                		Fx.form_input_check({
-                                			label: 'Prestarles un servicio',
-		                                	id: 'tipo_servicio',
-		                                	class: '',
-		                                	col_bs_label: 'col-sm-8',
-		                                	col_bs_select: 'col-sm-2',
-		                                }),
+                                        '<div class="checkbox">',
 
-                                		Fx.form_input_check({
-                                			label: 'Facturar',
-		                                	id: 'tipo_facturar',
-		                                	class: '',
-		                                	col_bs_label: 'col-sm-8',
-		                                	col_bs_select: 'col-sm-2',
-		                                }),
+                                    		Fx.form_input_check({
+                                    			label: 'Prestarles un servicio',
+    		                                	id: 'tipo_servicio',
+    		                                	class: 'opciones',
+    		                                	col_bs_label: 'col-sm-12',
+    		                                }),
 
-                                		Fx.form_input_check({
-                                			label: 'Enviar publicidad postal o por correo electrónico',
-		                                	id: 'tipo_publicidad',
-		                                	class: '',
-		                                	col_bs_label: 'col-sm-8',
-		                                	col_bs_select: 'col-sm-2',
-		                                }),
+                                    		Fx.form_input_check({
+                                    			label: 'Facturar',
+    		                                	id: 'tipo_facturar',
+    		                                	class: 'opciones',
+    		                                	col_bs_label: 'col-sm-12',
+    		                                }),
 
-                                		Fx.form_input_check({
-                                			label: 'Servicio postventa y fidelizacion',
-		                                	id: 'tipo_post',
-		                                	class: '',
-		                                	col_bs_label: 'col-sm-8',
-		                                	col_bs_select: 'col-sm-2',
-		                                }),
+                                    		Fx.form_input_check({
+                                    			label: 'Enviar publicidad postal o por correo electrónico',
+    		                                	id: 'tipo_publicidad',
+    		                                	class: 'opciones',
+    		                                	col_bs_label: 'col-sm-12',
+    		                                }),
+
+                                    		Fx.form_input_check({
+                                    			label: 'Servicio postventa y fidelizacion',
+    		                                	id: 'tipo_post',
+    		                                	class: 'opciones',
+    		                                	col_bs_label: 'col-sm-10',
+    		                                }),
+
+                                        '</div>',
+
 		                            '</div>',
 
 		                        '</div>',
 
-                            	'<div class="row">',
+                                '<div class="row sep20">',
 
-                            		'<p><b>Marque a quien entrega los datos personales de sus clientes.</b></p>',
-                            	
-                                	'<div id="tipo_entrega" class="col-sm-6">',
+                                    '<p><b>Marque a quien entrega los datos personales de sus clientes.</b></p>',
 
-                                		'<p>Cumplimiento de obligaciones legales</p>',
+                                '</div>',
 
-                                		Fx.form_input_check({
-                                			label: 'Administracion tributaria',
-		                                	id: 'tipo_tributaria',
-		                                	class: '',
-		                                	col_bs_label: 'col-sm-8',
-		                                	col_bs_select: 'col-sm-2',
-		                                }),
+                                '<div class="row clearfix">',
 
-                                		Fx.form_input_check({
-                                			label: 'Seguridad Social',
-		                                	id: 'tipo_ss',
-		                                	class: '',
-		                                	col_bs_label: 'col-sm-8',
-		                                	col_bs_select: 'col-sm-2',
-		                                }),
+                                    '<div id="tipo_entrega" class="col-sm-6 campo">',
+                                        
+                                        '<p><b>Cumplimiento de obligaciones legales:</b></p>',
+                                
+                                        '<div class="checkbox">',
 
-                                		Fx.form_input_check({
-                                			label: 'Bancos y entidades financieras',
-		                                	id: 'tipo_bancos',
-		                                	class: '',
-		                                	col_bs_label: 'col-sm-8',
-		                                	col_bs_select: 'col-sm-2',
-		                                }),
+                                    		Fx.form_input_check({
+                                    			label: 'Administracion tributaria',
+    		                                	id: 'tipo_tributaria',
+    		                                	class: '',
+    		                                	col_bs_label: 'col-sm-8',
+    		                                	col_bs_select: 'col-sm-2',
+    		                                }),
 
-                                		Fx.form_input_check({
-                                			label: 'Cuerpos y fuerzas de seguridad del estado',
-		                                	id: 'tipo_seguridad',
-		                                	class: '',
-		                                	col_bs_label: 'col-sm-8',
-		                                	col_bs_select: 'col-sm-2',
-		                                }),
+                                    		Fx.form_input_check({
+                                    			label: 'Seguridad Social',
+    		                                	id: 'tipo_ss',
+    		                                	class: '',
+    		                                	col_bs_label: 'col-sm-8',
+    		                                	col_bs_select: 'col-sm-2',
+    		                                }),
 
-                                		Fx.form_input_check({
-                                			label: 'Otros',
-		                                	id: 'tipo_otros',
-		                                	class: '',
-		                                	col_bs_label: 'col-sm-8',
-		                                	col_bs_select: 'col-sm-2',
-		                                }),
+                                    		Fx.form_input_check({
+                                    			label: 'Bancos y entidades financieras',
+    		                                	id: 'tipo_bancos',
+    		                                	class: '',
+    		                                	col_bs_label: 'col-sm-8',
+    		                                	col_bs_select: 'col-sm-2',
+    		                                }),
+
+                                    		Fx.form_input_check({
+                                    			label: 'Cuerpos y fuerzas de seguridad del estado',
+    		                                	id: 'tipo_seguridad',
+    		                                	class: '',
+    		                                	col_bs_label: 'col-sm-8',
+    		                                	col_bs_select: 'col-sm-2',
+    		                                }),
+
+                                    		Fx.form_input_check({
+                                    			label: 'Otros',
+    		                                	id: 'tipo_otros',
+    		                                	class: '',
+    		                                	col_bs_label: 'col-sm-8',
+    		                                	col_bs_select: 'col-sm-2',
+    		                                }),
+
+                                        '</div>',
 
 		                            '</div>',
 
-                                	'<div id="tipo_entrega_otros" class="col-sm-6">',
+                                	'<div id="tipo_entrega_otros" class="col-sm-6 campo">',
 
-                                		'<p>Otros:</p>',
+                                		'<p><b>Otros:</b></p>',
 
-                                		Fx.form_input_check({
-                                			label: 'Gestoría',
-		                                	id: 'tipo_gestoria',
-		                                	class: '',
-		                                	col_bs_label: 'col-sm-8',
-		                                	col_bs_select: 'col-sm-2',
-		                                }),
+                                        '<div class="checkbox">',
+
+                                    		Fx.form_input_check({
+                                    			label: 'Gestoría',
+    		                                	id: 'tipo_gestoria',
+    		                                	class: '',
+    		                                	col_bs_label: 'col-sm-8',
+    		                                	col_bs_select: 'col-sm-2',
+    		                                }),
+
+                                        '</div>',
 
 		                            '</div>',
 
@@ -937,16 +973,26 @@ define([
 
                         '</div>',
 
+                        // Infraestructura
+                        '<div class="tab-pane fade" id="tab9">',
+
+                            /*
+    
+                            */
+
+                        '</div>',
+
+                        '<div id="botones_ant_sig">',
+                            '<ul class="fw-footer pagination">',
+                                '<li class="previous first"><a class="a-prevent" href="#lopd"><i class="md md-more-horiz"></i></a></li>',
+                                '<li class="previous"><a class="a-prevent" href="#lopd"><i class="md md-chevron-left"></i></a></li>',
+                                '<li class="next"><a class="a-prevent" href="#lopd"><i class="md md-chevron-right"></i></a></li>',
+                                '<li class="next last"><a class="a-prevent" href="#lopd"><i class="md md-more-horiz"></i></a></li>',
+                            '</ul>',
+                        '</div>',
+
                     '</div>',
                         
-                    '<div id="botones_ant_sig"  style="width:100%;clear:both;float:left">',
-                        '<ul class="fw-footer pagination">',
-                            '<li class="previous first"><a class="a-prevent" href="#lopd"><i class="md md-more-horiz"></i></a></li>',
-                            '<li class="previous"><a class="a-prevent" href="#lopd"><i class="md md-chevron-left"></i></a></li>',
-                            '<li class="next"><a class="a-prevent" href="#lopd"><i class="md md-chevron-right"></i></a></li>',
-                            '<li class="next last"><a class="a-prevent" href="#lopd"><i class="md md-more-horiz"></i></a></li>',
-                        '</ul>',
-                    '</div>',
 
                 '</form>',
 

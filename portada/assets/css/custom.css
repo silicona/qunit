@@ -15,7 +15,8 @@ custom style
 .dosis{
 	font-family: "Dosis","Helvetica Neue",Helvetica,Arial,sans-serif !important;
 	letter-spacing: 1.5px;
-	font-size: 18px;
+	font-size: 24px;
+	/*font-size: 18px;*/
 }
 
 blockquote{

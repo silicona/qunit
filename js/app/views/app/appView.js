@@ -104,6 +104,15 @@ define([
 
 			this.$el.html(this.html);
 
+			this.detectar_entorno();
+			
+			return this;
+			
+		},
+
+
+		detectar_entorno: function(){
+			
 			$.when( Calidad.establecer_entorno() )
 
 			.then( function(json){
@@ -112,20 +121,17 @@ define([
 
 					var datos = $.parseJSON( json );
 
-					console.log( 'Datos', datos );
+					//console.log( 'Datos', datos );
 
 					if( datos !== null && datos.status !== 'ko' ){
 
 						if( datos.entorno === 'pruebas' ){
 
-							esto.$('#vista_general').append( '<div id="pruebas"><span>Estás en el entorno de pruebas</span></div>' );
+							$('#content').append( '<div id="pruebas"><span>Estás en el entorno de pruebas</span></div>' );
 						}
 					}
 				}
 			});
-			
-			return this;
-			
 		},
 
 		
@@ -529,11 +535,9 @@ define([
 				var seccion_ruta_actual = window.location.hash.split('/')[0].replace('#','');
 
 				if( ( seccion_ruta_actual != seccion_ruta_previa) || this.$('#vista_general').is(':empty') || this.vista_seccion == vista || this.vista_seccion == '' ){
-					//this.$('#contenido_seccion').html( this.views[vista + 'View'].render().$el );
-					this.$('#vista_general').html( this.views[vista + 'View'].render().$el );
-					//this.$(contenedor).html( this.views[vista + 'View'].render().$el );
-					//console.log(this.views[vista + 'View'].render());
-					//console.log(this.$('#vista_general'));
+					this.$('#vista_general').html( this.views[vista + 'View'].render() );
+					//this.$('#vista_general').html( this.views[vista + 'View'].render().$el );
+
 				}
 
 				this.$('#vista_general').show();
@@ -569,15 +573,19 @@ define([
 
 		},
 
-		logout: function(){
+		logout: function(e){
+
+			e.preventDefault();
+
+			console.log('Dentro de Appview');
 
 			// Incluir mensaje de sw_alert para confirmar la salida
 			// Direccionar a Portada
 
 				// Por hacer...
-			Calidad.ir_a_portada();
+			//Calidad.ir_a_portada();
 
-			Calidad.ir_a_login();
+			//Calidad.ir_a_login();
 
 		},
 

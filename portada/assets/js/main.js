@@ -110,7 +110,8 @@ background
 
   function fn_static() {
     /* set image for static image version */
-    $bg.backstretch('assets/img/bg/intro.jpg');
+    //$bg.backstretch('assets/img/bg/intro.jpg');
+    $bg.backstretch('assets/img/bg/caballos.jpg');
   }
 
   function fn_ss() {

@@ -63,7 +63,7 @@ define([
 			
 			// 'change #clasificaciones'                  : 'toggle_actividades',
 			
-			'click #botones_ant_sig ul.pagination li'  : 'determinar_posicion',
+			//'click #botones_ant_sig ul.pagination li'  : 'determinar_posicion',
 			
 			// 'click ul.tab-nav li a'                    : 'check_btn_demo',
 
@@ -129,50 +129,50 @@ define([
 		},
 		*/
 
-		determinar_posicion: function(e){
+		// determinar_posicion: function(e){
 
-			e.preventDefault();
+		// 	e.preventDefault();
 
-			// this.check_btn_demo();
+		// 	// this.check_btn_demo();
 
-			if( this.check_iso() == false ){
-				this.posicion = 1;
-				return false;
-			}
+		// 	if( this.check_iso() == false ){
+		// 		this.posicion = 1;
+		// 		return false;
+		// 	}
 
-			var className = e.currentTarget.className,
-				posicion = this.posicion;
+		// 	var className = e.currentTarget.className,
+		// 		posicion = this.posicion;
 			
-			if( className.indexOf('previous') > -1 ){
-				posicion--;
-			}
+		// 	if( className.indexOf('previous') > -1 ){
+		// 		posicion--;
+		// 	}
 
-			if( className.indexOf('next') > -1 ){
-				posicion++;
-			}
+		// 	if( className.indexOf('next') > -1 ){
+		// 		posicion++;
+		// 	}
 
-			if( className.indexOf('first') > -1 ){
-				posicion = 1;
-			}
+		// 	if( className.indexOf('first') > -1 ){
+		// 		posicion = 1;
+		// 	}
 
-			if( className.indexOf('last') > -1 ){
-				posicion = 5;
-			}
+		// 	if( className.indexOf('last') > -1 ){
+		// 		posicion = 5;
+		// 	}
 
-			if(posicion < 1){ posicion = 1;}
-			if(posicion > 5){ posicion = 5;}			
+		// 	if(posicion < 1){ posicion = 1;}
+		// 	if(posicion > 5){ posicion = 5;}			
 
-			this.$('.tabs_alta_clientes li a[data-pos="' + posicion + '"]').trigger('click');
+		// 	this.$('.tabs_alta_clientes li a[data-pos="' + posicion + '"]').trigger('click');
 			
-			this.posicion = posicion;
+		// 	this.posicion = posicion;
 
-			this.establecer_hash();
+		// 	this.establecer_hash();
 
-		},
+		// },
 
-		establecer_hash: function(){
-			window.location.hash = window.location.hash.split('/')[0] + '/' + this.posicion;
-		},
+		// establecer_hash: function(){
+		// 	window.location.hash = window.location.hash.split('/')[0] + '/' + this.posicion;
+		// },
 
 		initialize: function(){
 

@@ -16,7 +16,10 @@ define([
 
 		views: [],
 
-		events: {},
+		events: {
+
+			'click #boton_soporte' : 'ver',
+		},
 
 		initialize: function(){
 
@@ -32,6 +35,11 @@ define([
 			//console.log('En Vista inicio: ', this.$el);
 			return this;
 
+		},
+
+		ver: function(e){
+			e.preventDefault();
+			console.log('dentro');
 		}
 
 	});

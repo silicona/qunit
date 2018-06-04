@@ -13,55 +13,19 @@ define([
 		
 		routes: {
 			// ''                         : 'goToLogin',
-			''                               : 'goToInicio',
-			'login'                          : 'goToLogin',
+			''                               : 'goToSection',
+			':login'                          : 'goToSection',
 			//'politica'                       : 'goToPolitica',
-			'inicio'                         : 'goToInicio',
+			':inicio'                         : 'goToInicio',
 
 			//'clientes'                       : 'goToClientes',
 			//'clientes/:id_cliente'           : 'goToClienteDetalle',
 			
-			':lopd'							 : 'goToSection',
-			'soporte'                        : 'goToSoporte',
+			':lopd'					 		 : 'goToSection',
+			':lopd/:pag'					 : 'goToSection',
+			':soporte'                        : 'goToSection',
 			
-			//'adjudicaciones'                 : 'goToAdjudicaciones',
-			// 'alta'                           : 'goToAlta',
-
-			// 'usuarios'                       : 'goToUsuarios',
-			// 'usuarios/:id_usuario'           : 'goToUsuarioDetalle',
-			//'usuarios/0/:opcion'             : 'goToUsuarioDetalle',
-
 			'*path'                          : 'goToNoEncontrado'
-
-			// 'concursos/revision'             : 'goToConcursos',
-			// 'concursos/:id_concurso'         : 'goToConcursoDetalle',
-			// 'concursos'                      : 'goToConcursos',
-
-			// 'soporte/baja/0/:id'             : 'goToSoporteDetalle', // venimos de solicitar baja, para poder traernos el expediente
-			// 'soporte/tecnico/0/:id'          : 'goToSoporteDetalle', // venimos de solicitar baja, para poder traernos el expediente
-			// 'soporte/administrativo/0/:id'   : 'goToSoporteDetalle', // venimos de solicitar baja, para poder traernos el expediente
-			// 'soporte/juridico/0/:id'         : 'goToSoporteDetalle', // venimos de solicitar baja, para poder traernos el expediente
-			
-			// 'soporte/baja/:id'               : 'goToSoporteDetalle',
-			// 'soporte/tecnico/:id'            : 'goToSoporteDetalle',
-			// 'soporte/administrativo/:id'     : 'goToSoporteDetalle',
-			// 'soporte/juridico/:id'           : 'goToSoporteDetalle',
-			
-			// 'soporte/baja'                   : 'goToTipoSoporte',
-			// 'soporte/tecnico'                : 'goToTipoSoporte',
-			// 'soporte/administrativo'         : 'goToTipoSoporte',
-			// 'soporte/juridico'               : 'goToTipoSoporte',
-			
-			// 'informes'                       : 'goToInformes',
-			// 'carga'                          : 'goToCarga',
-			// 'claves'                         : 'goToClaves',
-
-			// 'verCondicionesBaja'             : 'goToVerCondicionesBaja',
-
-			//'alta/:id'                       : 'goToAltaClienteWeb',
-			//'contratacion/:id'               : 'goToContratacion',
-
-			//'revision'                       : 'goToRevision',
 			
 		},
 
@@ -71,46 +35,10 @@ define([
 
 		},
 
-		goToTest: function(){
 
-			this.goToSection('test');
-		},
-
-		goToLogin: function(){
-
-			this.goToSection('login');
-		},
-
-		goToPolitica: function(){
-			this.goToSection('verPolitica');
-		},
-
-		goToInicio: function(){
-			this.goToSection('inicio');
-		},
-
-		goToClientes: function(){
-			this.goToSection('clientes');
-		},
 
 		goToClienteDetalle: function(id_cliente){
 			this.goToSection('clientes', id_cliente);
-		},
-
-		goToSoporte: function(){
-			this.goToSection('soporte');
-		},
-
-		goToTipoSoporte: function(tipo_soporte){
-			this.goToSection('soporte',tipo_soporte);
-		},
-
-		goToSoporteDetalle: function(id_soporte){
-			this.goToSection('soporte', id_soporte);
-		},
-
-		goToAlta: function(id_tab){
-			this.goToSection('altaClienteWeb', id_tab);
 		},
 
 		goToUsuarios: function(){
@@ -130,6 +58,9 @@ define([
 			console.log('Router - Sección:' , seccion);
 
 			var parametro = parametro || '';
+
+			if(seccion == 'lopd'){ parametro = '' }
+				
 			this.appView.setPage(seccion, parametro);
 			
 		}

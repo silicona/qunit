@@ -18,7 +18,18 @@
 	}
 
 	#app {
-		/*height: inherit;*/
+
+		.sep20 {
+			margin-top: 20px;
+		}
+
+		.sep30 {
+			margin-top: 30px;
+		}
+
+		.sep50 {
+			margin-top: 50px;
+		}
 	}
 
 	#header {
@@ -78,9 +89,6 @@
 	}
 	*/
 
-	.sep50 {
-		margin-top: 50px;
-	}
 
 	footer {
 		/*
@@ -128,6 +136,7 @@
 	}
 
 /* LOPD */
+.lopd {
 
 	.block-header {
 		padding: 20px;
@@ -138,6 +147,69 @@
 			color: $blanco;
 		}
 	}
+
+	/*div[id^="extra"]{*/
+	div#tipo_extra {
+
+		display: none;
+	}
+
+	input[name="tipo_sino"]:visited {
+		color: blue;
+	}
+
+	.campo {
+
+		/*border: 2px solid gold;*/
+		border-radius: 10px;
+		box-shadow: 1px 1px 3px $negro;
+		padding-top: 1ex;
+		padding-bottom: 1ex;
+		margin-top: 1ex;
+		margin-bottom: 1ex;
+
+
+		p {
+			margin: 1ex 0;
+		}
+
+		label {
+			float: unset;
+			text-align: left;
+		}
+
+		.radio-inline { 
+			margin-left: 0px;
+			padding-left: 15px;
+			text-align: center;
+
+		}
+
+		.checkbox label {
+			margin: 1ex 0;
+
+			&:first-of-type{ margin-top: 0 };
+
+
+		}
+
+	}
+
+	#botones_ant_sig {
+		width: 100%;
+		text-align: center;
+		padding: 20px 0;
+
+		clear:both;
+		float:left;
+	}
+
+
+}
+
+
+
+
 
 
 

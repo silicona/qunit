@@ -541,31 +541,24 @@ define([
                 id             = obj_datos.id    || '',
                 checked        = obj_datos.checked || '',
                 //ayuda          = obj_datos.ayuda || '',
-                disabled       = obj_datos.disabled     || '',
+                disabled       = obj_datos.disabled    || '',
                 atributos      = obj_datos.atributos   || {},
+                clase_grupo    = obj_datos.clase_grupo || '',
                 clase          = obj_datos.clase || '',
-                //texto_si       = obj_datos.texto_si || 'Sí',
-                //texto_no       = obj_datos.texto_no || 'No',
 
                 col_bs_label   = obj_datos.col_bs_label || '',
-                col_bs_input   = obj_datos.col_bs_input || '',
-
                 title          = obj_datos.title || '',
-                boton_info     = '';
+                boton_info     = '',
+                valor 		   = obj_datos.valor || '';
 
             if( (checked == 1) || (checked == "checked") ){ checked = 'checked="checked"'; }
 
-            // if(ayuda != ''){
-            //     boton_info = '<span class="badge ayuda"><i class="i_ayuda fa fa-question" data-toggle="tooltip" title="' + ayuda + '"></i></span> ';
-            // }
-
             var arr_html = [
-                '<div class="form-group div_' + id + '">',
-                    '<div class="input-group">',
-                        '<input title="' + title + '" ' + this.objeto_a_string(atributos) + disabled + ' id="' + id + '" class="' + clase +  ' ' + col_bs_input + '" type="checkbox" name="' + id + '" ' + checked + ' >',
-                    '</div>',
-                    '<label for="' + id + '" title="' + title + '" class="'+ col_bs_label + ' control-label">' + boton_info + label + '</label>',
-                '</div>'
+            	'<label for="' + id + '" title="' + title + '" class="'+ col_bs_label + '" control-label>',
+                    '<input id="' + id + '" class="' + clase + '" type="checkbox" name="' + id + '" ' + checked + ' value="' + valor + '">',
+                    '<i class="input-helper"></i>',
+                    label,
+                '</label>',     
             ];
 
             return arr_html.join('');
@@ -669,6 +662,57 @@ define([
 			return arr_html.join('');
 
 		},
+
+		form_input_radio: function(obj_datos){
+				
+			var //label     	  = obj_datos.label || '',
+				id            = obj_datos.id    || '',
+				checked       = obj_datos.checked || '',
+				//ayuda       = obj_datos.ayuda || '',
+				disabled      = obj_datos.disabled    || '',
+				atributos     = obj_datos.atributos   || {},
+				clase_grupo   = obj_datos.clase_grupo || '',
+				clase         = obj_datos.clase || '',
+				inline 		  = obj_datos.inline || false,
+				
+				col_bs_label  = obj_datos.col_bs_label || '',
+				col_bs_radio  = obj_datos.col_bs_radio || '',
+				
+				opciones_json = obj_datos.opciones_json,
+				arr_opciones  = [],
+				titulo        = obj_datos.titulo|| '',
+				subtitulo     = obj_datos.subtitulo || '',
+				valor         = obj_datos.valor;
+
+            if( (checked == 1) || (checked == "checked") ){ checked = 'checked="checked"'; }
+
+            if( inline ){ inline = '-inline' }
+
+            $.each( opciones_json, function(index, valor){
+
+            	var opcion = [
+            				'<label class="radio' + inline + ' ' + col_bs_radio + '">',
+            					'<input type="radio" name="' + id + '" value="' + valor + '" id="' + valor + '">',
+            					//'<i class="input-helper"></i>',
+            					Fx.capitalize(valor), 
+            				'</label>'
+            	].join(''); 
+
+            	arr_opciones.push( opcion ); 
+            });
+
+        	if( subtitulo ){ subtitulo = '<br>' + subtitulo }
+
+            var arr_html = [
+            	'<div class="form-group div_' + id + ' radio-group ' + clase_grupo + '" id="' + id + '">',
+					'<label for="' + id + '" title="" class="control-label ' + col_bs_label + '">' + titulo + subtitulo + '</label>',
+            		arr_opciones.join(''),
+            	'</div>',
+               
+            ];
+
+            return arr_html.join('');
+        },
 
 		form_sino: function(obj_datos){
 			
