@@ -6,6 +6,8 @@
 	$gris_claro: #BEC5C2;
 	$gris_oscuro: #424442;
 
+	$verde_ama: #aa0;
+
 	
 
 /* App */
@@ -98,6 +100,7 @@
 	}
 
 	#pruebas {
+
 		background: $verde_pruebas none repeat scroll 0 0;
 		border-top: 2px solid grey;
 		position: fixed;
@@ -110,6 +113,7 @@
 		color: $negro;
 		font-weight: bold;
 	}
+
 
 /* Inicio */
 
@@ -148,25 +152,34 @@
 		}
 	}
 
-	/*div[id^="extra"]{*/
-	div#tipo_extra {
+
+	div[id$="extra"]{
 
 		display: none;
 	}
 
-	input[name="tipo_sino"]:visited {
-		color: blue;
-	}
+	.div_cif, .div_telefono {
 
+		/*display: inline-block;*/
+	}
+	
 	.campo {
 
 		/*border: 2px solid gold;*/
-		border-radius: 10px;
-		box-shadow: 1px 1px 3px $negro;
+		border-radius: 7px;
+		box-shadow: .5px .5px 5px $negro;
 		padding-top: 1ex;
 		padding-bottom: 1ex;
 		margin-top: 1ex;
 		margin-bottom: 1ex;
+
+		&.col-sm-6 {
+			width: 48%;
+
+			&+ .campo{
+				float: right;
+			}
+		}
 
 
 		p {
@@ -185,15 +198,60 @@
 
 		}
 
-		.checkbox label {
-			margin: 1ex 0;
+		.checkbox {
 
-			&:first-of-type{ margin-top: 0 };
+			label {
+				margin: 1ex 0;
 
+				&:first-of-type{ margin-top: 0 };
+			}
 
+			i.input-helper {
+
+				&:before{
+					border: 1px solid $verde_ama;
+				}
+			}
+		}
+
+		.radio, &.radio {
+
+			.col-sm-1 {
+				margin-left: 5ex;
+			}
+
+			i.input-helper {
+				
+				&:before {
+					top: 5px;
+				}
+
+				&:after {
+					top: 9px;
+					left: 4px;
+				}
+			}
+			
+			input:checked + .input-helper:after {
+				background: $verde_ama;
+				transform: scale(1.4);
+			}
+			
+		}
+
+		&.ficha {
+
+			background-color: $blanco;
+		}
+
+		&#infraestructura {
+
+			background-color: $blanco;
+			padding-left: 2ex;
 		}
 
 	}
+
 
 	#botones_ant_sig {
 		width: 100%;

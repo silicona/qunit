@@ -25,10 +25,14 @@ define([
 
 		events: {
 			'click #h2': 'oo',
-			'click #si' : 'abrir_opciones',
-			'click #no' : 'registrar_no',
+			'click .lopd_sino #si' : 'abrir_opciones',
+			'click .lopd_sino #no' : 'registrar_no',
 			'click #botones_ant_sig ul.pagination li' : 'determinar_posicion',
-			'load #h2' : 'oo',
+			//'load #h2' : 'oo',
+
+			'click #btn_procesar' : 'procesar',
+
+
 
 		},
 
@@ -57,7 +61,7 @@ define([
 			var esto = this;
 			this.$el.html(this.html);
 
-			//Formulario(this);
+			Formulario(this);
 
 			// 			// Establecer hash para que al pulsar atrás no se pierdan los datos
 			// window.setTimeout(function(){
@@ -70,7 +74,7 @@ define([
 			//     this.$('.tabs_lopd li a[data-pos="' + posicion + '"]').trigger('click');
 			// });
 
-			console.log('el', this.el);
+			//console.log('el', this.el);
 
 			return this;
 
@@ -81,12 +85,9 @@ define([
 		},
 
 		abrir_opciones: function(e){
-			var boton = e.currentTarget;
-			var seccion = $(boton).parents()[1].id.split('_')[0];
-			this.$('#' + seccion + '_extra').show();
 
-			var valor = boton.value;
-			console.log('Val:', valor);
+			var seccion = $(e.currentTarget).parents()[1].id.split('_')[0];
+			this.$('#' + seccion + '_extra').show(600);
 
 			this.anadir_a_array( this.secciones_si, seccion )
 
@@ -97,10 +98,10 @@ define([
 
 			var seccion = $(e.currentTarget).parents()[1].id.split('_')[0]
 
-			this.$('#' + seccion + '_extra').hide();
-			//console.log('NO: ', e.currentTarget.value);
+			this.$('#' + seccion + '_extra').hide(200);
 
 			this.anadir_a_array(this.secciones_no, seccion);
+
 			this.eliminar_de_array(this.secciones_si, seccion);
 		},
 
@@ -180,20 +181,20 @@ define([
 		},
 
 
-
 		procesar: function(e){
 			
 			e.preventDefault();
+			console.log('Dentro');
 
-			var obj_form = this.actualizar_obj_form( this.$('form'));
+			var obj_form = Calidad.actualizar_obj_form( this.$('#form_lopd') );
 
 			var obj_lopd = this.actualizar_obj_lopd();
 
 
 			//var cod_contratacion = this.$('#cod_contratacion').val();
 
-			this.$('#resp_contratar').empty();
-			Calidad.spinner(this, '#resp_contratar');
+			this.$('#resp_procesar_lopd').empty();
+			Calidad.spinner(this, '##resp_procesar_lopd');
 
 			// if( (cod_contratacion != 'CLASIF') && (cod_contratacion != 'DEMO01') && (cod_contratacion != 'CON30') && (cod_contratacion != 'CON60') && (cod_contratacion != 'CON120') && (cod_contratacion != 'CON2000') && (cod_contratacion != 'CON6') && (cod_contratacion != 'CON3') && (cod_contratacion != 'CON50') ){
 
@@ -227,13 +228,13 @@ define([
 			obj_lopd['sec_si'] = this.secciones_si;
 			$.each(this.secciones_si, function(indice, valor){
 
-				console.log( this.$('#' + valor) );
+				console.log( this );
 
 			}, this);
 
 
 			// secciones no
-			obj_lopd[sec_no] = this.secciones_no;
+			obj_lopd['sec_no'] = this.secciones_no;
 
 
 			return obj_lopd;

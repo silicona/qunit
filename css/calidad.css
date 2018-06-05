@@ -94,44 +94,63 @@ footer {
       padding-top: .5ex; }
 
 /* LOPD */
-.lopd {
-  /*div[id^="extra"]{*/ }
-  .lopd .block-header {
-    padding: 20px;
-    margin-bottom: 30px;
-    background: #160F05; }
-    .lopd .block-header h2 {
-      color: #FFFFFF; }
-  .lopd div#tipo_extra {
-    display: none; }
-  .lopd input[name="tipo_sino"]:visited {
-    color: blue; }
-  .lopd .campo {
-    /*border: 2px solid gold;*/
-    border-radius: 10px;
-    box-shadow: 1px 1px 3px #160F05;
-    padding-top: 1ex;
-    padding-bottom: 1ex;
-    margin-top: 1ex;
-    margin-bottom: 1ex; }
-    .lopd .campo p {
-      margin: 1ex 0; }
-    .lopd .campo label {
-      float: unset;
-      text-align: left; }
-    .lopd .campo .radio-inline {
-      margin-left: 0px;
-      padding-left: 15px;
-      text-align: center; }
-    .lopd .campo .checkbox label {
-      margin: 1ex 0; }
-      .lopd .campo .checkbox label:first-of-type {
-        margin-top: 0; }
-  .lopd #botones_ant_sig {
-    width: 100%;
-    text-align: center;
-    padding: 20px 0;
-    clear: both;
-    float: left; }
+.lopd .block-header {
+  padding: 20px;
+  margin-bottom: 30px;
+  background: #160F05; }
+  .lopd .block-header h2 {
+    color: #FFFFFF; }
+.lopd div[id$="extra"] {
+  display: none; }
+.lopd .div_cif, .lopd .div_telefono {
+  /*display: inline-block;*/ }
+.lopd .campo {
+  /*border: 2px solid gold;*/
+  border-radius: 7px;
+  box-shadow: 0.5px 0.5px 5px #160F05;
+  padding-top: 1ex;
+  padding-bottom: 1ex;
+  margin-top: 1ex;
+  margin-bottom: 1ex; }
+  .lopd .campo.col-sm-6 {
+    width: 48%; }
+    .lopd .campo.col-sm-6 + .campo {
+      float: right; }
+  .lopd .campo p {
+    margin: 1ex 0; }
+  .lopd .campo label {
+    float: unset;
+    text-align: left; }
+  .lopd .campo .radio-inline {
+    margin-left: 0px;
+    padding-left: 15px;
+    text-align: center; }
+  .lopd .campo .checkbox label {
+    margin: 1ex 0; }
+    .lopd .campo .checkbox label:first-of-type {
+      margin-top: 0; }
+  .lopd .campo .checkbox i.input-helper:before {
+    border: 1px solid #aa0; }
+  .lopd .campo .radio .col-sm-1, .lopd .campo.radio .col-sm-1 {
+    margin-left: 5ex; }
+  .lopd .campo .radio i.input-helper:before, .lopd .campo.radio i.input-helper:before {
+    top: 5px; }
+  .lopd .campo .radio i.input-helper:after, .lopd .campo.radio i.input-helper:after {
+    top: 9px;
+    left: 4px; }
+  .lopd .campo .radio input:checked + .input-helper:after, .lopd .campo.radio input:checked + .input-helper:after {
+    background: #aa0;
+    transform: scale(1.4); }
+  .lopd .campo.ficha {
+    background-color: #FFFFFF; }
+  .lopd .campo#infraestructura {
+    background-color: #FFFFFF;
+    padding-left: 2ex; }
+.lopd #botones_ant_sig {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  clear: both;
+  float: left; }
 
 /*# sourceMappingURL=calidad.css.map */

@@ -141,7 +141,8 @@ define([
 			var vista = '',
 				eq = 0;
 
-			this.$('#contenido_seccion').html( Templates['spinner'] );
+			this.$('#vista_general').html( Templates['spinner'] );
+			// this.$('#contenido_seccion').html( Templates['spinner'] );
 
 			if( (window.localStorage.getItem('hash') != null) && ( typeof window.localStorage.getItem('hash') != 'undefined') ){
 				
@@ -522,14 +523,14 @@ define([
 			}
 
 			
-			if( contenedor == '#contenido_detalle'){
+			// if( contenedor == '#contenido_detalle'){
 
-				this.$('#contenido_detalle').html( this.views[vista + 'View'].render().$el );
-				this.$('#contenido_seccion').hide();
+			// 	this.$('#contenido_detalle').html( this.views[vista + 'View'].render().$el );
+			// 	this.$('#contenido_seccion').hide();
 
-				this.vista_seccion = vista;
+			// 	this.vista_seccion = vista;
 
-			} else {
+			// } else {
 
 				var seccion_ruta_previa = Config.ruta_previa.split('/')[0].replace('#','');
 				var seccion_ruta_actual = window.location.hash.split('/')[0].replace('#','');
@@ -546,7 +547,7 @@ define([
 
 				this.vista_seccion = '';
 
-			}
+			//}
 
 			/*
 			// ENVIAR LA VISITA DE SECCIÓN A GOOGLE ANALYTICS

@@ -12,20 +12,20 @@ define([
 	var Router = Backbone.Router.extend({
 		
 		routes: {
-			// ''                         : 'goToLogin',
-			''                               : 'goToSection',
-			':login'                          : 'goToSection',
-			//'politica'                       : 'goToPolitica',
-			':inicio'                         : 'goToInicio',
+			// ''                     : 'goToLogin',
+			''                        : 'goToInicio',
+			':login'                  : 'goToSection',
+			//'politica'              : 'goToPolitica',
+			':inicio'                 : 'goToSection',
 
-			//'clientes'                       : 'goToClientes',
-			//'clientes/:id_cliente'           : 'goToClienteDetalle',
+			//'clientes'              : 'goToClientes',
+			//'clientes/:id_cliente'  : 'goToClienteDetalle',
 			
-			':lopd'					 		 : 'goToSection',
-			':lopd/:pag'					 : 'goToSection',
-			':soporte'                        : 'goToSection',
+			':lopd'					  : 'goToSection',
+			':lopd/:pag'			  : 'goToSection',
+			':soporte'                : 'goToSection',
 			
-			'*path'                          : 'goToNoEncontrado'
+			'*path'                   : 'goToNoEncontrado'
 			
 		},
 
@@ -35,7 +35,9 @@ define([
 
 		},
 
-
+		goToInicio: function(){
+			this.goToSection('inicio');
+		},
 
 		goToClienteDetalle: function(id_cliente){
 			this.goToSection('clientes', id_cliente);
