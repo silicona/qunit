@@ -49,7 +49,7 @@ define([
 
                             '<div class="sep30 col-sm-10 col-sm-offset-1">',
 
-                                '<form role="form" id="form_lopd_empresa">',
+                                '<div id="form_lopd_empresa" class="mi_form">',
 
                                     Fx.form_input({
                                         label: 'Nombre de la empresa',
@@ -146,7 +146,7 @@ define([
                                         col_bs_textarea: 'col-sm-8',
                                     }),
 
-                                '</form>',
+                                '</div>',
 
                                 '<div id="infraestructura" class="campo clearfix">',
 
@@ -1182,7 +1182,8 @@ define([
 
                         '<div id="botones_ant_sig">',
                             '<ul class="fw-footer pagination">',
-                                '<li class="previous first"><a class="a-prevent" href="#lopd"><i class="md md-more-horiz"></i></a></li>',
+                                // '<li class="previous first"><a class="a-prevent" href="#lopd"><i class="md md-more-horiz"></i></a></li>',
+                                '<li class="first"><a class="a-prevent" href="#lopd"><i class="md md-more-horiz"></i></a></li>',
                                 '<li class="previous"><a class="a-prevent" href="#lopd"><i class="md md-chevron-left"></i></a></li>',
                                 '<li class="next"><a class="a-prevent" href="#lopd"><i class="md md-chevron-right"></i></a></li>',
                                 '<li class="last"><a class="a-prevent" href="#lopd"><i class="md md-more-horiz"></i></a></li>',

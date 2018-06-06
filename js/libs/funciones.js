@@ -692,7 +692,8 @@ define([
 
             	var opcion = [
             				'<label class="radio' + inline + ' ' + col_bs_radio + '">',
-            					'<input type="radio" name="' + id + '" value="' + valor + '" id="' + valor + '">',
+            					'<input type="radio" name="' + id + '" value="' + valor + '" id="' + id + '_' + valor + '">',
+            					// '<input type="radio" name="' + id + '" value="' + valor + '" id="' + valor + '">',
             					'<i class="input-helper"></i>',
             					Fx.capitalize(valor), 
             				'</label>'

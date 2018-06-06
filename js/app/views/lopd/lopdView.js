@@ -3,12 +3,13 @@ define([
 	'jquery',
 	'underscore',
 	'backbone',
+	'funciones',
 	'app/formulario',
 	'app/calidad',
 
 	'app/views/lopd/html/lopdViewHtml'
 
-], function( $, _, backbone, Formulario, Calidad, LopdViewHtml ){
+], function( $, _, backbone, Fx, Formulario, Calidad, LopdViewHtml ){
 	
 	'use strict';
 
@@ -25,7 +26,7 @@ define([
 
 		events: {
 			'click #h2': 'oo',
-			'click .lopd_sino #si' : 'abrir_opciones',
+			'click .lopd_sino input' : 'abrir_opciones',
 			'click .lopd_sino #no' : 'registrar_no',
 			'click #botones_ant_sig ul.pagination li' : 'determinar_posicion',
 			//'click .tabs_lopd li a' : 'establecer_hash',
@@ -89,16 +90,23 @@ define([
 		abrir_opciones: function(e){
 
 			var seccion = $(e.currentTarget).parents()[1].id.split('_')[0];
-			this.$('#' + seccion + '_extra').show(600);
+			//console.log('valor:',e.currentTarget.value);
+			if(e.currentTarget.value == 'no'){
 
-			this.anadir_a_array( this.secciones_si, seccion )
+				this.registrar_no(seccion);
+			} else {
 
-			this.eliminar_de_array( this.secciones_no, seccion );
+				this.$('#' + seccion + '_extra').show(600);
+
+				this.anadir_a_array( this.secciones_si, seccion )
+
+				this.eliminar_de_array( this.secciones_no, seccion );
+			}
 		},
 
-		registrar_no: function(e){
+		registrar_no: function(seccion){
 
-			var seccion = $(e.currentTarget).parents()[1].id.split('_')[0]
+			//var seccion = $(e.currentTarget).parents()[1].id.split('_')[0]
 
 			this.$('#' + seccion + '_extra').hide(200);
 
@@ -144,6 +152,8 @@ define([
 
 			var className = e.currentTarget.className,
 				posicion = this.posicion;
+
+			console.log('Posicion antes', posicion);
 			
 			if( className.indexOf('previous') > -1 ){
 				posicion--;
@@ -190,13 +200,39 @@ define([
 		procesar: function(e){
 			
 			e.preventDefault();
-			console.log('Dentro');
 
-			var obj_form = Calidad.actualizar_obj_form( this.$('#form_lopd_empresa') );
+			var esto = this,
+				error = '',
+				campo_resp = esto.$('#resp_procesar_lopd');
+
+			var obj_form = Calidad.actualizar_obj_form( '#form_lopd_empresa' );
+
+			$.each( obj_form, function(id, valor){
+				console.log('Valor: ', valor);
+				if( valor == '' ){
+					error += 'El campo ' + Fx.capitalize(id) + ' de Su Empresa no está rellenado.<br>';
+				}
+
+			})
+
+			if( error != '' ){
+
+				campo_resp.html( Fx.bs_alert(error + 'Rellene los datos que faltan para poder procesar los documentos, por favor.', 'danger') );
+				return false;
+			}
+
+
+			//console.log('form:', this.$('#form_lopd_empresa'));
+			//console.log('Obj form:', obj_form);
+			//var inter = JSON.stringify( obj_form );
 
 			var obj_lopd = this.actualizar_obj_lopd();
 
-			this.$('#resp_procesar_lopd').html( obj_lopd );
+			inter += JSON.stringify( obj_lopd );
+			//console.log('Obj LOPD:', obj_lopd);
+
+			//this.$('#resp_procesar_lopd').html( 'Llegamos' );
+			campo_resp.append( inter );
 
 
 			//var cod_contratacion = this.$('#cod_contratacion').val();
@@ -233,12 +269,22 @@ define([
 			//obj_lopd['formulario'] = Calidad.actualizar_obj_form( this.$('') );
 
 			// seccion si
-			obj_lopd['sec_si'] = this.secciones_si;
-			$.each(this.secciones_si, function(indice, valor){
+			obj_lopd['sec_si'] = {};
 
-				console.log( this );
+			$.each(this.secciones_si, function(index, seccion){
 
-			}, this);
+				obj_lopd['sec_si'][seccion] = {};
+
+				console.warn( 'Seccion: ', seccion );
+				$('input[type=checkbox], input[type=radio]', '#' + seccion + '_extra').each(function(indice, valor){
+
+					//console.log('Valor: ', valor)
+					if( this.checked ){
+						obj_lopd['sec_si'][seccion][$(this).attr('id')] = valor.checked;
+					}
+				})
+
+			});
 
 
 			// secciones no
