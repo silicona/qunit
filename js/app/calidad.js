@@ -440,7 +440,7 @@ define([
                     return '';
                 }
 
-                return window.localStorage.getItem('hash') || Config.hash;
+                return window.localStorage.getItem('cld') || Config.hash;
 
             },
 

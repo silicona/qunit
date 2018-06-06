@@ -1,30 +1,11 @@
-define(//[
+define([
 
-	//'jquery',
-	/*
-	'underscore',
-	'backbone',
-	'funciones',
-	'app/config',
-	'app/merca',*/
-	// 'app/app',
-	// 'mustache',
-	//'app/views/inicio/inicioView',
-	//'app/views/inicio/html/inicioViewHtml',
+	'jquery',
+	'app/views/inicio/inicioView',
 
+], function ( $, InicioView	){
 
-//],function (require) {
-/*],*/function ( require
-	//$, //_, Backbone, Fx, Config, Merca, 
-	//InicioView
-	//, InicioviewHtml
-	){
-
-	// Import depdendencies (note you can use relative paths here)
-	var InicioView = require("../js/app/views/inicio/inicioView"), $ = jQuery;
-
-	var q = QUnit.module("Modulo inicioView", function(hooks){
-		//QUnit.start();
+	QUnit.module("Modulo inicioView", function(hooks){
 
 		var vista, 
 
@@ -32,6 +13,7 @@ define(//[
 			fixture = $('#qunit-fixture');
 
 		hooks.beforeEach( function(assert){
+			
 			var VistaInicio = InicioView;
 			assert.ok( _.isFunction(VistaInicio.prototype.setElement) && _.isFunction(VistaInicio.prototype.delegateEvents), 'La vista es Backbone' );
 
@@ -48,13 +30,12 @@ define(//[
 
 			//assert.equal(VistaInicio, false);
 			//assert.ok( _.isFunction(VistaInicio.prototype.setElement) && _.isFunction(VistaInicio.prototype.delegateEvents), 'La vista es Backbone' );
-			assert.equal( contenedor.find('a').length, 7, 'Hay botones en la vista' );
+			assert.equal( contenedor.find('a').length, 2, 'Hay botones en la vista' );
 
 		});
 
 	});
 
-	return q;
 	
 	// QUnit.test("isSuitibleFor - same age supplied, returns true", function () { 
 

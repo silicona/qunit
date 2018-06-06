@@ -15,14 +15,15 @@
 	 * rather than using the `baseUrl` value supplied above.
 	*/
 	var testModules = [
-		"app/mercaTest.js",
+		"app/CalidadTest.js",
 		"app/FuncionesTest.js",
 		"vistas/appViewTest.js",
 		"vistas/inicioViewTest.js",
-		"varios/AjaxTest.js",
+		"vistas/lopdViewTest.js",
+		/*"varios/AjaxTest.js",
 		"varios/QunitTest.js",
 		"varios/NullTest.js",
-		"varios/RegStringTest.js",
+		"varios/RegStringTest.js",*/
 	];
 	
     // Resolve all testModules and then start the Test Runner.

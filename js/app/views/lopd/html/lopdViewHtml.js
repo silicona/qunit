@@ -49,101 +49,104 @@ define([
 
                             '<div class="sep30 col-sm-10 col-sm-offset-1">',
 
-                                Fx.form_input({
-                                    label: 'Nombre de la empresa',
-                                    id: 'nombre',
-                                    valor: '',
-                                    placeholder: '',
-                                    tipo: 'text',
-                                    clase: 'texto obligatorio',
-                                    min_char: '3',
-                                    col_bs_label: 'col-sm-3',
-                                    col_bs_input: 'col-sm-8',
-                                }),
+                                '<form role="form" id="form_lopd_empresa">',
 
-                                Fx.form_input({
-                                    label: 'Dirección completa de la empresa',
-                                    id: 'direccion',
-                                    valor: '',
-                                    tipo: 'text',
-                                    clase: 'texto obligatorio',
-                                    min_char: '3',
-                                    col_bs_label: 'col-sm-3',
-                                    col_bs_input: 'col-sm-8',
-                                }),
+                                    Fx.form_input({
+                                        label: 'Nombre de la empresa',
+                                        id: 'nombre',
+                                        valor: '',
+                                        placeholder: '',
+                                        tipo: 'text',
+                                        clase: 'texto obligatorio',
+                                        min_char: '3',
+                                        col_bs_label: 'col-sm-3',
+                                        col_bs_input: 'col-sm-8',
+                                    }),
 
-                                Fx.form_input({
-                                    label: 'Código postal',
-                                    id: 'cp',
-                                    valor: '',
-                                    tipo: 'text',
-                                    clase: 'texto obligatorio',
-                                    min_char: '3',
-                                    col_bs_label: 'col-sm-3',
-                                    col_bs_input: 'col-sm-8',
-                                }),
+                                    Fx.form_input({
+                                        label: 'Dirección completa de la empresa',
+                                        id: 'direccion',
+                                        valor: '',
+                                        tipo: 'text',
+                                        clase: 'texto obligatorio',
+                                        min_char: '3',
+                                        col_bs_label: 'col-sm-3',
+                                        col_bs_input: 'col-sm-8',
+                                    }),
 
-                                Fx.form_input({
-                                    label: 'CIF',
-                                    id: 'cif',
-                                    valor: '',
-                                    tipo: 'text',
-                                    clase: 'texto',
-                                    col_bs_label: 'col-sm-3',
-                                    col_bs_input: 'col-sm-5',
-                                }),
+                                    Fx.form_input({
+                                        label: 'Código postal',
+                                        id: 'cp',
+                                        valor: '',
+                                        tipo: 'text',
+                                        clase: 'texto obligatorio',
+                                        min_char: '3',
+                                        col_bs_label: 'col-sm-3',
+                                        col_bs_input: 'col-sm-8',
+                                    }),
 
-                                Fx.form_input({
-                                    label: 'Teléfono',
-                                    id: 'telefono',
-                                    valor: '',
-                                    tipo: 'text',
-                                    clase: 'telefono',
-                                    min_char: '3',
-                                    col_bs_label: 'col-sm-3',
-                                    col_bs_input: 'col-sm-5',
-                                }),
+                                    Fx.form_input({
+                                        label: 'CIF',
+                                        id: 'cif',
+                                        valor: '',
+                                        tipo: 'text',
+                                        clase: 'texto',
+                                        col_bs_label: 'col-sm-3',
+                                        col_bs_input: 'col-sm-5',
+                                    }),
 
-
-                                Fx.form_input({
-                                    label: 'Dirección de correo electrónico de la empresa:',
-                                    id: 'email',
-                                    valor: '',
-                                    placeholder: 'email_de_empresa@suempresa.com',
-                                    tipo: 'text',
-                                    clase: 'email obligatorio',
-                                    min_char: '3',
-                                    col_bs_label: 'col-sm-3',
-                                    col_bs_input: 'col-sm-8',
-                                }),
+                                    Fx.form_input({
+                                        label: 'Teléfono',
+                                        id: 'telefono',
+                                        valor: '',
+                                        tipo: 'text',
+                                        clase: 'telefono',
+                                        min_char: '3',
+                                        col_bs_label: 'col-sm-3',
+                                        col_bs_input: 'col-sm-5',
+                                    }),
 
 
-                                Fx.form_input({
-                                    
-                                    label: 'Dirección de correo electrónico para la LOPD',
-                                    id: 'email_lopd',
-                                    ayuda: 'Escriba el email de la persona responsable de la seguridad o, en su defecto, el email utilizado para atender las cuestiones relativas a la LOPD.',
-                                    placeholder: 'email_para_lopd@suempresa.com',
-                                    valor: '',
-                                    tipo: 'text',
-                                    clase: 'email obligatorio',
-                                    min_char: '3',
-                                    col_bs_label: 'col-sm-3',
-                                    col_bs_input: 'col-sm-8',
+                                    Fx.form_input({
+                                        label: 'Dirección de correo electrónico de la empresa:',
+                                        id: 'email',
+                                        valor: '',
+                                        placeholder: 'email_de_empresa@suempresa.com',
+                                        tipo: 'text',
+                                        clase: 'email obligatorio',
+                                        min_char: '3',
+                                        col_bs_label: 'col-sm-3',
+                                        col_bs_input: 'col-sm-8',
+                                    }),
 
-                                }),
 
-                                // // 
-                                // 'su empresa maneja datos '   
-                                Fx.form_textarea({
-                                    label: 'Descripción de la empresa:',
-                                    id: 'descripcion',
-                                    placeholder: 'Describa brevemente a qué se dedica su empresa',
-                                    clase: 'texto',
-                                    min_char: '3',
-                                    col_bs_label: 'col-sm-3',
-                                    col_bs_textarea: 'col-sm-8',
-                                }),
+                                    Fx.form_input({
+                                        
+                                        label: 'Dirección de correo electrónico para la LOPD',
+                                        id: 'email_lopd',
+                                        ayuda: 'Escriba el email de la persona responsable de la seguridad o, en su defecto, el email utilizado para atender las cuestiones relativas a la LOPD.',
+                                        placeholder: 'email_para_lopd@suempresa.com',
+                                        valor: '',
+                                        tipo: 'text',
+                                        clase: 'email obligatorio',
+                                        min_char: '3',
+                                        col_bs_label: 'col-sm-3',
+                                        col_bs_input: 'col-sm-8',
+
+                                    }),
+
+      
+                                    Fx.form_textarea({
+                                        label: 'Descripción de la empresa:',
+                                        id: 'descripcion',
+                                        placeholder: 'Describa brevemente a qué se dedica su empresa',
+                                        clase: 'texto',
+                                        min_char: '3',
+                                        col_bs_label: 'col-sm-3',
+                                        col_bs_textarea: 'col-sm-8',
+                                    }),
+
+                                '</form>',
 
                                 '<div id="infraestructura" class="campo clearfix">',
 
@@ -274,7 +277,6 @@ define([
 
                                     '</div>',
 
-
                                 '</div>',
 
                             '</div>',
@@ -300,7 +302,6 @@ define([
                                         0: 'si',
                                         1: 'no'
                                     }
-
                                 }),
 
                             '</div>',
@@ -1184,7 +1185,8 @@ define([
                                 '<li class="previous first"><a class="a-prevent" href="#lopd"><i class="md md-more-horiz"></i></a></li>',
                                 '<li class="previous"><a class="a-prevent" href="#lopd"><i class="md md-chevron-left"></i></a></li>',
                                 '<li class="next"><a class="a-prevent" href="#lopd"><i class="md md-chevron-right"></i></a></li>',
-                                '<li class="next last"><a class="a-prevent" href="#lopd"><i class="md md-more-horiz"></i></a></li>',
+                                '<li class="last"><a class="a-prevent" href="#lopd"><i class="md md-more-horiz"></i></a></li>',
+                                // '<li class="next last"><a class="a-prevent" href="#lopd"><i class="md md-more-horiz"></i></a></li>',
                             '</ul>',
                         '</div>',
 

@@ -28,11 +28,9 @@ define([
 			'click .lopd_sino #si' : 'abrir_opciones',
 			'click .lopd_sino #no' : 'registrar_no',
 			'click #botones_ant_sig ul.pagination li' : 'determinar_posicion',
-			//'load #h2' : 'oo',
+			//'click .tabs_lopd li a' : 'establecer_hash',
 
 			'click #btn_procesar' : 'procesar',
-
-
 
 		},
 
@@ -41,9 +39,7 @@ define([
 			Calidad.cleanUp(this);
 
 			// Establecer hash para que al pulsar atrás no se pierdan los datos
-			window.setTimeout(function(){
-				window.location.hash = '#lopd/1';
-			},100);
+			//if( window)
 			
 
 			$(window).bind('hashchange', function(){
@@ -63,6 +59,12 @@ define([
 
 			Formulario(this);
 
+			//window.setTimeout(function(){
+			if( window.location.hash == '#lopd'){
+
+				window.location.hash = '#lopd/1';
+			}
+			//},1000);
 			// 			// Establecer hash para que al pulsar atrás no se pierdan los datos
 			// window.setTimeout(function(){
 			// 	window.location.hash = '#lopd/1';
@@ -145,23 +147,27 @@ define([
 			
 			if( className.indexOf('previous') > -1 ){
 				posicion--;
+				console.log('Previous', posicion);
 			}
 
 			if( className.indexOf('next') > -1 ){
 				posicion++;
+				console.log('Next', posicion);
 			}
 
 			if( className.indexOf('first') > -1 ){
 				posicion = 1;
+				console.log('First', posicion);
 			}
 
 			if( className.indexOf('last') > -1 ){
 				posicion = 9;
+				console.log('Last', posicion);
 			}
 
 			if(posicion < 1){ posicion = 1;}
 			if(posicion > 9){ posicion = 9;}			
-			console.log('posicion', posicion);
+			//console.log('posicion', posicion);
 
 			this.$('.tabs_lopd li a[data-pos="' + posicion + '"]').trigger('click');
 			
@@ -186,15 +192,17 @@ define([
 			e.preventDefault();
 			console.log('Dentro');
 
-			var obj_form = Calidad.actualizar_obj_form( this.$('#form_lopd') );
+			var obj_form = Calidad.actualizar_obj_form( this.$('#form_lopd_empresa') );
 
 			var obj_lopd = this.actualizar_obj_lopd();
+
+			this.$('#resp_procesar_lopd').html( obj_lopd );
 
 
 			//var cod_contratacion = this.$('#cod_contratacion').val();
 
-			this.$('#resp_procesar_lopd').empty();
-			Calidad.spinner(this, '##resp_procesar_lopd');
+			//this.$('#resp_procesar_lopd').empty();
+			//Calidad.spinner(this, '##resp_procesar_lopd');
 
 			// if( (cod_contratacion != 'CLASIF') && (cod_contratacion != 'DEMO01') && (cod_contratacion != 'CON30') && (cod_contratacion != 'CON60') && (cod_contratacion != 'CON120') && (cod_contratacion != 'CON2000') && (cod_contratacion != 'CON6') && (cod_contratacion != 'CON3') && (cod_contratacion != 'CON50') ){
 

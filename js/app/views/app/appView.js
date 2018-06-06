@@ -11,7 +11,6 @@ define([
 	'app/views/app/html/appViewHtml',
 
 	'app/views/login/loginView',
-	//'app/views/login/verPoliticaView',
 
 	'app/views/inicio/inicioView',
 
@@ -20,8 +19,6 @@ define([
 	
 	'app/views/soportes/soportesView',
 	'app/views/soportes/detalleSoporteView',
-
-	// 'app/views/alta/altaView',
 
 	// 'app/views/usuarios/usuariosView',
 	// 'app/views/usuarios/detalleUsuarioView',
@@ -172,10 +169,10 @@ define([
 
 			
 
-			/*
-			if( window.location.hash.split('/')[0] == '#alta' && typeof window.location.hash.split('/')[1] != 'undefined' ){
-				return true;		
+			if( window.location.hash.split('/')[0] == '#lopd' && typeof window.location.hash.split('/')[1] != 'undefined' ){
+				//return true;		
 			}
+			/*
 
 			
 			if( Calidad.es_admin() ){
