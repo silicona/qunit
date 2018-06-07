@@ -33,6 +33,12 @@ define([
 
 			this.$el.html(this.html);
 			//console.log('En Vista inicio: ', this.$el);
+
+			if( !(Calidad.hash() == '') ){
+				
+				Calidad.ir_a_login();
+			}
+
 			return this;
 
 		},

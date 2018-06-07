@@ -1,0 +1,8 @@
+{
+	"require": {
+		"phpunit/phpunit" : "^6.5",
+		"phpunit/dbunit" : "^3",
+		"nelmio/alice" : "^3.1",
+		"fzaninotto/faker" : "^1.7"
+	}
+}

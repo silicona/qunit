@@ -139,7 +139,7 @@ define([
                         mi_json = $.parseJSON(mi_json);
                         Config.obj_usuario = mi_json;
 
-                        window.localStorage.setItem('obj_usuario', JSON.stringify( Config.obj_usuario) );
+                        //window.localStorage.setItem('obj_usuario', JSON.stringify( Config.obj_usuario) );
 
                         if(Config.obj_usuario.cliente_admin == '1'){
                             $('#btn_usuarios').show();
@@ -174,6 +174,21 @@ define([
                 return resp;
             },
 
+            establecer_config: function(obj_json){
+
+                Config.hash         = obj_json.hash;
+                Config.id_usuario   = obj_json.id_usuario;
+                Config.nombre       = obj_json.nombre;
+                //Config.apellidos    = obj_json.apellidos;
+                
+                
+                Config.id_perfil    = obj_json.id_perfil;
+                Config.perfil       = Config.obj_perfiles[ obj_json.id_perfil ];
+
+                Config.id_cliente          = obj_json.id_cliente;
+
+            },
+
 
             establecer_entorno: function(){
 
@@ -191,26 +206,27 @@ define([
             
             es_admin: function(){
 
-                return ( Config.cld_admin == 'true') && ( typeof Config.cld_admin != 'undefined') ; 
+                return ( Config.perfil == 'Admin') && ( typeof Config.admin != 'undefined') ; 
+                // return ( Config.cld_admin == 'true') && ( typeof Config.cld_admin != 'undefined') ; 
             },
 
             es_cliente: function(){
 
-                return ( (Config.cld_admin != 'true' || typeof Config.cld_admin == 'undefined' ) && 
-                          /*Config.obj_usuario.comercial == '0' &&*/ Config.obj_usuario.tecnico == '0' ) ;
+                return ( (Config.perfil == 'Cliente' || typeof Config.admin == 'undefined' ) && 
+                          /*Config.obj_usuario.comercial == '0' &&*/ Config.tecnico == 'undefined' ) ;
             },
 
             //es_comercial: function(){ return ( Config.obj_usuario.comercial == '1' ) ; },
 
             es_tecnico: function(){
 
-                return ( Config.obj_usuario.tecnico == '1' ) ;  
+                return ( Config.tecnico == '1' ) ;  
             },
 
 
             hash: function(){
 
-                var local = window.localStorage.getItem('dp');
+                var local = window.localStorage.getItem('cld');
 
                 if( local != 'null' && local != null && local.length > 10 ){ return local; }
 
@@ -310,7 +326,7 @@ define([
                 Config.hash          = '';
                 Config.nombre        = '';
                 Config.empresa       = '';
-                Config.calidad_admin = '';
+                Config.admin         = '';
                 Config.tecnico       = '';
                 /*Config.comercial   = '';*/
                 
