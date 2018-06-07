@@ -12,7 +12,7 @@ define([
 
 		ruta_previa: window.location.hash,
 
-		hash: 'mi_hash',
+		hash: '',
 
 		parametros: '',
 
@@ -28,6 +28,14 @@ define([
 			1 : 'tecnico',
 			2 : 'administrativo',
 			3 : 'juridico'
+		},
+
+		obj_sectores: {
+			0: ' - Elija un sector -',
+			1: 'Alimentación',
+			2: 'Obras',
+			3: 'Servicios',
+			4: 'Suministros'
 		},
 
 		obj_clientes:{},

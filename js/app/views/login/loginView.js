@@ -54,6 +54,9 @@ define([
 
 			Calidad.limpiar_datos_sesion();
 
+			//console.log('datos', usuario);
+			//console.log('datos', password);
+
 			var resp = $.ajax({
 	          dataType: "text",
 	          type: 'POST',
@@ -81,8 +84,10 @@ define([
 	        			
 						if(obj_json.status == 'ok'){
 
-							
+							console.log( 'json: ', obj_json );
 							Calidad.establecer_config( obj_json );
+
+							console.log( 'config: ', Config.hash );
 							/*
 							Config.hash             = obj_json.hash;
 							Config.nombre           = obj_json.nombre;
@@ -112,6 +117,8 @@ define([
 							    // Fallback code comes here.
 							  
 								alert('La plataforma de Calidad del grupo Oclem necesita almacenar información en su navegador. Esto no es posible en modo navegación privada. Por favor, deshabilite esta opción en su navegador y vuelva a intentarlo.');
+							  } else {
+							  	alert('Fallo al establecer cld');
 							  }
 
 							}

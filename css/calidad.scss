@@ -166,6 +166,7 @@
 	.campo {
 
 		/*border: 2px solid gold;*/
+		background-color: $blanco;
 		border-radius: 7px;
 		box-shadow: .5px .5px 5px $negro;
 		padding-top: 1ex;
@@ -176,7 +177,8 @@
 		&.col-sm-6 {
 			width: 48%;
 
-			&+ .campo{
+			/*&+ .campo{*/
+			&:nth-of-type(even){
 				float: right;
 			}
 		}
@@ -224,11 +226,34 @@
 				
 				&:before {
 					top: 5px;
+					border: 1px solid $verde_ama;
 				}
 
 				&:after {
 					top: 9px;
 					left: 4px;
+				}
+			}
+
+			&.col-sm-6 {
+
+				label.control-label {
+					padding-left: 15px;
+				}
+
+				.radio {
+
+					margin-left: 30px;
+				}
+				
+				.radio-inline{
+
+					i.input-helper{
+
+						&:before { left: -10px; }
+
+						&:after { left: -6px; }
+					}
 				}
 			}
 			
@@ -237,17 +262,6 @@
 				transform: scale(1.4);
 			}
 			
-		}
-
-		&.ficha {
-
-			background-color: $blanco;
-		}
-
-		&#infraestructura {
-
-			background-color: $blanco;
-			padding-left: 2ex;
 		}
 
 	}

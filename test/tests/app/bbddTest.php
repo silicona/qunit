@@ -24,12 +24,12 @@
 			$sql = 'START TRANSACTION;';
 			$resultado = mysqli_query( self::$conexion, $sql );
 	
-			$this -> assertNotEquals( 'oclemcalidad', $GLOBALS['DB_NAME'] );
+			//$this -> assertEquals( 'oclemcalidad', $GLOBALS['DB_NAME'] );
 			$this -> assertTrue( $resultado, 'No se ha iniciado la transaction: ' . mysqli_connect_error() );
-			$this -> assertTrue( self::$conexion );
+			//$this -> assertTrue( self::$conexion );
 		}
 
-		public function ñlkñlk_tearDown(){
+		public function tearDown(){
 
 			$sql = 'ROLLBACK;';
 			$resultado = mysqli_query( self::$conexion, $sql );
@@ -46,13 +46,15 @@
 
 			foreach( $arr_link as $link ){
 
-				$sql = 'SELECT count(id) FROM cld_usuarios';
+				$sql = 'SELECT count(id_usuario) FROM cld_usuarios';
 
 				$res = mysqli_query( $link, $sql );
 				
 				$cantidad = $res ? mysqli_fetch_row($res)[0] : 0;
 				
-				$this -> assertGreaterThan( 0, $cantidad, 'Sin contacto con la BBDD: ' . mysqli_error($link) );
+				//$this -> assertGreaterThan( 0, $cantidad, 'Sin contacto con la BBDD: ' . mysqli_error($link) );
+				print_r($cantidad);
+				$this -> assertGreaterThan( 0, $cantidad, 'Sin contacto con la BBDD: ' . mysqli_connect_error() );
 			}
 		}
 

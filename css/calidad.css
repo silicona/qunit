@@ -106,6 +106,7 @@ footer {
   /*display: inline-block;*/ }
 .lopd .campo {
   /*border: 2px solid gold;*/
+  background-color: #FFFFFF;
   border-radius: 7px;
   box-shadow: 0.5px 0.5px 5px #160F05;
   padding-top: 1ex;
@@ -113,8 +114,9 @@ footer {
   margin-top: 1ex;
   margin-bottom: 1ex; }
   .lopd .campo.col-sm-6 {
-    width: 48%; }
-    .lopd .campo.col-sm-6 + .campo {
+    width: 48%;
+    /*&+ .campo{*/ }
+    .lopd .campo.col-sm-6:nth-of-type(even) {
       float: right; }
   .lopd .campo p {
     margin: 1ex 0; }
@@ -134,18 +136,22 @@ footer {
   .lopd .campo .radio .col-sm-1, .lopd .campo.radio .col-sm-1 {
     margin-left: 5ex; }
   .lopd .campo .radio i.input-helper:before, .lopd .campo.radio i.input-helper:before {
-    top: 5px; }
+    top: 5px;
+    border: 1px solid #aa0; }
   .lopd .campo .radio i.input-helper:after, .lopd .campo.radio i.input-helper:after {
     top: 9px;
     left: 4px; }
+  .lopd .campo .radio.col-sm-6 label.control-label, .lopd .campo.radio.col-sm-6 label.control-label {
+    padding-left: 15px; }
+  .lopd .campo .radio.col-sm-6 .radio, .lopd .campo.radio.col-sm-6 .radio {
+    margin-left: 30px; }
+  .lopd .campo .radio.col-sm-6 .radio-inline i.input-helper:before, .lopd .campo.radio.col-sm-6 .radio-inline i.input-helper:before {
+    left: -10px; }
+  .lopd .campo .radio.col-sm-6 .radio-inline i.input-helper:after, .lopd .campo.radio.col-sm-6 .radio-inline i.input-helper:after {
+    left: -6px; }
   .lopd .campo .radio input:checked + .input-helper:after, .lopd .campo.radio input:checked + .input-helper:after {
     background: #aa0;
     transform: scale(1.4); }
-  .lopd .campo.ficha {
-    background-color: #FFFFFF; }
-  .lopd .campo#infraestructura {
-    background-color: #FFFFFF;
-    padding-left: 2ex; }
 .lopd #botones_ant_sig {
   width: 100%;
   text-align: center;

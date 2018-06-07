@@ -6,10 +6,12 @@
 
 
 	*/
-
+		error_reporting(E_ALL);
 	require_once '../lib/config.php';
+	require_once 'entidades/Cld_login.php';
+	//echo 'Dentro';
+	//exit;
 	// require_once '../lib/PasswordHash.php';
-	require_once '../lib/entidades/Cld_login.php';
 
 
 	$login    = limpia_varchar($_POST['usuario']);
@@ -18,13 +20,15 @@
 	$hash     = limpia_varchar($_POST['hash']);
 
 	//salir_si_no_hash($link, $hash);
-
 	if($accion == 'check_login'){
 		echo json_encode( login::check_login( $link, $login, $password) );
+		//echo json_encode( 'ok' );
+		exit();
 	}
 
 	if($accion == 'logout'){
 		echo json_encode( login::logout( $link, $hash) );
+		exit();
 	}
 
 ?>

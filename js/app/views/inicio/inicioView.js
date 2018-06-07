@@ -34,10 +34,12 @@ define([
 			this.$el.html(this.html);
 			//console.log('En Vista inicio: ', this.$el);
 
-			if( !(Calidad.hash() == '') ){
+			if( Config.hash == '' ){
 				
 				Calidad.ir_a_login();
 			}
+
+			console.log( 'Desde inicio- config: ', Config);
 
 			return this;
 

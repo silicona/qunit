@@ -332,6 +332,8 @@ define([
                 
                 Config.obj_clientes  = '';
                 Config.obj_usuario   = '';
+
+                console.log(Config);
                 
             },
 

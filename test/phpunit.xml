@@ -26,7 +26,7 @@
         <var name="DB_HOST" value="127.0.0.1"/>
         <var name="DB_USER" value="root"/>
         <var name="DB_PASS" value="" />
-        <var name="DB_NAME" value="oclemcalidad" />
+        <var name="DB_NAME" value="oclemcalidad_bbdd" />
     </php>
 
     <filter>

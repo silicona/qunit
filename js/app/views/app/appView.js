@@ -583,7 +583,7 @@ define([
 				// Por hacer...
 			//Calidad.ir_a_portada();
 
-			//Calidad.ir_a_login();
+			Calidad.ir_a_login();
 
 		},
 

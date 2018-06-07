@@ -24,14 +24,14 @@ define([
                 
                 '<ul class="tab-nav text-center tabs_lopd">',
                     '<li class="active" ><a data-pos="1" href="#tab1" data-toggle="tab">Su empresa</a></li>',
-                    '<li ><a href="#tab2" data-pos="2" data-toggle="tab">Clientes</a></li>',
-                    '<li ><a href="#tab3" data-pos="3" data-toggle="tab">Futuros clientes</a></li>',
-                    '<li ><a href="#tab4" data-pos="4" data-toggle="tab">Empleados</a></li>',
-                    '<li ><a href="#tab5" data-pos="5" data-toggle="tab">Candidatos</a></li>',
-                    '<li ><a href="#tab6" data-pos="6" data-toggle="tab">Proveedores</a></li>',
-                    '<li ><a href="#tab7" data-pos="7" data-toggle="tab">videovigilancia</a></li>',
+                    '<li ><a href="#tab2" data-pos="2" data-toggle="tab">Su estructura</a></li>',
+                    '<li ><a href="#tab3" data-pos="3" data-toggle="tab">Clientes</a></li>',
+                    '<li ><a href="#tab4" data-pos="4" data-toggle="tab">Futuros clientes</a></li>',
+                    '<li ><a href="#tab5" data-pos="5" data-toggle="tab">Empleados</a></li>',
+                    '<li ><a href="#tab6" data-pos="6" data-toggle="tab">Candidatos</a></li>',
+                    '<li ><a href="#tab7" data-pos="7" data-toggle="tab">Proveedores</a></li>',
                     '<li ><a href="#tab8" data-pos="8" data-toggle="tab">Empresas externas</a></li>',
-                    '<li ><a href="#tab9" data-pos="9" data-toggle="tab">Infraestructura</a></li>',
+                    '<li ><a href="#tab9" data-pos="9" data-toggle="tab">Procesar datos</a></li>',
                 '</ul>',
                     
                 '<form role="form" id="form_lopd" class="mi_form form-horizontal">',   
@@ -121,6 +121,17 @@ define([
 
 
                                     Fx.form_input({
+                                        label: 'Nombre del responsable de seguridad:',
+                                        id: 'nombre_responsable',
+                                        tipo: 'text',
+                                        clase: 'texto',
+                                        min_char: '3',
+                                        col_bs_label: 'col-sm-3',
+                                        col_bs_input: 'col-sm-8',
+                                    }),
+
+
+                                    Fx.form_input({
                                         
                                         label: 'Dirección de correo electrónico para la LOPD',
                                         id: 'email_lopd',
@@ -132,6 +143,16 @@ define([
                                         min_char: '3',
                                         col_bs_label: 'col-sm-3',
                                         col_bs_input: 'col-sm-8',
+
+                                    }),
+
+                                    Fx.form_select({
+
+                                        label: 'Indique el sector de su empresa',
+                                        id: 'sector',
+                                        col_bs_label: 'col-sm-3',
+                                        col_bs_select: 'col-sm-8',
+                                        json_valores_et: Config.obj_sectores,
 
                                     }),
 
@@ -148,15 +169,86 @@ define([
 
                                 '</div>',
 
-                                '<div id="infraestructura" class="campo clearfix">',
+                            '</div>',
 
-                                    '<div class="radio">',
+                        '</div>',
 
+                        // Infraestructura
+                        '<div class="tab-pane fade" id="tab2">',
+
+                            // '<div class="col-sm-10 col-sm-offset-1 campo">',
+
+                            //     '<p>Los datos que incorpore en el programa desde esta pantalla hasta la finalización del programa, se van a utilizar para elaborar los documentos que se generan automáticamente adaptados a su organización.</p>',
+                            
+                            // '</div>',
+
+                            '<div id="form_lopd_infra" class="sep30 col-sm-10 col-sm-offset-1 clearfix">',
+
+                                '<div class="row">',
+
+                                    '<div id="infra_almacen" class="col-sm-6 campo">',
+
+                                        '<p><b>¿Cómo almacena los datos de caracter personal?</b></p>',
+
+                                        '<div class="col-sm-12 checkbox">',
+
+                                            Fx.form_input_check({
+                                                label: 'Los almaceno de forma electrónica',
+                                                id: 'infra_alm_elec',
+                                                class: 'opciones',
+                                                col_bs_label: 'col-sm-12',
+                                            }),
+
+                                            Fx.form_input_check({
+                                                label: 'Los almaceno de forma física',
+                                                id: 'infra_alm_fis',
+                                                class: 'opciones',
+                                                col_bs_label: 'col-sm-12',
+                                                
+                                            }),
+
+                                        '</div>',
+
+                                    '</div>',
+
+                                    '<div class="col-sm-6 campo">',
+
+                                        '<p><b>¿Que tipo de acceso es necesario para acceder a los datos almacenados?</b></p>',
+
+                                        '<div class="checkbox col-sm-12">',
+                                        
+                                            Fx.form_input_check({
+
+                                                label: 'Usuario y Contraseña (formato digital)',
+                                                id: 'datos_acceso_digital',
+                                                class: 'opciones',
+                                                col_bs_label: 'col-sm-12',
+                                            }),
+
+                                            Fx.form_input_check({
+
+                                                label: 'Armarios con llave de acceso (formato papel)',
+                                                id: 'datos_acceso_fisico',
+                                                class: 'opciones',
+                                                col_bs_label: 'col-sm-12',
+                                            }),
+
+                                        '</div>',
+
+                                    '</div>',
+ 
+                                '</div>',
+
+
+                                '<div class="row">',
+
+                                    '<div class="col-sm-12 campo radio">',
+                                        
                                         Fx.form_input_radio({
 
-                                            titulo: '<b>¿Su empresa almacena datos de caracter personal electrónicamente?</b>',
-                                            subtitulo: '',
-                                            id: 'datos_electronicos',
+                                            titulo: '<b>¿Su organización capta imágenes mediante cámaras de videovigilancia con fines de seguridad?</b>',
+                                            subtitulo: 'Si tiene instaladas cámaras de videovigilancia en su negocio, márquelo y le daremos pautas a seguir para poder utilizarlas cumpliendo con la normativa de protección de datos.',
+                                            id: 'datos_imagenes',
                                             clase_grupo: '',
                                             inline: true,
 
@@ -167,28 +259,78 @@ define([
                                                 1: 'no'
                                             }
                                         }),
+                                    
+                                    '</div>',
 
+                                '</div>',
+                                
+                                /*
+                                '<div class="col-sm-6 campo radio">',
+
+                                    Fx.form_input_radio({
+
+                                        titulo: '<b>¿Su empresa almacena datos de caracter personal electrónicamente?</b>',
+                                        subtitulo: '',
+                                        id: 'datos_electronicos',
+                                        clase_grupo: '',
+                                        inline: true,
+
+                                        col_bs_label: 'col-sm-12',
+                                        col_bs_radio: 'col-sm-1',
+                                        opciones_json: {
+                                            0: 'si',
+                                            1: 'no'
+                                        }
+                                    }),
+
+                                '</div>',
+
+                                    Fx.form_input_radio({
+
+                                        titulo: '<b>¿Su empresa almacena datos personales en formato papel?</b>',
+                                        subtitulo: '',
+                                        id: 'datos_fisicos',
+                                        clase_grupo: '',
+                                        inline: true,
+
+                                        col_bs_label: 'col-sm-12',
+                                        col_bs_radio: 'col-sm-1',
+                                        opciones_json: {
+                                            0: 'si',
+                                            1: 'no'
+                                        }
+                                    }),                 
+                                */
+                                '<div class="row">',
+
+                                    '<div class="col-sm-6 campo radio">',
 
                                         Fx.form_input_radio({
 
-                                            titulo: '<b>¿Su empresa almacena datos personales en formato papel?</b>',
-                                            subtitulo: '',
-                                            id: 'datos_fisicos',
+                                            titulo: '<b>¿Cada cuanto tiempo se borran las imágenes grabadas?</b>',
+                                            subtitulo: '(no conteste si no guarda imágenes)',
+                                            id: 'datos_almacen',
                                             clase_grupo: '',
-                                            inline: true,
+                                            inline: '',
 
                                             col_bs_label: 'col-sm-12',
-                                            col_bs_radio: 'col-sm-1',
+                                            col_bs_radio: 'col-sm-12',
                                             opciones_json: {
-                                                0: 'si',
-                                                1: 'no'
+                                                0: '1 semana.',
+                                                1: '2 semanas.',
+                                                2: '1 mes.',
+                                                3: '3 meses.'
                                             }
-                                        }),                 
+                                        }),
+
+                                    '</div>',
+
+                                    '<div class="col-sm-6 campo radio">',
 
                                         Fx.form_input_radio({
 
-                                            titulo: '<b>¿Dispone de sistema de almacenaje de datos personales propio?</b>',
-                                            subtitulo: 'No conteste si no almacena datos de caracter personal.',
+                                            titulo: '<b>¿Dispone de dispositivos de almacenaje de datos personales propio?</b>',
+                                            subtitulo: '(servidores, discos duros, pen-drives, ordenadores de trabajo en local)',
                                             id: 'datos_almacen',
                                             clase_grupo: '',
                                             inline: true,
@@ -200,7 +342,9 @@ define([
                                                 1: 'no'
                                             }
                                         }),
-
+                                    '</div>',
+                                    /*
+                                    '<div class="col-sm-6 campo radio">',
                                         Fx.form_input_radio({
 
                                             titulo: '<b>¿Es necesario estár autorizado para acceder a los datos personales que almacena?</b>',
@@ -217,65 +361,60 @@ define([
                                             },
                                         }),
 
+                                    '</div>',
+                                    */
+
+                                '</div>',
+
+                                '<div class="row">',
+
+                                    '<div class="col-sm-6 campo radio">',
+
                                         Fx.form_input_radio({
 
-                                            titulo: '<b>¿Ha contratado a una empresa externa para realizar las tareas de mantenimiento informático?</b>',
+                                            titulo: '<b>¿Su empresa realiza las tareas de mantenimiento informático?</b>',
                                             subtitulo: '',
                                             id: 'datos_mantenimiento',
                                             clase_grupo: '',
-                                            inline: true,
+                                            inline: '',
 
                                             col_bs_label: 'col-sm-12',
-                                            col_bs_radio: 'col-sm-1',
+                                            col_bs_radio: 'col-sm-12',
                                             opciones_json: {
-                                                0: 'si',
-                                                1: 'no'
+                                                0: 'si, las realiza personal de mi empresa.',
+                                                1: 'si, tenemos externalizado este servicio.',
+                                                2: 'no, no realizamos mantenimiento.'
                                             },
                                         }),
 
+                                    '</div>',
+
+                                    '<div class="col-sm-6 campo radio">',
+
                                         Fx.form_input_radio({
 
-                                            titulo: '<b>¿Realiza copias de seguridad de los datos personales almacenados regularmente?</b>',
+                                            titulo: '<b>¿Cada tiempo cuanto realizan copias de seguridad de sus datos?</b>',
                                             subtitulo: '',
                                             id: 'datos_backup',
                                             clase_grupo: '',
-                                            inline: true,
+                                            inline: '',
 
                                             col_bs_label: 'col-sm-12',
-                                            col_bs_radio: 'col-sm-1',
+                                            col_bs_radio: 'col-sm-12',
                                             opciones_json: {
-                                                0: 'si',
-                                                1: 'no'
+                                                0: 'Diariamente.',
+                                                0: 'Semanalmente.',
+                                                1: 'Mensualmente.',
+                                                2: 'No realizo copia de seguridad.'
                                             }
                                         }),
 
                                     '</div>',
 
-                                    '<div id="div_datos_acceso" class="row">',
+                                '</div>',
 
-                                        '<p class="col-sm-12"><b>¿Que tipo de acceso es necesario para acceder a los datos almacenados?</b></p>',
+                                '<div id="div_datos_acceso" class="row">',
 
-                                        '<div class="checkbox col-sm-8 col-sm-offset-1">',
-                                        
-                                            Fx.form_input_check({
-
-                                                label: 'Usuario y Contraseña (formato digital)',
-                                                id: 'datos_acceso_digital',
-                                                class: 'opciones',
-                                                col_bs_label: 'col-sm-12',
-                                            }),
-
-                                            Fx.form_input_check({
-
-                                                label: 'Registro o llave de acceso (formato fisico)',
-                                                id: 'datos_acceso_fisico',
-                                                class: 'opciones',
-                                                col_bs_label: 'col-sm-12',
-                                            }),
-
-                                        '</div>',
-
-                                    '</div>',
 
                                 '</div>',
 
@@ -284,7 +423,7 @@ define([
                         '</div>',
 
                         // Datos de clientes
-                        '<div class="tab-pane fade" id="tab2">',
+                        '<div class="tab-pane fade" id="tab3">',
 
                             '<div class="col-sm-offset-1 col-sm-10 campo radio">',
 
@@ -466,7 +605,7 @@ define([
                         '</div>',
 
                         // Datos de futuros clientes
-                        '<div class="tab-pane fade" id="tab3">',
+                        '<div class="tab-pane fade" id="tab4">',
 
                             '<div class="col-sm-offset-1 col-sm-10 campo radio">',
     
@@ -588,7 +727,7 @@ define([
                         '</div>',
 
                         // Datos de empleades
-                        '<div class="tab-pane fade" id="tab4">',
+                        '<div class="tab-pane fade" id="tab5">',
 
                             '<div class="col-sm-offset-1 col-sm-10 campo radio">',
 
@@ -657,69 +796,69 @@ define([
                                         '</div>',
 
 		                            '</div>',
+                               
+                                    '<div id="empleados_compartir" class="col-sm-6 campo">',
 
-                                	'<div id="empleados_procedencia"  class="col-sm-6 campo">',
-
-                                		'<p><b>Marque de donde obtiene los datos personales de sus empleados:</b></p>',
+                                        '<p><b>Marque para qué utiliza los datos personales que solicita a sus empleados:</b></p>',
 
                                         '<div class="checkbox">',
 
-                                    		Fx.form_input_check({
-                                    			label: 'Los facilitan ellos.',
-    		                                	id: 'empleados_propio',
-    		                                	class: 'opciones',
-    		                                	col_bs_label: 'col-sm-12',
-    		                                }),
+                                            Fx.form_input_check({
+                                                label: 'Gestionar la nómina.',
+                                                id: 'empleados_nomina',
+                                                class: 'opciones',
+                                                col_bs_label: 'col-sm-12',
+                                            }),
 
-                                    		Fx.form_input_check({
-                                    			label: 'Los facilita una agencia de colocación.',
-    		                                	id: 'empleados_tercera',
-    		                                	class: 'opciones',
-    		                                	col_bs_label: 'col-sm-12',
-    		                                }),
+                                            Fx.form_input_check({
+                                                label: 'Formación.',
+                                                id: 'empleados_formacion',
+                                                class: 'opciones',
+                                                col_bs_label: 'col-sm-12',
+                                            }),
+
+                                            Fx.form_input_check({
+                                                label: 'Mantenimiento de la relación laboral.',
+                                                id: 'empleados_relacion',
+                                                class: 'opciones',
+                                                col_bs_label: 'col-sm-12',
+                                            }),
 
                                         '</div>',
 
-		                            '</div>',
+                                    '</div>',
 
 		                        '</div>',
 
                             	'<div class="row clearfix">',
-                            	
-                                	'<div id="empleados_compartir" class="col-sm-6 campo">',
 
-                                		'<p><b>Marque para qué utiliza los datos personales que solicita a sus empleados:</b></p>',
+                                    '<div id="empleados_procedencia"  class="col-sm-6 campo">',
 
-                                		'<div class="checkbox">',
+                                        '<p><b>Marque de donde obtiene los datos personales de sus empleados:</b></p>',
+
+                                        '<div class="checkbox">',
 
                                             Fx.form_input_check({
-                                    			label: 'Gestionar la nómina.',
-    		                                	id: 'empleados_nomina',
-    		                                	class: 'opciones',
-    		                                	col_bs_label: 'col-sm-12',
-    		                                }),
+                                                label: 'Los facilitan ellos.',
+                                                id: 'empleados_propio',
+                                                class: 'opciones',
+                                                col_bs_label: 'col-sm-12',
+                                            }),
 
-                                    		Fx.form_input_check({
-                                    			label: 'Formación.',
-    		                                	id: 'empleados_formacion',
-    		                                	class: 'opciones',
-    		                                	col_bs_label: 'col-sm-12',
-    		                                }),
-
-                                    		Fx.form_input_check({
-                                    			label: 'Mantenimiento de la relación laboral.',
-    		                                	id: 'empleados_relacion',
-    		                                	class: 'opciones',
-    		                                	col_bs_label: 'col-sm-12',
-    		                                }),
+                                            Fx.form_input_check({
+                                                label: 'Los facilita una agencia de colocación.',
+                                                id: 'empleados_tercera',
+                                                class: 'opciones',
+                                                col_bs_label: 'col-sm-12',
+                                            }),
 
                                         '</div>',
 
-		                            '</div>',
-                            	
-                                	'<div id="empleados_gestion" class="col-sm-6 campo radio">',
+                                    '</div>',
+                                
+                                    '<div class="col-sm-6 campo radio">',
 
-                                		Fx.form_input_radio({
+                                        Fx.form_input_radio({
 
                                             titulo: '<b>¿La gestión de la nómina la realiza una gestoría?</b>',
                                             id: 'empleados_gestion_nomina',
@@ -735,7 +874,71 @@ define([
                                             },
                                         }),
 
+                                    '</div>',
+
+                                '</div>',
+
+                                '<div class="row clearfix">',
+
+                                    '<div class="col-sm-6 campo radio">',
+
+                                        Fx.form_input_radio({
+
+                                            titulo: '<b>¿Dispone de mutua de accidentes?</b>',
+                                            id: 'empleados_mutua',
+                                            clase_grupo: 'opciones',
+                                            clase: 'text-center',
+                                            inline: true,
+
+                                            col_bs_label: 'col-sm-12',
+                                            col_bs_radio: 'col-sm-1',
+                                            opciones_json: {
+                                                0: 'si',
+                                                1: 'no'
+                                            },
+                                        }),
+
+                                    '</div>',
+
+                                	'<div class="col-sm-6 campo radio">',
+
+                                		Fx.form_input_radio({
+
+                                            titulo: '<b>¿Dan formación a los trabajadores?</b>',
+                                            id: 'empleados_formacion',
+                                            clase_grupo: 'opciones',
+                                            clase: 'text-center',
+                                            inline: true,
+
+                                            col_bs_label: 'col-sm-12',
+                                            col_bs_radio: 'col-sm-1',
+                                            opciones_json: {
+                                                0: 'si',
+                                                1: 'no'
+                                            },
+                                        }),
+
 		                            '</div>',
+
+                                    '<div class="col-sm-6 campo radio">',
+
+                                        Fx.form_input_radio({
+
+                                            titulo: '<b>¿Dispone de servicio de prevencion ajeno?</b>',
+                                            id: 'empleados_prevencion',
+                                            clase_grupo: 'opciones',
+                                            clase: 'text-center',
+                                            inline: true,
+
+                                            col_bs_label: 'col-sm-12',
+                                            col_bs_radio: 'col-sm-1',
+                                            opciones_json: {
+                                                0: 'si',
+                                                1: 'no'
+                                            },
+                                        }),
+
+                                    '</div>',
 
 		                        '</div>',
 
@@ -744,7 +947,7 @@ define([
                         '</div>',
 
                         // Datos de candidates
-                        '<div class="tab-pane fade" id="tab5">',
+                        '<div class="tab-pane fade" id="tab6">',
 
                             '<div class="col-sm-offset-1 col-sm-10 campo radio">',
 
@@ -808,28 +1011,76 @@ define([
 
 		                            '</div>',
 
-                                	'<div id="candidatos_procedencia" class="col-sm-6 campo">',
+                                	'<div class="col-sm-6 campo">',
 
-                                		'<p><b>Marque de donde obtiene los datos personales de sus candidatos a un empleo:</b></p>',
+                                        '<p><b>Marque de donde obtiene los datos personales de sus candidatos a un empleo:</b></p>',
+
+                                        '<div class="checkbox">',
+
+                                            Fx.form_input_check({
+                                                label: 'Los facilitan ellos en curriculum papel.',
+                                                id: 'candidatos_curriculum',
+                                                class: 'opciones',
+                                                col_bs_label: 'col-sm-12',
+                                            }),
+
+                                            Fx.form_input_check({
+                                                label: 'Los incorporan ellos a mi página web.',
+                                                id: 'candidatos_web',
+                                                class: 'opciones',
+                                                col_bs_label: 'col-sm-12',
+                                            }),
+
+                                            Fx.form_input_check({
+                                                label: 'Rellenan un formulario.',
+                                                id: 'candidatos_web',
+                                                class: 'opciones',
+                                                col_bs_label: 'col-sm-12',
+                                            }),
+
+                                        '</div>',
+
+                                    '</div>',
+
+                                '</div>',
+
+                                '<div class="row clearfix">',
+                                    /*
+                                    '<div id="candidatos_procedencia" class="col-sm-6 campo">',
+
+                                		'<p><b>Plazo de eliminación de los datos personales:</b></p>',
 
                                         '<div class="checkbox">',
 
                                     		Fx.form_input_check({
-                                    			label: 'Los facilitan ellos en curriculum papel.',
+                                    			label: 'Un año',
     		                                	id: 'candidatos_curriculum',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
     		                                }),
 
                                     		Fx.form_input_check({
-                                    			label: 'Los incorporan ellos a mi página web.',
+                                    			label: 'Dos años.',
     		                                	id: 'candidatos_web',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
     		                                }),
 
+                                            Fx.form_input_check({
+                                                label: 'Tres años.',
+                                                id: 'candidatos_web',
+                                                class: 'opciones',
+                                                col_bs_label: 'col-sm-12',
+                                            }),
+                                            Fx.form_input_check({
+                                                label: 'Cuatro años.',
+                                                id: 'candidatos_web',
+                                                class: 'opciones',
+                                                col_bs_label: 'col-sm-12',
+                                            }),
+
                                     		Fx.form_input_check({
-                                    			label: 'Rellenan un formulario.',
+                                    			label: 'Cinco años.',
     		                                	id: 'candidatos_web',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
@@ -838,6 +1089,29 @@ define([
                                         '</div>',
 
     		                        '</div>',
+                                    */
+
+                                    '<div class="col-sm-6 campo radio">',
+
+                                        Fx.form_input_radio({
+
+                                            titulo: '<b>¿Cada cuanto tiempo elimina los datos de los candidatos?</b>',
+                                            subtitulo: '',
+                                            id: 'candidatos_eliminacion',
+                                            clase_grupo: '',
+                                            inline: '',
+
+                                            col_bs_label: 'col-sm-12',
+                                            col_bs_radio: 'col-sm-12',
+                                            opciones_json: {
+                                                0: '1 año.',
+                                                1: '2 años.',
+                                                2: '3 años.',
+                                                3: '5 años.'
+                                            }
+                                        }),
+
+                                    '</div>',
 
 		                        '</div>',
 
@@ -846,7 +1120,7 @@ define([
                         '</div>',
 
                         // Datos de proveedores
-                        '<div class="tab-pane fade" id="tab6">',
+                        '<div class="tab-pane fade" id="tab7">',
 
                             '<div class="col-sm-offset-1 col-sm-10 campo radio">',
     
@@ -925,32 +1199,7 @@ define([
 
 		                    '</div>',
 
-                        '</div>',
-
-                        // Captación de imágenes
-                        '<div class="tab-pane fade" id="tab7">',
-
-                            '<div class="col-sm-offset-1 col-sm-10 campo radio">',
-
-                                Fx.form_input_radio({
-
-                                	titulo: '<b>¿Su organización capta imágenes mediante cámaras de videovigilancia con fines de seguridad?</b>',
-                                    subtitulo: 'Si tiene instaladas cámaras de videovigilancia en su negocio, márquelo y le daremos pautas a seguir para poder utilizarlas cumpliendo con la normativa de protección de datos.',
-                                	id: 'seguridad_datos',
-                                    clase_grupo: 'lopd_sino',
-                                    inline: true,
-
-                                    col_bs_label: 'col-sm-12',
-                                    col_bs_radio: 'col-sm-1',
-                                    opciones_json: {
-                                        0: 'si',
-                                        1: 'no'
-                                    }
-                                }),
-
-                            '</div>',
-
-                        '</div>',
+                        '</div>',,
 
                         // Terceras empresas
                         '<div class="tab-pane fade" id="tab8">',
@@ -1140,7 +1389,7 @@ define([
 
                         '</div>',
 
-                        // Infraestructura
+                        // Procesar Datos
                         '<div class="tab-pane fade" id="tab9">',
 
                             '<div class="col-sm-offset-1 col-sm-10 campo">',

@@ -6,7 +6,7 @@
     require_once 'funciones.php';
     require_once 'formularios.php';
 
-    require_once 'dp.php';
+    require_once 'Calidad.php';
 
 
     //  CAMBIAR EN PRODUCCIÓN
@@ -75,7 +75,7 @@
         /*******************************************************************************************/
         error_reporting(E_ERROR | E_WARNING | E_PARSE);
         
-        define('INM_DOMINIO', 'http://localhost');
+        define('INM_DOMINIO', 'http://localhost/');
         define('INM_CARPETA', 'oclemcalidad/');
 
         define('INM_ENTORNO', 'pruebas');
@@ -97,12 +97,12 @@
         error_reporting(E_ERROR | E_WARNING | E_PARSE);
         
         define('INM_DOMINIO', 'http://localhost');
-        define('INM_CARPETA', 'dp/plataforma/');
+        define('INM_CARPETA', 'oclemcalidad/');
 
         define('INM_ENTORNO', 'pruebas');
         
         $db_host    = "localhost"; 
-        $db_nombre  = "abogados_bbdd";
+        $db_nombre  = "oclemcalidad_bbdd";
         $db_user    = "root"; 
         $db_pass    = "";
         
@@ -135,15 +135,15 @@
         $div_pruebas = '<div id="div_pruebas"><p class="text_center">ESTÁS EN EL SERVIDOR DE PRUEBAS</p></div>';
 
     }
-
+    /*
     if( strpos(__FILE__, '/home/abogadosyarbitra') !== false ){ 
-        
+     */   
         /*******************************************************************************************/
         ///   ENTORNO DE PRODUCCIÓN      ////
         /*******************************************************************************************/
         
         // SI PONEMOS EL ENTORNO EN PRUEBAS NO FUNCIONARÁN LOS SCRIPTS AUTOMATICOS
-
+        /*
         error_reporting(0);
         // error_reporting(E_ALL ^ E_NOTICE);
 
@@ -161,7 +161,7 @@
         $div_pruebas = '';
 
     }
-
+    */
 
 
     $base_url = INM_DOMINIO . '/' . INM_CARPETA;

@@ -5,7 +5,7 @@
 	 *
 	*/
 
-	require_once '../../lib/PasswordHash.php';
+	require_once '../lib/PasswordHash.php';
 
 
 	class login {
@@ -76,6 +76,8 @@
 			// DEVUELVE UN ARRAY CON LOS VALORES DEL ACCESO SI EL USUARIO Y PASSWORD
 			// COINCIDEN CON EL ADMIN, CONCESIÓN O CLIENTE
 
+			//i('Dentro');
+			//return 'Dentro';
 			$es_admin = false;
 
 			// COMPROBAR SI CLIENTE
@@ -110,7 +112,7 @@
 
 					if( $e['id_cliente'] > 0){
 
-						$activo = coger_campo_misma_tabla($link, 'activo', 'Cld_cliente', 'id_cliente', $e['id_cliente']);
+						$activo = coger_campo_misma_tabla($link, 'activo', 'cld_clientes', 'id_cliente', $e['id_cliente']);
 
 						if($activo == 0){
 							// asociado inactivo

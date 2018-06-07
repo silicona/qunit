@@ -673,7 +673,7 @@ define([
 				atributos     = obj_datos.atributos   || {},
 				clase_grupo   = obj_datos.clase_grupo || '',
 				clase         = obj_datos.clase || '',
-				inline 		  = obj_datos.inline || false,
+				inline 		  = obj_datos.inline || '',
 				
 				col_bs_label  = obj_datos.col_bs_label || '',
 				col_bs_radio  = obj_datos.col_bs_radio || '',
@@ -682,7 +682,7 @@ define([
 				arr_opciones  = [],
 				titulo        = obj_datos.titulo|| '',
 				subtitulo     = obj_datos.subtitulo || '',
-				valor         = obj_datos.valor;
+				valor         = obj_datos.valor
 
             if( (checked == 1) || (checked == "checked") ){ checked = 'checked="checked"'; }
 

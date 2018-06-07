@@ -215,16 +215,18 @@ define([
 
 			})
 
+			/*
 			if( error != '' ){
 
 				campo_resp.html( Fx.bs_alert(error + 'Rellene los datos que faltan para poder procesar los documentos, por favor.', 'danger') );
 				return false;
 			}
+			*/
 
 
 			//console.log('form:', this.$('#form_lopd_empresa'));
 			//console.log('Obj form:', obj_form);
-			//var inter = JSON.stringify( obj_form );
+			var inter = JSON.stringify( obj_form );
 
 			var obj_lopd = this.actualizar_obj_lopd();
 
@@ -279,9 +281,9 @@ define([
 				$('input[type=checkbox], input[type=radio]', '#' + seccion + '_extra').each(function(indice, valor){
 
 					//console.log('Valor: ', valor)
-					if( this.checked ){
+					//if( this.checked ){
 						obj_lopd['sec_si'][seccion][$(this).attr('id')] = valor.checked;
-					}
+					//}
 				})
 
 			});
