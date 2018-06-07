@@ -5,6 +5,11 @@ html, body {
   /*font-size: 13px;
   line-height: 1.2em;
   font-family: roboto;*/ }
+  html.login-content:before, body.login-content:before {
+    background-color: #FFFFFF;
+    background-image: url("../media/fondo_inicio.jpg");
+    background-size: cover;
+    height: 100%; }
 
 #app .sep20 {
   margin-top: 20px; }
@@ -92,6 +97,10 @@ footer {
     .boton_inicio a span {
       display: block;
       padding-top: .5ex; }
+
+/* LOGIN */
+.login .logo-login {
+  width: 100%; }
 
 /* LOPD */
 .lopd .block-header {

@@ -36,7 +36,7 @@ define([
 
 			if( Config.hash == '' ){
 				
-				Calidad.ir_a_login();
+				//Calidad.ir_a_login();
 			}
 
 			console.log( 'Desde inicio- config: ', Config);

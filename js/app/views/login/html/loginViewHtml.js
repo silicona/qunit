@@ -16,16 +16,18 @@ define([
         
         '<div id="l-login" class="lc-block toggled">',
             
-            '<img class="logo_login" src="' + Config.base_url + 'img/profile-menu.png" alt="Grupo Oclem" /><br><br>',
+            '<img class="logo_login" src="' + Config.base_url + 'img/profile-menu.png" alt="Grupo Oclem" /><br>',
+            '<h3 class="text-center">Departamento de calidad</h3>',
+            '<br>',
             '<div class="input-group m-b-20">',
-                '<span class="input-group-addon"><i class="fa fa-user"></i></span>',
+                '<span class="input-group-addon"><i class="fa fa-user fa-2x"></i></span>',
                 '<div class="fg-line">',
                     '<input id="usuario" type="text" placeholder="Usuario" class="form-control" value="">',
                 '</div>',
             '</div>',
             
             '<div class="input-group m-b-20">',
-                '<span class="input-group-addon"><i class="fa fa-lock"></i></span>',
+                '<span class="input-group-addon"><i class="fa fa-lock fa-2x"></i></span>',
                 '<div class="fg-line">',
                     '<input id="password" type="password" placeholder="Password" class="form-control" value="" >',
                 '</div>',
@@ -33,14 +35,15 @@ define([
             
             '<div class="clearfix"></div>',
             
-            '<a id="btn_login" class="btn btn-login btn-danger btn-float waves-effect waves-button" href="#"><i class="md md-arrow-forward"></i></a>',
+            //'<a id="btn_login" class="btn btn-login btn-danger btn-float waves-effect waves-button" href="#"><i class="md md-arrow-forward"></i></a>',
             '<br>',
-            '<a id="btn_acceder" class="btn btn-success" href="#"> Entrar <i class="fa fa-arrow-right"></i></a>',
+            '<a id="btn_acceder" class="btn btn-success" href="#">Acceder</a>',
+            // '<a id="btn_acceder" class="btn btn-success" href="#"> Acceder <i class="fa fa-arrow-right"></i></a>',
             '<br>',
             '<br>',
 
             '<div id="resp_login"></div>',
-            '<p class="align-center"> <br><a href="' + Config.base_url + '#alta"><i class="fa fa-user fa-lg"></i> Contratar</p>',
+            //'<p class="align-center"> <br><a href="' + Config.base_url + '#alta"><i class="fa fa-user fa-lg"></i> Contratar</p>',
             
             '</ul>',
         '</div>',

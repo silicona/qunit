@@ -53,7 +53,7 @@ define([
 
                                     Fx.form_input({
                                         label: 'Nombre de la empresa',
-                                        id: 'nombre',
+                                        id: 'empresa',
                                         valor: '',
                                         placeholder: '',
                                         tipo: 'text',
@@ -64,9 +64,10 @@ define([
                                     }),
 
                                     Fx.form_input({
-                                        label: 'Dirección completa de la empresa',
+                                        label: 'Dirección de la empresa',
                                         id: 'direccion',
                                         valor: '',
+                                        placeholder: 'CAlle y número',
                                         tipo: 'text',
                                         clase: 'texto obligatorio',
                                         min_char: '3',
@@ -90,7 +91,7 @@ define([
                                         id: 'cif',
                                         valor: '',
                                         tipo: 'text',
-                                        clase: 'texto',
+                                        clase: 'texto obligatorio',
                                         col_bs_label: 'col-sm-3',
                                         col_bs_input: 'col-sm-5',
                                     }),
@@ -150,6 +151,7 @@ define([
 
                                         label: 'Indique el sector de su empresa',
                                         id: 'sector',
+                                        clase: 'obligatorio',
                                         col_bs_label: 'col-sm-3',
                                         col_bs_select: 'col-sm-8',
                                         json_valores_et: Config.obj_sectores,
@@ -186,7 +188,7 @@ define([
 
                                 '<div class="row">',
 
-                                    '<div id="infra_almacen" class="col-sm-6 campo">',
+                                    '<div class="col-sm-6 campo">',
 
                                         '<p><b>¿Cómo almacena los datos de caracter personal?</b></p>',
 
@@ -194,14 +196,14 @@ define([
 
                                             Fx.form_input_check({
                                                 label: 'Los almaceno de forma electrónica',
-                                                id: 'infra_alm_elec',
+                                                id: 'almacen_elec',
                                                 class: 'opciones',
                                                 col_bs_label: 'col-sm-12',
                                             }),
 
                                             Fx.form_input_check({
                                                 label: 'Los almaceno de forma física',
-                                                id: 'infra_alm_fis',
+                                                id: 'almacen_fis',
                                                 class: 'opciones',
                                                 col_bs_label: 'col-sm-12',
                                                 
@@ -220,7 +222,7 @@ define([
                                             Fx.form_input_check({
 
                                                 label: 'Usuario y Contraseña (formato digital)',
-                                                id: 'datos_acceso_digital',
+                                                id: 'almacen_acceso_digital',
                                                 class: 'opciones',
                                                 col_bs_label: 'col-sm-12',
                                             }),
@@ -228,7 +230,7 @@ define([
                                             Fx.form_input_check({
 
                                                 label: 'Armarios con llave de acceso (formato papel)',
-                                                id: 'datos_acceso_fisico',
+                                                id: 'almacen_acceso_fisico',
                                                 class: 'opciones',
                                                 col_bs_label: 'col-sm-12',
                                             }),
@@ -248,7 +250,7 @@ define([
 
                                             titulo: '<b>¿Su organización capta imágenes mediante cámaras de videovigilancia con fines de seguridad?</b>',
                                             subtitulo: 'Si tiene instaladas cámaras de videovigilancia en su negocio, márquelo y le daremos pautas a seguir para poder utilizarlas cumpliendo con la normativa de protección de datos.',
-                                            id: 'datos_imagenes',
+                                            id: 'almacen_imagenes',
                                             clase_grupo: '',
                                             inline: true,
 
@@ -309,7 +311,7 @@ define([
 
                                             titulo: '<b>¿Cada cuanto tiempo se borran las imágenes grabadas?</b>',
                                             subtitulo: '(no conteste si no guarda imágenes)',
-                                            id: 'datos_almacen',
+                                            id: 'almacen_borrado',
                                             clase_grupo: '',
                                             inline: '',
 
@@ -331,7 +333,7 @@ define([
 
                                             titulo: '<b>¿Dispone de dispositivos de almacenaje de datos personales propio?</b>',
                                             subtitulo: '(servidores, discos duros, pen-drives, ordenadores de trabajo en local)',
-                                            id: 'datos_almacen',
+                                            id: 'almacen_propio',
                                             clase_grupo: '',
                                             inline: true,
 
@@ -343,6 +345,69 @@ define([
                                             }
                                         }),
                                     '</div>',
+
+                                '</div>',
+
+                                '<div class="row">',
+
+                                    '<div class="col-sm-6 campo">',
+
+                                        '<p>Especifique la cantidad de dispositivos de su empresa</p>',
+
+                                        Fx.form_input({
+                                            label: 'Servidores de datos',
+                                            id: 'almacen_servidores',
+                                            ayuda: '',
+                                            placeholder: '',
+                                            valor: '',
+                                            tipo: 'text',
+                                            clase: 'solo_numero',
+                                            //min_char: '3',
+                                            col_bs_label: 'col-sm-8 col-sm-offset-1',
+                                            col_bs_input: 'col-sm-2',
+                                        }),
+
+                                        Fx.form_input({
+                                            label: 'Discos duros',
+                                            id: 'almacen_discos',
+                                            ayuda: '',
+                                            placeholder: '',
+                                            valor: '',
+                                            tipo: 'text',
+                                            clase: 'solo_numero',
+                                            //min_char: '3',
+                                            col_bs_label: 'col-sm-8 col-sm-offset-1',
+                                            col_bs_input: 'col-sm-2',
+                                        }),
+                                        
+                                        Fx.form_input({
+                                            label: 'USB Pendrives',
+                                            id: 'almacen_pen',
+                                            ayuda: '',
+                                            placeholder: '',
+                                            valor: '',
+                                            tipo: 'text',
+                                            clase: 'solo_numero',
+                                            //min_char: '3',
+                                            col_bs_label: 'col-sm-8 col-sm-offset-1',
+                                            col_bs_input: 'col-sm-2',
+                                        }),
+
+                                        Fx.form_input({
+                                            label: 'Ordenadores de trabajo en local',
+                                            id: 'almacen_pc',
+                                            ayuda: '',
+                                            placeholder: '',
+                                            valor: '',
+                                            tipo: 'text',
+                                            clase: 'solo_numero',
+                                            //min_char: '3',
+                                            col_bs_label: 'col-sm-8 col-sm-offset-1',
+                                            col_bs_input: 'col-sm-2',
+                                        }),
+
+                                    '</div>',
+
                                     /*
                                     '<div class="col-sm-6 campo radio">',
                                         Fx.form_input_radio({
@@ -374,7 +439,7 @@ define([
 
                                             titulo: '<b>¿Su empresa realiza las tareas de mantenimiento informático?</b>',
                                             subtitulo: '',
-                                            id: 'datos_mantenimiento',
+                                            id: 'almacen_manteni',
                                             clase_grupo: '',
                                             inline: '',
 
@@ -395,7 +460,7 @@ define([
 
                                             titulo: '<b>¿Cada tiempo cuanto realizan copias de seguridad de sus datos?</b>',
                                             subtitulo: '',
-                                            id: 'datos_backup',
+                                            id: 'almacen_backup',
                                             clase_grupo: '',
                                             inline: '',
 
@@ -403,9 +468,9 @@ define([
                                             col_bs_radio: 'col-sm-12',
                                             opciones_json: {
                                                 0: 'Diariamente.',
-                                                0: 'Semanalmente.',
-                                                1: 'Mensualmente.',
-                                                2: 'No realizo copia de seguridad.'
+                                                1: 'Semanalmente.',
+                                                2: 'Mensualmente.',
+                                                3: 'No realizo copia de seguridad.'
                                             }
                                         }),
 

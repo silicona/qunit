@@ -17,6 +17,14 @@
 		/*font-size: 13px;
 		line-height: 1.2em;
 		font-family: roboto;*/
+
+		&.login-content:before {
+
+			background-color: $blanco;
+			background-image: url('../media/fondo_inicio.jpg');
+			background-size: cover;
+			height: 100%;
+		}
 	}
 
 	#app {
@@ -138,6 +146,16 @@
 		}
 
 	}
+
+/* LOGIN */
+
+.login {
+
+	.logo-login {
+
+		width: 100%;
+	}
+}
 
 /* LOPD */
 .lopd {

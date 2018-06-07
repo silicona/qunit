@@ -34,6 +34,9 @@ define([
 		render: function(){
 			
 			this.$el.html(this.html);
+
+			this.$('#usuario').focus();
+			
 			return this;
 			
 		},
