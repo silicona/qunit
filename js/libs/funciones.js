@@ -172,6 +172,17 @@ define([
 
 		},
 
+		objeto_a_array: function( objeto ){
+
+			var array = [];
+			$.each( objeto, function(clave, valor){
+
+				array.push( valor.trim() );
+			});
+
+			return array;
+		},
+
 		arr_a_select: function(id_select, array){
 
 			var str_html = '';
@@ -478,7 +489,7 @@ define([
 			var arr_html = [
 				'<div class="form-group div_' + id + '">',
 			    	'<label class="' + col_bs_label + ' control-label" for="' + id + '" title="' + ayuda + '">' + boton_info + label + '</label>',
-					'<div class="input-group ' + col_bs_input + '">',
+					'<div class="input-group text ' + col_bs_input + '">',
 				    	'<input title="' + title + '" ' + this.objeto_a_string(atributos) + disabled + ' type="' + tipo + '" value="' + valor + '" ' + attr + ' class="form-control ' + clase + '" id="' + id + '" placeholder="' + placeholder + '" >',
 				  		
 					'</div>',
@@ -682,7 +693,7 @@ define([
 				arr_opciones  = [],
 				titulo        = obj_datos.titulo|| '',
 				subtitulo     = obj_datos.subtitulo || '',
-				valor         = obj_datos.valor
+				valor         = obj_datos.valor || '';
 
             if( (checked == 1) || (checked == "checked") ){ checked = 'checked="checked"'; }
 

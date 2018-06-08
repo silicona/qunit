@@ -196,7 +196,7 @@
 			width: 48%;
 
 			/*&+ .campo{*/
-			&:nth-of-type(even){
+			&:nth-of-type(even), &:nth-of-type(n + 2) {
 				float: right;
 			}
 		}
@@ -209,6 +209,26 @@
 		label {
 			float: unset;
 			text-align: left;
+		}
+
+		&.textos {
+
+			.form-group { 
+				margin-bottom: 0px;
+
+				label {
+					top: -10px;
+					text-align: right;
+				}
+			}
+		}
+
+		.text {
+			display: inline-block;
+
+			.solo_numero {
+				border-bottom: 1px solid $verde_ama;
+			}
 		}
 
 		.radio-inline { 
@@ -272,6 +292,11 @@
 
 						&:after { left: -6px; }
 					}
+				}
+
+				.in_bloque {
+
+					display: inline-block;
 				}
 			}
 			

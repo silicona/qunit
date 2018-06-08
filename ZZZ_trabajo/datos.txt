@@ -28,3 +28,119 @@ aceptar_condiciones
 
 
 datos de usuario
+
+
+1 - form_lopd_empresa
+empresa - var
+direccion - var
+cp - int
+cif - var
+telefono - var
+email - var
+nombre_responsable - var
+email_lopd - ver
+sector - select 0-3
+descripcion - text
+
+2 - form_lopd_infra
+almacen_elec - ch
+almacen_fis - ch
+almacen_acc_dig - ch
+almacen_acc_fis - ch
+
+almacen_imagenes - sn
+almacen_borrado - ra 0-3
+almacen_propio - sn
+
+almacen_servidores - var
+almacen_discos - var
+almacen_pen - var
+almacen_pc - var
+
+almacen_manteni - ra 0-2
+almacen_backup - ra 0-3
+
+3 - Cliente
+cliente_sino - sn
+
+cliente_identificacion - ch
+cliente_caracteristicas - ch
+cliente_academicos - ch
+cliente_bancarios - ch
+
+cliente_servicio - ch
+cliente_facturar - ch
+cliente_publicidad - ch
+cliente_post - ch
+
+cliente_tributaria - ch
+cliente_ss - ch
+cliente_bancos - ch
+cliente_seguridad - ch
+cliente_otros - ch
+
+cliente_gestoria - ch
+
+4 - Futuro
+futuro_sino - sn
+
+futuro_identificacion - ch
+futuro_caracteristicas - ch
+futuro_academicos - ch
+
+futuro_propio - ch
+futuro_tercera - ch
+
+futuro_agencia - ch
+futuro_imprenta - ch
+futuro_exclusivo - ch
+
+5 - Empleados
+empleados_sino - sn
+
+empleados_identificacion - ch
+empleados_caracteristicas - ch
+empleados_academicos - ch
+empleados_profesion - ch
+empleados_bancos - ch
+
+empleados_nomina - ch
+empleados_formacion - ch
+empleados_relacion - ch
+
+empleados_propio - ch
+empleados_tercera - ch
+
+empleados_gestion - sn
+empleados_mutua - sn
+empleados_formar - sn
+empleados_prevencion - sn
+
+6 - Candidatos
+candidatos_sino - sn
+
+candidatos_identificacion - ch
+candidatos_caracteristicas - ch
+candidatos_academicos - ch
+candidatos_profesion - ch
+
+candidatos_curriculum - ch
+candidatos_web - ch
+candidatos_form - ch
+
+candidatos_borrado - ra 0-3
+
+7 - Proveedores
+proveedores_sino - sn
+
+proveedores_identificacion - ch
+proveedores_bancos - ch
+
+proveedores_factura - ch
+proveedores_pedido - ch
+
+
+
+
+
+
