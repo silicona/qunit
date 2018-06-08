@@ -1,0 +1,22 @@
+form_lopd_infra
+
+	almacen_elec - bool
+	almacen_fis - bool
+
+	almacen_acceso_digital - bool
+	almacen_acceso_fisico - bool
+
+	almacen_imagenes - bool
+	almacen_borrado - int
+
+	almacen_propio - bool
+	almacen_servidores - int
+	almacen_manteni - int
+	almacen_backup
+
+	almacen_servidores - int
+	almacen_discos - int
+	almacen_pen - int
+	almacen_pc - int
+
+
