@@ -125,13 +125,22 @@ footer {
   .lopd .campo.col-sm-6 {
     width: 48%;
     /*&+ .campo{*/ }
-    .lopd .campo.col-sm-6:nth-of-type(even) {
+    .lopd .campo.col-sm-6:nth-of-type(even), .lopd .campo.col-sm-6:nth-of-type(n + 2) {
       float: right; }
   .lopd .campo p {
     margin: 1ex 0; }
   .lopd .campo label {
     float: unset;
     text-align: left; }
+  .lopd .campo.textos .form-group {
+    margin-bottom: 0px; }
+    .lopd .campo.textos .form-group label {
+      top: -10px;
+      text-align: right; }
+  .lopd .campo .text {
+    display: inline-block; }
+    .lopd .campo .text .solo_numero {
+      border-bottom: 1px solid #aa0; }
   .lopd .campo .radio-inline {
     margin-left: 0px;
     padding-left: 15px;
@@ -158,6 +167,8 @@ footer {
     left: -10px; }
   .lopd .campo .radio.col-sm-6 .radio-inline i.input-helper:after, .lopd .campo.radio.col-sm-6 .radio-inline i.input-helper:after {
     left: -6px; }
+  .lopd .campo .radio.col-sm-6 .in_bloque, .lopd .campo.radio.col-sm-6 .in_bloque {
+    display: inline-block; }
   .lopd .campo .radio input:checked + .input-helper:after, .lopd .campo.radio input:checked + .input-helper:after {
     background: #aa0;
     transform: scale(1.4); }

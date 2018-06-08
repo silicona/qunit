@@ -38,6 +38,14 @@ define([
 			4: 'Suministros'
 		},
 
+		obj_lopd_secciones: {
+			0: 'clientes',
+			1: 'futuros',
+			2: 'empleados',
+			3: 'candidatos',
+			4: 'proveedores',
+		},
+
 		obj_clientes:{},
 
 		obj_usuario: {}

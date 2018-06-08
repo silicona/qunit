@@ -4,12 +4,13 @@ define([
 	'underscore',
 	'backbone',
 	'funciones',
+	'app/config',
 	'app/formulario',
 	'app/calidad',
 
 	'app/views/lopd/html/lopdViewHtml'
 
-], function( $, _, backbone, Fx, Formulario, Calidad, LopdViewHtml ){
+], function( $, _, backbone, Fx, Config, Formulario, Calidad, LopdViewHtml ){
 	
 	'use strict';
 
@@ -29,6 +30,7 @@ define([
 			'click .lopd_sino input' : 'abrir_opciones',
 			'click .lopd_sino #no' : 'registrar_no',
 			'click #botones_ant_sig ul.pagination li' : 'determinar_posicion',
+			'keypress .solo_numero': 'escribir_solo_numeros',
 			//'click .tabs_lopd li a' : 'establecer_hash',
 
 			'click #btn_procesar' : 'procesar',
@@ -91,7 +93,7 @@ define([
 
 			var seccion = $(e.currentTarget).parents()[1].id.split('_')[0];
 			//console.log('valor:',e.currentTarget.value);
-			if(e.currentTarget.value == 'no'){
+			if(e.currentTarget.value == 1){
 
 				this.registrar_no(seccion);
 			} else {
@@ -136,6 +138,18 @@ define([
 
 		},
 
+		anadir_a_objeto: function(objeto_final, objeto_a_anadir){
+
+			for( var clave in objeto_a_anadir ){
+
+				if( objeto_final[clave] == undefined ){
+
+					objeto_final[clave] = objeto_a_anadir[clave];
+				}
+			};
+
+			return objeto_final;
+		},
 
 		determinar_posicion: function(e){
 
@@ -196,6 +210,22 @@ define([
 			console.log('window.location.hash POST', window.location.hash);
 		},
 
+		escribir_solo_numeros: function(e){
+
+			console.log('Evento', e);
+			console.log('Evento key:', e.key);
+			var permitidos = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+			if( permitidos.indexOf(e.key) == - 1 ){
+				return false;
+			}
+
+			return true;
+		},
+
+
+		/*
+		 * PROCESAMIENTO
+		 */
 
 		procesar: function(e){
 			
@@ -206,35 +236,56 @@ define([
 				campo_resp = esto.$('#resp_procesar_lopd');
 
 			var obj_form = Calidad.actualizar_obj_form( '#form_lopd_empresa' );
-
 			$.each( obj_form, function(id, valor){
-				console.log('Valor: ', valor);
+				//console.log('Valor: ', valor);
+
+				if( id == 'nombre_responsable'){ return true; }
+
 				if( valor == '' ){
 					error += 'El campo ' + Fx.capitalize(id) + ' de Su Empresa no está rellenado.<br>';
 				}
 
-			})
+			});
 
-			/*
-			if( error != '' ){
+			var obj_form_infra = Calidad.actualizar_obj_form( '#form_lopd_infra' );
+			$.each( obj_form_infra, function(id, valor){
+				//console.log('Valor: ', valor);
+				if( valor == '' ){
+					error += 'El campo ' + Fx.capitalize(id) + ' de Su Estructura no está rellenado.<br>';
+				}
+			});
 
-				campo_resp.html( Fx.bs_alert(error + 'Rellene los datos que faltan para poder procesar los documentos, por favor.', 'danger') );
-				return false;
-			}
-			*/
 
 
-			//console.log('form:', this.$('#form_lopd_empresa'));
-			//console.log('Obj form:', obj_form);
-			var inter = JSON.stringify( obj_form );
 
 			var obj_lopd = this.actualizar_obj_lopd();
 
-			inter += JSON.stringify( obj_lopd );
+			console.log('Obj lopd', obj_lopd);
+			
+			if( Array.isArray(obj_lopd) ){
+
+				error += obj_lopd.join('');
+			}
+
+			if( error != '' ){
+
+				campo_resp.html( Fx.bs_alert( 'Rellene los datos que faltan para poder procesar los documentos, por favor.<br><br>' + error, 'danger') );
+				//return false;
+			}
+			
+			obj_form = this.anadir_a_objeto( obj_form, obj_form_infra);
+			console.log('Obj_form final:', obj_form);
+
+			//console.log('form:', this.$('#form_lopd_empresa'));
+			//console.log('Obj form:', obj_form);
+			//var inter = JSON.stringify( obj_form );
+
+
+			//inter += JSON.stringify( obj_lopd );
 			//console.log('Obj LOPD:', obj_lopd);
 
 			//this.$('#resp_procesar_lopd').html( 'Llegamos' );
-			campo_resp.append( inter );
+			//campo_resp.append( inter );
 
 
 			//var cod_contratacion = this.$('#cod_contratacion').val();
@@ -258,41 +309,83 @@ define([
 
 				//this.guardar_cliente();
 
-
-
 		},
 
 		actualizar_obj_lopd: function(){
 
 			// Prepara el obj de datos
 			var obj_lopd = {};
+			var errores = ['<br>'];
 
-			// campos de primera pagina
-			//obj_lopd['formulario'] = Calidad.actualizar_obj_form( this.$('') );
+			// Detectamos las secciones con sino sin contestar y devolvemos las erroneas
+			var secciones = Fx.objeto_a_array( Config.obj_lopd_secciones );
+			var sec_error = secciones.filter( seccion => this.secciones_si.indexOf(seccion) == - 1 );	
+			sec_error = sec_error.filter( seccion => this.secciones_no.indexOf(seccion) == - 1 );
+
+			if( sec_error.length > 0){
+
+				for( var indice in sec_error) {
+
+					if( sec_error[indice] == 'futuros') { sec_error[indice] = 'futuros clientes'}
+
+					errores.push( 'La primera pregunta de ' + Fx.capitalize(sec_error[indice]) + ' no está respondida.<br>' );
+				}
+
+				errores.push['<br>'];
+			}
+
+			if( errores.length > 1 ){ return errores; }
 
 			// seccion si
 			obj_lopd['sec_si'] = {};
 
 			$.each(this.secciones_si, function(index, seccion){
+				var ni_una_resp = true;
 
 				obj_lopd['sec_si'][seccion] = {};
 
-				console.warn( 'Seccion: ', seccion );
-				$('input[type=checkbox], input[type=radio]', '#' + seccion + '_extra').each(function(indice, valor){
+				//console.warn( 'Seccion: ', seccion );
+				$('input[type=checkbox]', '#' + seccion + '_extra').each(function(indice, input){
 
-					//console.log('Valor: ', valor)
-					//if( this.checked ){
-						obj_lopd['sec_si'][seccion][$(this).attr('id')] = valor.checked;
+					//console.log('Indice: ', indice);
+					//console.log('Valor: ', input);
+
+					//switch( input.type ){
+
+						//case 'checkbox':
+							var valor = 0;
+							if( this.checked ){ valor = 1 }
+							obj_lopd['sec_si'][seccion][$(this).attr('id')] = valor;
+
+					
+					if( this.checked ){ ni_una_resp = false; }
+				});
+							//break;
+				$('div.radio-group', '#' + seccion + '_extra').each(function(indice, grupo){
+					
+							var valor = '';
+							if(this.checked){ 
+								valor = input.value == '0' ? 1 : 0;
+
+							}
+					obj_lopd['sec_si'][seccion]['r ' + $(this).attr('id')] = valor;
+
 					//}
-				})
+				});
 
+				if( ni_una_resp ){
+
+					errores.push( 'Debe marcar alguna opción de la pestaña ' + Fx.capitalize(seccion) + '.<br>');
+					return true;
+				}
+				
 			});
 
+			if( errores.length > 1 ){ return errores; }
 
 			// secciones no
 			obj_lopd['sec_no'] = this.secciones_no;
-
-
+			
 			return obj_lopd;
 
 		}
