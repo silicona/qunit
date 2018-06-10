@@ -555,7 +555,7 @@ define([
                 disabled       = obj_datos.disabled    || '',
                 atributos      = obj_datos.atributos   || {},
                 clase_grupo    = obj_datos.clase_grupo || '',
-                clase          = obj_datos.clase || '',
+                clase          = obj_datos.class || '',
 
                 col_bs_label   = obj_datos.col_bs_label || '',
                 title          = obj_datos.title || '',
@@ -703,7 +703,7 @@ define([
 
             	var opcion = [
             				'<label class="radio' + inline + ' ' + col_bs_radio + '">',
-            					'<input type="radio" name="' + id + '" value="' + valor + '" id="' + id + '_' + valor + '">',
+            					'<input type="radio" name="' + id + '" value="' + index + '" id="' + id + '_' + index + '">',
             					// '<input type="radio" name="' + id + '" value="' + valor + '" id="' + valor + '">',
             					'<i class="input-helper"></i>',
             					Fx.capitalize(valor), 

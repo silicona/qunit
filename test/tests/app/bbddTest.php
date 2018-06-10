@@ -1,6 +1,7 @@
 <?php
 
 	require_once '../lib/bbdd.php';
+	require_once '../api/entidades/App.php';
 
 	class BbddTest extends \PHPUnit\Framework\TestCase {
 
@@ -37,7 +38,7 @@
 			$this -> assertTrue( $resultado, 'No ha finalizado la transaction' );
 		}
 
-		public function test_obtener_link(){
+		public function test_BBDD_BASICO_obtiene_nombre_admin(){
 
 			$arr_link = array(
 				self::$conexion,
@@ -46,7 +47,7 @@
 
 			foreach( $arr_link as $link ){
 
-				$sql = 'SELECT count(id_usuario) FROM cld_usuarios';
+				$sql = 'SELECT login FROM cld_usuarios where id_usuario = 1';
 
 				$res = mysqli_query( $link, $sql );
 				
@@ -54,7 +55,7 @@
 				
 				//$this -> assertGreaterThan( 0, $cantidad, 'Sin contacto con la BBDD: ' . mysqli_error($link) );
 				print_r($cantidad);
-				$this -> assertGreaterThan( 0, $cantidad, 'Sin contacto con la BBDD: ' . mysqli_connect_error() );
+				$this -> assertEquals( 'admin', $cantidad, 'Sin contacto con la BBDD: ' . mysqli_connect_error() );
 			}
 		}
 
@@ -79,20 +80,21 @@
 			// }
 		}
 
-		public function lll_test_leer_entorno(){
+		public function test_leer_entorno(){
 
 			$arr_keys = array(
 				'dominio',	'carpeta',	'entorno',
 				'host', 'user', 'pass', 'nombre'
 			);
 
-			$arr_variables = Cliente::leer_entorno();
+			$arr_variables = App::detectar_entorno();
 
 			$this -> assertNotNull( $arr_variables );
-						
+			
+			print_r(__FILE__);		
 			foreach( $arr_keys as $key ){
 
-				$this -> assertArrayHasKey( $key, $arr_variables );
+				//$this -> assertArrayHasKey( $key, $arr_variables );
 			}
 		}
 

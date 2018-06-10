@@ -92,11 +92,13 @@ define([
 		abrir_opciones: function(e){
 
 			var seccion = $(e.currentTarget).parents()[1].id.split('_')[0];
-			//console.log('valor:',e.currentTarget.value);
-			if(e.currentTarget.value == 1){
+			var valor = e.currentTarget.value;
+			if(valor == 2){
 
 				this.registrar_no(seccion);
-			} else {
+			} 
+
+			if(valor == 1){
 
 				this.$('#' + seccion + '_extra').show(600);
 
@@ -155,14 +157,7 @@ define([
 
 			console.log('determinar', e);
 			e.preventDefault();
-			e.stopPropagation();
-
-			// this.check_btn_demo();
-
-			// if( this.check_iso() == false ){
-			// 	this.posicion = 1;
-			// 	return false;
-			// }
+			//e.stopPropagation();
 
 			var className = e.currentTarget.className,
 				posicion = this.posicion;
@@ -185,17 +180,19 @@ define([
 			}
 
 			if( className.indexOf('last') > -1 ){
-				posicion = 9;
+				posicion = 8;
 				console.log('Last', posicion);
 			}
 
 			if(posicion < 1){ posicion = 1;}
-			if(posicion > 9){ posicion = 9;}			
+			if(posicion > 8){ posicion = 8;}			
 			//console.log('posicion', posicion);
 
-			this.$('.tabs_lopd li a[data-pos="' + posicion + '"]').trigger('click');
-			
 			this.posicion = posicion;
+
+			console.log( 'Posicion final', this.posicion );
+			//this.$('.tabs_lopd li a[data-pos="' + posicion + '"]').trigger('click');
+			
 
 			this.establecer_hash();
 
@@ -212,8 +209,8 @@ define([
 
 		escribir_solo_numeros: function(e){
 
-			console.log('Evento', e);
-			console.log('Evento key:', e.key);
+			//console.log('Evento', e);
+			//console.log('Evento key:', e.key);
 			var permitidos = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
 			if( permitidos.indexOf(e.key) == - 1 ){
 				return false;
@@ -235,46 +232,66 @@ define([
 				error = '',
 				campo_resp = esto.$('#resp_procesar_lopd');
 
+			campo_resp.html('');
+
 			var obj_form = Calidad.actualizar_obj_form( '#form_lopd_empresa' );
 			$.each( obj_form, function(id, valor){
 				//console.log('Valor: ', valor);
 
-				if( id == 'nombre_responsable'){ return true; }
+				if( id == 'nombre_responsable' || id == 'descripcion' ){ return true; }
 
-				if( valor == '' ){
-					error += 'El campo ' + Fx.capitalize(id) + ' de Su Empresa no está rellenado.<br>';
+				if( valor == '' || valor == 0 ){
+					error += 'El campo ' + Fx.capitalize(id) + ' de Su Empresa no está completado.<br>';
+				}
+
+				if( id == 'telefono' ){
+
+					if( valor.length != 9 ){
+
+						error += 'El valor del campo ' + Fx.capitalize(id) + ' de Su Empresa no es correcto.<br>';
+					}
+				}
+
+				if( id == 'cp' ){
+
+					if( valor.length != 5 ){
+						
+						error += 'El valor del campo ' + Fx.capitalize(id) + ' de Su Empresa no es correcto.<br>';
+					}
+				}
+
+				if( id == 'email' || id == 'email_lopd' ){
+
+					var reg = /[\w\.]+@([\w\.]+)?[\w]\.\w{2,5}/;
+					if( !reg.test(valor) ){
+						
+						error += 'El valor del campo ' + Fx.capitalize(id) + ' de Su Empresa no es correcto.<br>';
+					}
 				}
 
 			});
 
-			var obj_form_infra = Calidad.actualizar_obj_form( '#form_lopd_infra' );
-			$.each( obj_form_infra, function(id, valor){
-				//console.log('Valor: ', valor);
-				if( valor == '' ){
-					error += 'El campo ' + Fx.capitalize(id) + ' de Su Estructura no está rellenado.<br>';
-				}
-			});
+			var obj_estru = this.actualizar_obj_estru();
 
-
-
+			if( Array.isArray(obj_estru) ){ error += obj_estru.join(''); }
 
 			var obj_lopd = this.actualizar_obj_lopd();
-
-			console.log('Obj lopd', obj_lopd);
 			
-			if( Array.isArray(obj_lopd) ){
-
-				error += obj_lopd.join('');
-			}
+			if( Array.isArray(obj_lopd) ){ error += obj_lopd.join(''); }
 
 			if( error != '' ){
 
 				campo_resp.html( Fx.bs_alert( 'Rellene los datos que faltan para poder procesar los documentos, por favor.<br><br>' + error, 'danger') );
-				//return false;
+				return false;
 			}
 			
-			obj_form = this.anadir_a_objeto( obj_form, obj_form_infra);
+			obj_form = this.anadir_a_objeto( obj_form, obj_estru );
+			obj_form = this.anadir_a_objeto( obj_form, obj_lopd );
 			console.log('Obj_form final:', obj_form);
+
+			this.guardar_lopd(obj_form);
+
+
 
 			//console.log('form:', this.$('#form_lopd_empresa'));
 			//console.log('Obj form:', obj_form);
@@ -311,15 +328,185 @@ define([
 
 		},
 
+		guardar_lopd: function(obj_form){
+
+			var resp = $.ajax({
+
+				type: 'POST',
+				url: Config.base_ajax + 'lopd.php',
+				data: {
+					accion: 'guardar_crudo',
+					hash: Calidad.hash(),
+					obj_form: obj_form,
+				}
+			});
+		},
+
+		actualizar_obj_estru: function(){
+
+			var obj_estru = {},
+				esto = this,
+				errores = ['<br>'];
+
+			$( '.campo.col-sm-6', esto.$('#form_lopd_estru') ).each(function(indice, campo){
+
+				var marcado = false;
+
+				$( 'input[type=checkbox]', campo ).each(function(indice, input){
+
+					if( this.checked ){
+
+						marcado = true;
+						obj_estru[$(this).attr('name')] = this.value;
+					}
+				});
+
+				$( 'div.radio-group', campo ).each(function(indice, grupo){
+					
+					if( grupo.id == 'estru_borrado' ){
+
+						var no_grabacion = esto.$('#estru_imagenes input:checked').val() == 2; 
+						
+						if( no_grabacion ){
+							marcado = true;
+							return true;
+						}
+					}
+ 	
+					$('input', grupo).each(function(indice, input){
+						
+
+						if( this.checked ){
+
+							marcado = true;
+							obj_estru[$(this).attr('name')] = this.value;
+						}
+					});
+				});
+
+				$( 'input[type=text]', campo ).each(function(indice, input){
+
+					marcado = true;
+					if( this.value ){
+
+						obj_estru[$(this).attr('id')] = this.value;
+
+					} else {
+
+						var nom = $(this).attr('id').replace('estru_', '');
+						errores.push( 'Falta el dato ' + Fx.capitalize(nom) + ' del campo de Dispositivos de Su Estructura.<br>');
+					}
+				});
+
+				if( !marcado ){
+
+					var nombre = $(this).attr('id').replace('campo_', '');
+
+					switch( nombre ){
+
+						case 'datos':
+							nombre = 'almacenaje de datos';
+							break;
+
+						case 'acceso':
+							nombre = 'tipo de acceso';
+							break;
+
+						case 'imagenes':
+							nombre = 'grabación de imágenes';
+							break;
+
+						case 'borrado':
+							nombre += ' de imágenes';
+							break;
+
+						case 'discos':
+							nombre += 'discos duros';
+							break;
+
+						case 'propio':
+							nombre = 'almacenaje propio';
+							break;
+					}
+
+					errores.push( 'Falta contestar el campo ' + Fx.capitalize(nombre) + ' de Su Estructura.<br>');
+				}
+			});
+
+			if( errores.length > 1 ){ 
+
+				return errores; 
+
+			} else {
+
+				return obj_estru;
+			}
+		},
+
+
 		actualizar_obj_lopd: function(){
 
 			// Prepara el obj de datos
+			var esto = this;
 			var obj_lopd = {};
 			var errores = ['<br>'];
 
+			var sec_error = this.comprobar_seccion_sin_marcar();
+			errores = errores.concat(sec_error);
+
+			$.each(this.secciones_si, function(index, seccion){
+
+				var ni_una_resp = true;
+				//obj_lopd[seccion] = {};
+				obj_lopd[seccion + '_sino'] = '1';
+
+				$( 'input[type=checkbox]', esto.$('#' + seccion + '_extra') ).each(function(indice, input){
+
+					if( this.checked ){ 
+			
+						ni_una_resp = false;
+						obj_lopd[$(this).attr('id')] = this.value;
+					}
+
+				});
+
+				$( 'div.radio-group input', esto.$('#' + seccion + '_extra') ).each(function(indice, input){
+					
+					if( input.checked ){
+
+						ni_una_resp = false;	
+						obj_lopd[$(this).attr('name')] = this.value;
+					}
+
+				});
+
+				if( ni_una_resp ){
+
+					errores.push( 'Debe marcar alguna opción de la pestaña ' + Fx.capitalize(seccion) + '.<br>');
+				}
+				
+			});
+
+			//console.log('Errores: ', errores);
+			if( errores.length > 1 ){ return errores; }
+
+			// secciones no
+			$(this.secciones_no).each(function(indice, seccion){
+				
+				obj_lopd[seccion + '_sino'] = 2;
+			});
+			
+			return obj_lopd;
+		},
+
+
+		comprobar_seccion_sin_marcar: function(){
+
 			// Detectamos las secciones con sino sin contestar y devolvemos las erroneas
-			var secciones = Fx.objeto_a_array( Config.obj_lopd_secciones );
-			var sec_error = secciones.filter( seccion => this.secciones_si.indexOf(seccion) == - 1 );	
+			var errores = [],
+				secciones = Fx.objeto_a_array( Config.obj_lopd_secciones ),
+				sec_error = secciones.filter( seccion => this.secciones_si.indexOf(seccion) == - 1 );
+				
 			sec_error = sec_error.filter( seccion => this.secciones_no.indexOf(seccion) == - 1 );
 
 			if( sec_error.length > 0){
@@ -333,62 +520,9 @@ define([
 
 				errores.push['<br>'];
 			}
-
-			if( errores.length > 1 ){ return errores; }
-
-			// seccion si
-			obj_lopd['sec_si'] = {};
-
-			$.each(this.secciones_si, function(index, seccion){
-				var ni_una_resp = true;
-
-				obj_lopd['sec_si'][seccion] = {};
-
-				//console.warn( 'Seccion: ', seccion );
-				$('input[type=checkbox]', '#' + seccion + '_extra').each(function(indice, input){
-
-					//console.log('Indice: ', indice);
-					//console.log('Valor: ', input);
-
-					//switch( input.type ){
-
-						//case 'checkbox':
-							var valor = 0;
-							if( this.checked ){ valor = 1 }
-							obj_lopd['sec_si'][seccion][$(this).attr('id')] = valor;
-
-					
-					if( this.checked ){ ni_una_resp = false; }
-				});
-							//break;
-				$('div.radio-group', '#' + seccion + '_extra').each(function(indice, grupo){
-					
-							var valor = '';
-							if(this.checked){ 
-								valor = input.value == '0' ? 1 : 0;
-
-							}
-					obj_lopd['sec_si'][seccion]['r ' + $(this).attr('id')] = valor;
-
-					//}
-				});
-
-				if( ni_una_resp ){
-
-					errores.push( 'Debe marcar alguna opción de la pestaña ' + Fx.capitalize(seccion) + '.<br>');
-					return true;
-				}
-				
-			});
-
-			if( errores.length > 1 ){ return errores; }
-
-			// secciones no
-			obj_lopd['sec_no'] = this.secciones_no;
 			
-			return obj_lopd;
-
-		}
+			return errores;
+		},
 
 
 	});

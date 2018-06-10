@@ -35,15 +35,27 @@ define([
 					'</a>',	
 				'</div>',
 			'</div>',
-			/*
+			
 			'<div class="col-sm-3" id="boton_cliente">',
-				'<a href="#clientes/misdatos" class="boton_inicio" title="Ver los datos de tu empresa">',
-					'<i class="fa fa-user fa-4x"></i>',
-					'<span>Mis datos de empresa</span>',
-				'</a>',
+				'<div class="boton_inicio">',
+					'<a href="#clientes" title="Ver los datos de tu empresa">',
+						'<i class="fa fa-user fa-4x"></i>',
+						'<span>Clientes</span>',
+					'</a>',
+				'</div>',
+			'</div>',
+
+			'<div class="col-sm-3" id="boton_cliente_datos">',
+				'<div class="boton_inicio">',
+					'<a href="#clientes/misdatos" title="Ver los datos de tu empresa">',
+						'<i class="fa fa-user fa-4x"></i>',
+						'<span>Mis datos de empresa</span>',
+					'</a>',
+				'</div>',
 			'</div>',
 			
 
+			/*
 			'<div class="col-sm-3" id="boton_perfil">',
 				'<a href="#usuarios/perfil" class="boton_inicio" title="Ver tu perfil">',
 					'<i class="fa fa-user fa-4x"></i>',
@@ -55,13 +67,6 @@ define([
 				'<a href="#usuarios/misusuarios" class="boton_inicio" title="Ver tus usuarios">',
 					'<i class="fa fa-users fa-4x"></i>',
 					'<span>Tus usuarios</span>',
-				'</a>',
-			'</div>',
-
-			'<div class="col-sm-3" id="boton_test">',
-				'<a href="#test" class="boton_inicio" title="Acceder a los tests">',
-					'<i class="fa fa-institution fa-4x"></i>',
-					'<span>Test de Backbone</span>',
 				'</a>',
 			'</div>',
 

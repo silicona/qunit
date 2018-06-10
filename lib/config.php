@@ -29,15 +29,15 @@
     define('EMAIL_ADMIN',           'cesar@respirainternet.com');
     define('NOMBRE_EMAIL_ADMIN',    'César Chas');
 
-    define('EMAIL_ADMINISTRACION',           'administracion@abogadosyarbitraje.com');
-    define('NOMBRE_EMAIL_ADMINISTRACION',    'Abogados y Arbitraje');
+    define('EMAIL_ADMINISTRACION',           'calidad@oclem.com');
+    define('NOMBRE_EMAIL_ADMINISTRACION', 'Calidad Oclem');
 
-    define('EMAIL_INFO',           'administracion@abogadosyarbitraje.com');
-    define('NOMBRE_EMAIL_INFO',    'Abogados y Arbitraje');
+    define('EMAIL_INFO',           'calidad@oclem.com');
+    define('NOMBRE_EMAIL_INFO',    'Calidad Oclem');
 
-    define('EMAIL_SOLICITUDES',          'jrobledo@abogadosyarbitraje.com');
-    define('NOMBRE_EMAIL_SOLICITUDES',   'Julio Robledo');
-    define('TFNO_SOLICITUDES',          '+34605451052');
+    //define('EMAIL_SOLICITUDES',          'jrobledo@abogadosyarbitraje.com');
+    //define('NOMBRE_EMAIL_SOLICITUDES',   'Julio Robledo');
+    //define('TFNO_SOLICITUDES',          '+34605451052');
     
     /*
     define('EMAIL_SOLICITUDES',          'cesar@respirainternet.com');
@@ -68,22 +68,22 @@
     
     }
 
-    if( strpos(__FILE__, 'home/silicona') !== false || strpos(__FILE__, 'opt/lampp') !== false ){ 
+    if( strpos(__FILE__, 'var/www/html') !== false || strpos(__FILE__, 'opt/lampp') !== false ){ 
         
         /*******************************************************************************************/
         ///   ENTORNO DE PRUEBAS           ////
         /*******************************************************************************************/
         error_reporting(E_ERROR | E_WARNING | E_PARSE);
         
-        define('INM_DOMINIO', 'http://localhost/');
+        define('INM_DOMINIO', 'http://localhost');
         define('INM_CARPETA', 'oclemcalidad/');
 
         define('INM_ENTORNO', 'pruebas');
         
         $db_host    = "localhost"; 
-        $db_nombre  = "oclemcalidad";
-        $db_user    = "root"; 
-        $db_pass    = "";
+        $db_nombre  = "oclemcalidad_bbdd";
+        $db_user    = "usuario"; 
+        $db_pass    = "pass";
         
         $div_pruebas = '<div id="div_pruebas"><p class="text_center"><i class="fa fa-info-circle fa-lg" style="color:#333;font-size:18px;"></i> ESTÁS EN EL SERVIDOR DE PRUEBAS</p></div>';
     

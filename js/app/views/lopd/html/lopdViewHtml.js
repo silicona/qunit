@@ -75,41 +75,79 @@ define([
                                         col_bs_input: 'col-sm-8',
                                     }),
 
-                                    Fx.form_input({
-                                        label: 'Código postal',
-                                        id: 'cp',
-                                        valor: '',
-                                        tipo: 'text',
-                                        clase: 'texto obligatorio',
-                                        min_char: '3',
-                                        col_bs_label: 'col-sm-3',
-                                        col_bs_input: 'col-sm-8',
-                                    }),
+                                    '<div class="row">',
+
+                                        '<div class="col-sm-6">',
+
+                                            Fx.form_input({
+                                                label: 'Localidad',
+                                                id: 'localidad',
+                                                valor: '',
+                                                tipo: 'text',
+                                                clase: 'texto obligatorio',
+                                                placeholder: '',
+                                                min_char: '3',
+                                                col_bs_label: 'col-sm-6',
+                                                col_bs_input: 'col-sm-6',
+                                            }),
+
+                                        '</div>',
+
+                                        '<div class="col-sm-6">',
+
+                                            Fx.form_input({
+                                                label: 'Código postal',
+                                                id: 'cp',
+                                                valor: '',
+                                                tipo: 'text',
+                                                clase: 'texto obligatorio solo_numero',
+                                                placeholder: '10001',
+                                                min_char: '4',
+                                                col_bs_label: 'col-sm-6',
+                                                col_bs_input: 'col-sm-4',
+                                            }),
+
+                                        '</div>',
+
+                                    '</div>',
+
+                                    '<div class="row">',
+
+                                        '<div class="col-sm-6">',
+
+                                            Fx.form_input({
+                                                label: 'CIF',
+                                                id: 'cif',
+                                                valor: '',
+                                                tipo: 'text',
+                                                clase: 'texto obligatorio',
+                                                col_bs_label: 'col-sm-6',
+                                                col_bs_input: 'col-sm-6',
+                                            }),
+
+                                        '</div>',
+
+                                        '<div class="col-sm-6">',
+
+                                            Fx.form_input({
+                                                label: 'Teléfono',
+                                                id: 'telefono',
+                                                valor: '',
+                                                placeholder: '645123789',
+                                                tipo: 'text',
+                                                clase: 'telefono solo_numero obligatorio',
+                                                min_char: '3',
+                                                col_bs_label: 'col-sm-6',
+                                                col_bs_input: 'col-sm-4',
+                                            }),
+
+                                        '</div>',
+
+                                    '</div>',
+
 
                                     Fx.form_input({
-                                        label: 'CIF',
-                                        id: 'cif',
-                                        valor: '',
-                                        tipo: 'text',
-                                        clase: 'texto obligatorio',
-                                        col_bs_label: 'col-sm-3',
-                                        col_bs_input: 'col-sm-5',
-                                    }),
-
-                                    Fx.form_input({
-                                        label: 'Teléfono',
-                                        id: 'telefono',
-                                        valor: '',
-                                        tipo: 'text',
-                                        clase: 'telefono',
-                                        min_char: '3',
-                                        col_bs_label: 'col-sm-3',
-                                        col_bs_input: 'col-sm-5',
-                                    }),
-
-
-                                    Fx.form_input({
-                                        label: 'Dirección de correo electrónico de la empresa:',
+                                        label: 'Correo electrónico de la empresa:',
                                         id: 'email',
                                         valor: '',
                                         placeholder: 'email_de_empresa@suempresa.com',
@@ -134,7 +172,7 @@ define([
 
                                     Fx.form_input({
                                         
-                                        label: 'Dirección de correo electrónico para la LOPD',
+                                        label: 'Correo electrónico para la LOPD',
                                         id: 'email_lopd',
                                         ayuda: 'Escriba el email de la persona responsable de la seguridad o, en su defecto, el email utilizado para atender las cuestiones relativas a la LOPD.',
                                         placeholder: 'email_para_lopd@suempresa.com',
@@ -149,7 +187,7 @@ define([
 
                                     Fx.form_select({
 
-                                        label: 'Indique el sector de su empresa',
+                                        label: '(*) Indique el sector de su empresa',
                                         id: 'sector',
                                         clase: 'obligatorio',
                                         col_bs_label: 'col-sm-3',
@@ -178,11 +216,23 @@ define([
                         // Su estructura
                         '<div class="tab-pane fade" id="tab2">',
 
-                            '<div id="form_lopd_infra" class="sep30 col-sm-10 col-sm-offset-1 clearfix">',
+                            '<div class="col-sm-10 col-sm-offset-1 campo">',
+
+                                '<p>',
+
+                                    'Los datos que incorpore en el programa desde esta pantalla hasta la finalización del programa, se van a utilizar para elaborar los documentos que se generan automáticamente adaptados a su organización.',
+
+                                    '<br>Es obligatorio cumplimentar todos los campos de esta pestaña.',
+
+                                '</p>',
+                            
+                            '</div>',
+
+                            '<div id="form_lopd_estru" class="sep30 col-sm-10 col-sm-offset-1 clearfix">',
 
                                 '<div class="row">',
 
-                                    '<div class="col-sm-6 campo">',
+                                    '<div class="col-sm-6 campo" id="campo_datos">',
 
                                         '<p><b>¿Cómo almacena los datos de caracter personal?</b></p>',
 
@@ -190,24 +240,25 @@ define([
 
                                             Fx.form_input_check({
                                                 label: 'Los almaceno de forma electrónica',
-                                                id: 'almacen_elec',
+                                                id: 'estru_electronica',
                                                 class: 'opciones',
                                                 col_bs_label: 'col-sm-12',
+                                                valor: 'checked',
                                             }),
 
                                             Fx.form_input_check({
                                                 label: 'Los almaceno de forma física',
-                                                id: 'almacen_fis',
+                                                id: 'estru_fisica',
                                                 class: 'opciones',
                                                 col_bs_label: 'col-sm-12',
-                                                
+                                                valor: 'checked',
                                             }),
 
                                         '</div>',
 
                                     '</div>',
 
-                                    '<div class="col-sm-6 campo">',
+                                    '<div class="col-sm-6 campo" id="campo_acceso">',
 
                                         '<p><b>¿Que tipo de acceso es necesario para acceder a los datos almacenados?</b></p>',
 
@@ -216,17 +267,19 @@ define([
                                             Fx.form_input_check({
 
                                                 label: 'Usuario y Contraseña (formato digital)',
-                                                id: 'almacen_acc_dig',
+                                                id: 'estru_acceso_digital',
                                                 class: 'opciones',
                                                 col_bs_label: 'col-sm-12',
+                                                valor: 'checked',
                                             }),
 
                                             Fx.form_input_check({
 
                                                 label: 'Armarios con llave de acceso (formato papel)',
-                                                id: 'almacen_acc_fis',
+                                                id: 'estru_acceso_fisico',
                                                 class: 'opciones',
                                                 col_bs_label: 'col-sm-12',
+                                                valor: 'checked',
                                             }),
 
                                         '</div>',
@@ -238,33 +291,33 @@ define([
 
                                 '<div class="row">',
 
-                                    '<div class="col-sm-6 campo radio">',
+                                    '<div class="col-sm-6 campo radio" id="campo_imagenes">',
                                         
                                         Fx.form_input_radio({
 
                                             titulo: '<b>¿Su organización capta imágenes mediante cámaras de videovigilancia con fines de seguridad?</b>',
                                             subtitulo: '',
-                                            id: 'almacen_imagenes',
+                                            id: 'estru_imagenes',
                                             clase_grupo: '',
                                             inline: true,
 
                                             col_bs_label: 'col-sm-12',
                                             col_bs_radio: 'col-sm-1',
                                             opciones_json: {
-                                                0: 'si',
-                                                1: 'no'
+                                                1: 'si',
+                                                2: 'no'
                                             }
                                         }),
                                     
                                     '</div>',
 
-                                    '<div class="col-sm-6 campo radio">',
+                                    '<div class="col-sm-6 campo radio" id="campo_borrado">',
 
                                         Fx.form_input_radio({
 
                                             titulo: '<b>¿Cada cuanto tiempo se borran las imágenes grabadas?</b>',
                                             subtitulo: '(no conteste si no guarda imágenes)',
-                                            id: 'almacen_borrado',
+                                            id: 'estru_borrado',
                                             clase_grupo: '',
                                             inline: '',
 
@@ -284,37 +337,37 @@ define([
 
                                 '<div class="row">',
 
-                                    '<div class="col-sm-6 campo radio">',
+                                    '<div class="col-sm-6 campo radio" id="campo_propio">',
 
                                         Fx.form_input_radio({
 
                                             titulo: '<b>¿Dispone de dispositivos de almacenaje de datos personales propio?</b>',
                                             subtitulo: '',
-                                            id: 'almacen_propio',
+                                            id: 'estru_propio',
                                             clase_grupo: '',
                                             inline: true,
 
                                             col_bs_label: 'col-sm-12',
                                             col_bs_radio: 'col-sm-1',
                                             opciones_json: {
-                                                0: 'si',
-                                                1: 'no'
+                                                1: 'si',
+                                                2: 'no'
                                             }
                                         }),
                                     '</div>',
 
                                     '<div class="col-sm-6 campo textos">',
 
-                                        '<p><b>Especifique la cantidad de dispositivos de su empresa</b></p>',
+                                        '<p><b>Especifique la cantidad de dispositivos de su empresa:</b></p>',
 
                                         Fx.form_input({
                                             label: 'Servidores de datos',
-                                            id: 'almacen_servidores',
+                                            id: 'estru_servidores',
                                             ayuda: '',
                                             placeholder: '',
                                             valor: '',
                                             tipo: 'text',
-                                            clase: 'solo_numero',
+                                            clase: 'solo_numero obligatorio',
                                             //min_char: '3',
                                             col_bs_label: 'col-sm-6 col-sm-offset-1',
                                             col_bs_input: 'col-sm-2',
@@ -322,12 +375,12 @@ define([
 
                                         Fx.form_input({
                                             label: 'Discos duros',
-                                            id: 'almacen_discos',
+                                            id: 'estru_discos',
                                             ayuda: '',
                                             placeholder: '',
                                             valor: '',
                                             tipo: 'text',
-                                            clase: 'solo_numero',
+                                            clase: 'solo_numero obligatorio',
                                             //min_char: '3',
                                             col_bs_label: 'col-sm-6 col-sm-offset-1',
                                             col_bs_input: 'col-sm-2',
@@ -335,12 +388,12 @@ define([
                                         
                                         Fx.form_input({
                                             label: 'USB Pendrives',
-                                            id: 'almacen_pen',
+                                            id: 'estru_pendrives',
                                             ayuda: '',
                                             placeholder: '',
                                             valor: '',
                                             tipo: 'text',
-                                            clase: 'solo_numero',
+                                            clase: 'solo_numero obligatorio',
                                             //min_char: '3',
                                             col_bs_label: 'col-sm-6 col-sm-offset-1',
                                             col_bs_input: 'col-sm-2',
@@ -348,12 +401,12 @@ define([
 
                                         Fx.form_input({
                                             label: 'Ordenadores de trabajo en local',
-                                            id: 'almacen_pc',
+                                            id: 'estru_ordenadores',
                                             ayuda: '',
                                             placeholder: '',
                                             valor: '',
                                             tipo: 'text',
-                                            clase: 'solo_numero',
+                                            clase: 'solo_numero obligatorio',
                                             //min_char: '3',
                                             col_bs_label: 'col-sm-6 col-sm-offset-1',
                                             col_bs_input: 'col-sm-2',
@@ -365,13 +418,13 @@ define([
 
                                 '<div class="row">',
 
-                                    '<div class="col-sm-6 campo radio">',
+                                    '<div class="col-sm-6 campo radio" id="campo_mantenimiento">',
 
                                         Fx.form_input_radio({
 
                                             titulo: '<b>¿Su empresa realiza las tareas de mantenimiento informático?</b>',
                                             subtitulo: '',
-                                            id: 'almacen_manteni',
+                                            id: 'estru_mantenimiento',
                                             clase_grupo: '',
                                             inline: '',
 
@@ -386,13 +439,13 @@ define([
 
                                     '</div>',
 
-                                    '<div class="col-sm-6 campo radio">',
+                                    '<div class="col-sm-6 campo radio" id="campo_backup">',
 
                                         Fx.form_input_radio({
 
                                             titulo: '<b>¿Cada tiempo cuanto realizan copias de seguridad de sus datos?</b>',
                                             subtitulo: '',
-                                            id: 'almacen_backup',
+                                            id: 'estru_backup',
                                             clase_grupo: '',
                                             inline: '',
 
@@ -410,10 +463,6 @@ define([
 
                                 '</div>',
 
-                                '<div id="div_datos_acceso" class="row">',
-
-
-                                '</div>',
 
                             '</div>',
 
@@ -435,8 +484,8 @@ define([
                                     col_bs_label: 'col-sm-12',
                                     col_bs_radio: 'col-sm-1',
                                     opciones_json: {
-                                        0: 'si',
-                                        1: 'no'
+                                        1: 'si',
+                                        2: 'no'
                                     }
                                 }),
 
@@ -457,7 +506,7 @@ define([
     		                                	id: 'clientes_identificacion',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
-                                                valor: 1,
+                                                valor: 'checked',
     		                                }),
 
                                     		Fx.form_input_check({
@@ -465,7 +514,7 @@ define([
     		                                	id: 'clientes_caracteristicas',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
-    		                                	valor: 1,
+    		                                	valor: 'checked',
     		                                }),
 
                                     		Fx.form_input_check({
@@ -473,7 +522,7 @@ define([
     		                                	id: 'clientes_academicos',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
-                                                valor: 1,
+                                                valor: 'checked',
     		                                }),
 
                                     		Fx.form_input_check({
@@ -481,7 +530,7 @@ define([
     		                                	id: 'clientes_bancarios',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
-                                                valor: 1,
+                                                valor: 'checked',
     		                                }),
 
                                         '</div>',
@@ -499,7 +548,7 @@ define([
     		                                	id: 'clientes_servicio',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
-                                                valor: 1,
+                                                valor: 'checked',
     		                                }),
 
                                     		Fx.form_input_check({
@@ -507,7 +556,7 @@ define([
     		                                	id: 'clientes_facturar',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
-                                                valor: 1,
+                                                valor: 'checked',
     		                                }),
 
                                     		Fx.form_input_check({
@@ -515,7 +564,7 @@ define([
     		                                	id: 'clientes_publicidad',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
-                                                valor: 1,
+                                                valor: 'checked',
     		                                }),
 
                                     		Fx.form_input_check({
@@ -523,7 +572,7 @@ define([
     		                                	id: 'clientes_post',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
-                                                valor: 1,
+                                                valor: 'checked',
     		                                }),
 
                                         '</div>',
@@ -532,17 +581,12 @@ define([
 
 		                        '</div>',
 
-                                '<div class="row sep20">',
-
-                                    '<p><b>Marque a quien entrega los datos personales de sus clientes.</b></p>',
-
-                                '</div>',
-
                                 '<div class="row clearfix">',
 
-                                    '<div class="col-sm-6 campo">',
+                                    '<div class="col-sm-12 campo">',
                                         
-                                        '<p><b>Cumplimiento de obligaciones legales:</b></p>',
+                                        //'<p><b>Cumplimiento de obligaciones legales:</b></p>',
+                                        '<p><b>Marque con quién comparte los datos personales de sus clientes.</b></p>',
                                 
                                         '<div class="checkbox">',
 
@@ -550,59 +594,49 @@ define([
                                     			label: 'Administracion tributaria',
     		                                	id: 'clientes_tributaria',
     		                                	class: 'opciones',
-    		                                	col_bs_label: 'col-sm-12',
-                                                valor: 1,
+    		                                	col_bs_label: 'col-sm-6',
+                                                valor: 'checked',
     		                                }),
 
                                     		Fx.form_input_check({
                                     			label: 'Seguridad Social',
     		                                	id: 'clientes_ss',
     		                                	class: 'opciones',
-    		                                	col_bs_label: 'col-sm-112',
-                                                valor: 1,
+    		                                	col_bs_label: 'col-sm-6',
+                                                valor: 'checked',
     		                                }),
 
                                     		Fx.form_input_check({
                                     			label: 'Bancos y entidades financieras',
     		                                	id: 'clientes_bancos',
     		                                	class: 'opciones',
-    		                                	col_bs_label: 'col-sm-12',
-                                                valor: 1,
+    		                                	col_bs_label: 'col-sm-6',
+                                                valor: 'checked',
     		                                }),
 
                                     		Fx.form_input_check({
                                     			label: 'Cuerpos y fuerzas de seguridad del estado',
     		                                	id: 'clientes_seguridad',
     		                                	class: 'opciones',
-    		                                	col_bs_label: 'col-sm-12',
-                                                valor: 1,
+    		                                	col_bs_label: 'col-sm-6',
+                                                valor: 'checked',
     		                                }),
-
-                                    		Fx.form_input_check({
-                                    			label: 'Otros',
-    		                                	id: 'clientes_otros',
-    		                                	class: 'opciones',
-    		                                	col_bs_label: 'col-sm-12',
-                                                valor: 1,
-    		                                }),
-
-                                        '</div>',
-
-		                            '</div>',
-
-                                	'<div class="col-sm-6 campo">',
-
-                                		'<p><b>Otros:</b></p>',
-
-                                        '<div class="checkbox">',
 
                                     		Fx.form_input_check({
                                     			label: 'Gestoría',
     		                                	id: 'clientes_gestoria',
     		                                	class: 'opciones',
-    		                                	col_bs_label: 'col-sm-12',
-                                                valor: 1,
+    		                                	col_bs_label: 'col-sm-6',
+                                                valor: 'checked',
     		                                }),
+
+                                            Fx.form_input_check({
+                                                label: 'Otros',
+                                                id: 'clientes_otros',
+                                                class: 'opciones',
+                                                col_bs_label: 'col-sm-6',
+                                                valor: 'checked',
+                                            }),
 
                                         '</div>',
 
@@ -629,8 +663,8 @@ define([
                                 	col_bs_label: 'col-sm-12',
                                 	col_bs_radio: 'col-sm-1',
                                     opciones_json: {
-                                        0: 'si',
-                                        1: 'no'
+                                        1: 'si',
+                                        2: 'no'
                                     }
                                 }),
 
@@ -651,7 +685,7 @@ define([
     		                                	id: 'futuros_identificacion',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
-                                                valor: 1,
+                                                valor: 'checked',
     		                                }),
 
                                     		Fx.form_input_check({
@@ -659,7 +693,7 @@ define([
     		                                	id: 'futuros_caracteristicas',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
-                                                valor: 1,
+                                                valor: 'checked',
     		                                }),
 
                                     		Fx.form_input_check({
@@ -667,7 +701,7 @@ define([
     		                                	id: 'futuros_academicos',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
-                                                valor: 1,
+                                                valor: 'checked',
     		                                }),
 
                                         '</div>',
@@ -685,7 +719,7 @@ define([
     		                                	id: 'futuros_propio',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
-                                                valor: 1,
+                                                valor: 'checked',
     		                                }),
 
                                     		Fx.form_input_check({
@@ -693,7 +727,7 @@ define([
     		                                	id: 'futuros_tercera',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
-                                                valor: 1,
+                                                valor: 'checked',
     		                                }),
 
                                         '</div>',
@@ -715,7 +749,7 @@ define([
     		                                	id: 'futuros_agencia',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-8',
-                                                valor: 1,
+                                                valor: 'checked',
     		                                }),
 
                                     		Fx.form_input_check({
@@ -723,7 +757,7 @@ define([
     		                                	id: 'futuros_imprenta',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-8',
-                                                valor: 1,
+                                                valor: 'checked',
     		                                }),
 
                                     		Fx.form_input_check({
@@ -731,7 +765,7 @@ define([
     		                                	id: 'futuros_exclusivo',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-8',
-                                                valor: 1,
+                                                valor: 'checked',
     		                                }),
 
     		                            '</div>',
@@ -752,15 +786,15 @@ define([
                                 Fx.form_input_radio({
                                 	titulo: '<b>¿Su organización trata datos personales de empleados?</b>',
                                     subtitulo: 'Se refiere a datos personales de sus empleados.',
-                                	id: 'empleados_datos',
+                                	id: 'empleados_sino',
                                 	clase_grupo: 'lopd_sino',
                                 	inline: true,
 
                                     col_bs_label: 'col-sm-12',
                                 	col_bs_radio: 'col-sm-1',
                                     opciones_json: {
-                                        0: 'si',
-                                        1: 'no'
+                                        1: 'si',
+                                        2: 'no'
                                     }
                                 }),
 
@@ -774,14 +808,14 @@ define([
 
                                 		'<p><b>A continuación marque qué datos personales trata de sus empleados</b></p>',
 
-                                        '<div class="checkbox">',
+                                        '<div class="checkbox" id="empleados_ch_0">',
 
                                     		Fx.form_input_check({
                                     			label: 'Identificación (nombre, apellidos, número de la Seguridad Social, dirección postal, teléfono, email).',
     		                                	id: 'empleados_identificacion',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
-                                                valor: 1,
+                                                valor: 'checked',
     		                                }),
 
                                     		Fx.form_input_check({
@@ -789,7 +823,7 @@ define([
     		                                	id: 'empleados_caracteristicas',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
-                                                valor: 1,
+                                                valor: 'checked',
     		                                }),
 
                                     		Fx.form_input_check({
@@ -797,7 +831,7 @@ define([
     		                                	id: 'empleados_academicos',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
-                                                valor: 1,
+                                                valor: 'checked',
     		                                }),
 
                                     		Fx.form_input_check({
@@ -805,7 +839,7 @@ define([
     		                                	id: 'empleados_profesion',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
-                                                valor: 1,
+                                                valor: 'checked',
     		                                }),
 
                                     		Fx.form_input_check({
@@ -813,7 +847,7 @@ define([
     		                                	id: 'empleados_bancos',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
-                                                valor: 1,
+                                                valor: 'checked',
     		                                }),
 
                                         '</div>',
@@ -831,7 +865,7 @@ define([
                                                 id: 'empleados_nomina',
                                                 class: 'opciones',
                                                 col_bs_label: 'col-sm-12',
-                                                valor: 1,
+                                                valor: 'checked',
                                             }),
 
                                             Fx.form_input_check({
@@ -839,7 +873,7 @@ define([
                                                 id: 'empleados_formacion',
                                                 class: 'opciones',
                                                 col_bs_label: 'col-sm-12',
-                                                valor: 1,
+                                                valor: 'checked',
                                             }),
 
                                             Fx.form_input_check({
@@ -847,7 +881,7 @@ define([
                                                 id: 'empleados_relacion',
                                                 class: 'opciones',
                                                 col_bs_label: 'col-sm-12',
-                                                valor: 1,
+                                                valor: 'checked',
                                             }),
 
                                         '</div>',
@@ -865,7 +899,7 @@ define([
                                                 id: 'empleados_propio',
                                                 class: 'opciones',
                                                 col_bs_label: 'col-sm-12',
-                                                valor: 1,
+                                                valor: 'checked',
                                             }),
 
                                             Fx.form_input_check({
@@ -873,7 +907,7 @@ define([
                                                 id: 'empleados_tercera',
                                                 class: 'opciones',
                                                 col_bs_label: 'col-sm-12',
-                                                valor: 1,
+                                                valor: 'checked',
                                             }),
 
                                         '</div>',
@@ -890,15 +924,15 @@ define([
 
                                             titulo: '<b>¿La gestión de la nómina la realiza una gestoría?</b>',
                                             id: 'empleados_gestion',
-                                            clase_grupo: 'opciones',
+                                            clase_grupo: 'sino',
                                             clase: 'text-center',
                                             inline: true,
 
                                             col_bs_label: 'col-sm-12',
                                             col_bs_radio: 'col-sm-1',
                                             opciones_json: {
-                                                0: 'si',
-                                                1: 'no'
+                                                1: 'si',
+                                                2: 'no'
                                             },
                                         }),
 
@@ -910,15 +944,15 @@ define([
 
                                             titulo: '<b>¿Dispone de mutua de accidentes?</b>',
                                             id: 'empleados_mutua',
-                                            clase_grupo: 'opciones',
+                                            clase_grupo: 'sino',
                                             clase: 'text-center',
                                             inline: true,
 
                                             col_bs_label: 'col-sm-12',
                                             col_bs_radio: 'col-sm-1',
                                             opciones_json: {
-                                                0: 'si',
-                                                1: 'no'
+                                                1: 'si',
+                                                2: 'no'
                                             },
                                         }),
 
@@ -934,15 +968,15 @@ define([
 
                                             titulo: '<b>¿Imparten formación a los trabajadores?</b>',
                                             id: 'empleados_formar',
-                                            clase_grupo: 'opciones',
+                                            clase_grupo: 'sino',
                                             clase: 'text-center',
                                             inline: true,
 
                                             col_bs_label: 'col-sm-12',
                                             col_bs_radio: 'col-sm-1',
                                             opciones_json: {
-                                                0: 'si',
-                                                1: 'no'
+                                                1: 'si',
+                                                2: 'no'
                                             },
                                         }),
 
@@ -954,15 +988,15 @@ define([
 
                                             titulo: '<b>¿Dispone de servicio de prevencion ajeno?</b>',
                                             id: 'empleados_prevencion',
-                                            clase_grupo: 'opciones',
+                                            clase_grupo: 'sino',
                                             clase: 'text-center',
                                             inline: true,
 
                                             col_bs_label: 'col-sm-12',
                                             col_bs_radio: 'col-sm-1',
                                             opciones_json: {
-                                                0: 'si',
-                                                1: 'no'
+                                                1: 'si',
+                                                2: 'no'
                                             },
                                         }),
 
@@ -990,8 +1024,8 @@ define([
                                 	col_bs_label: 'col-sm-12',
                                 	col_bs_radio: 'col-sm-1',
                                     opciones_json: {
-                                        0: 'si',
-                                        1: 'no'
+                                        1: 'si',
+                                        2: 'no'
                                     }                                
                                 }),
 
@@ -1012,6 +1046,7 @@ define([
     		                                	id: 'candidatos_identificacion',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
+                                                valor: 'checked',
     		                                }),
 
                                     		Fx.form_input_check({
@@ -1019,6 +1054,7 @@ define([
     		                                	id: 'candidatos_caracteristicas',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
+                                                valor: 'checked',
     		                                }),
 
                                     		Fx.form_input_check({
@@ -1026,6 +1062,7 @@ define([
     		                                	id: 'candidatos_academicos',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
+                                                valor: 'checked',
     		                                }),
 
                                     		Fx.form_input_check({
@@ -1033,6 +1070,7 @@ define([
     		                                	id: 'candidatos_profesion',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
+                                                valor: 'checked',
     		                                }),
 
                                         '</div>',
@@ -1050,6 +1088,7 @@ define([
                                                 id: 'candidatos_curriculum',
                                                 class: 'opciones',
                                                 col_bs_label: 'col-sm-12',
+                                                valor: 'checked',
                                             }),
 
                                             Fx.form_input_check({
@@ -1057,6 +1096,7 @@ define([
                                                 id: 'candidatos_web',
                                                 class: 'opciones',
                                                 col_bs_label: 'col-sm-12',
+                                                valor: 'checked',
                                             }),
 
                                             Fx.form_input_check({
@@ -1064,6 +1104,7 @@ define([
                                                 id: 'candidatos_form',
                                                 class: 'opciones',
                                                 col_bs_label: 'col-sm-12',
+                                                valor: 'checked',
                                             }),
 
                                         '</div>',
@@ -1110,7 +1151,7 @@ define([
                                 Fx.form_input_radio({
 
                                 	titulo: '<b>¿Su organización trata datos personales de proveedores (personas físicas)?</b>',
-                                	subtitulo: 'Se refiere a datos personales de aquellas personas físicas que proveen de productos o servicios a su empresa. Si sus proveedores son personas jurídicas no tiene que marcar la casilla de proveedores.',
+                                	subtitulo: 'Se refiere a datos personales de aquellas personas físicas que proveen de productos o servicios a su empresa.<br>Si sus proveedores son personas jurídicas marque la casilla No.',
                                     id: 'proveedores_sino',
                                     clase_grupo: 'lopd_sino',
                                     inline: true,
@@ -1118,8 +1159,8 @@ define([
                                 	col_bs_label: 'col-sm-12',
                                 	col_bs_radio: 'col-sm-1',
                                     opciones_json: {
-                                        0: 'si',
-                                        1: 'no'
+                                        1: 'si',
+                                        2: 'no'
                                     }
 
                                 }),
@@ -1141,6 +1182,7 @@ define([
     		                                	id: 'proveedores_identificacion',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
+                                                valor: 'checked',
     		                                }),
 
                                     		Fx.form_input_check({
@@ -1148,6 +1190,7 @@ define([
     		                                	id: 'proveedores_bancos',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
+                                                valor: 'checked',
     		                                }),
 
                                         '</div>',
@@ -1165,6 +1208,7 @@ define([
     		                                	id: 'proveedores_factura',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
+                                                valor: 'checked',
     		                                }),
 
                                     		Fx.form_input_check({
@@ -1172,6 +1216,7 @@ define([
     		                                	id: 'proveedores_pedido',
     		                                	class: 'opciones',
     		                                	col_bs_label: 'col-sm-12',
+                                                valor: 'checked',
     		                                }),
 
                                         '</div>',

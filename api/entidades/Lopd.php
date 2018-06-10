@@ -2,6 +2,23 @@
 
 class Lopd {
 
+
+	public function __construct(){}
+
+	public function guardar_bruto($link, $obj_form){
+
+		$campos = [];
+		$valores = [];
+		foreach( $obj_form as $id => $dato ){
+
+			$campos[] = $id;
+			$valores[] = $dato;
+		}
+
+		
+	}
+
+
 	public $textos = array(
 		'text1' => 'Tratamiento de clientes',
 		'text2' => 'Tratamiento de futuros clientes',
@@ -25,6 +42,8 @@ class Lopd {
 		'text20' => 'En caso de gestión automatizada se indicará en este punto el sistema informático utilizado.',
 
 	);
+
+
 
 
 }

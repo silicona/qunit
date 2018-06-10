@@ -18,8 +18,9 @@ define([
 			//'politica'              : 'goToPolitica',
 			':inicio'                 : 'goToSection',
 
-			//'clientes'              : 'goToClientes',
-			//'clientes/:id_cliente'  : 'goToClienteDetalle',
+			':clientes'               : 'goToSection',
+			//':clientes/:id_cliente'   : 'goToClienteDetalle',
+			':clientes/:id_cliente'   : 'goToSection',
 			
 			':lopd'					  : 'goToSection',
 			':lopd/:pag'			  : 'goToSection',
@@ -32,7 +33,6 @@ define([
 		initialize: function(view){
 
 			this.appView = view;
-
 		},
 
 		goToInicio: function(){
@@ -57,8 +57,8 @@ define([
 
 		goToSection: function(seccion, parametro){
 
-			console.log('Router - Sección:' , seccion);
-			console.log('Router - Parametro:' , parametro);
+			//console.log('Router - Sección:' , seccion);
+			//console.log('Router - Parametro:' , parametro);
 
 			var parametro = parametro || '';
 

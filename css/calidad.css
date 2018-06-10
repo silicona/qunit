@@ -109,6 +109,8 @@ footer {
   background: #160F05; }
   .lopd .block-header h2 {
     color: #FFFFFF; }
+.lopd .div_sector button {
+  background-color: #FFFFFF !important; }
 .lopd div[id$="extra"] {
   display: none; }
 .lopd .div_cif, .lopd .div_telefono {

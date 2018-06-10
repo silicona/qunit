@@ -36,10 +36,10 @@ define([
 
 			if( Config.hash == '' ){
 				
-				//Calidad.ir_a_login();
+				Calidad.ir_a_login();
 			}
 
-			console.log( 'Desde inicio- config: ', Config);
+			//console.log( 'Desde inicio- config: ', Config);
 
 			return this;
 
@@ -47,7 +47,7 @@ define([
 
 		ver: function(e){
 			e.preventDefault();
-			console.log('dentro');
+			//console.log('dentro');
 		}
 
 	});

@@ -14,8 +14,8 @@ define([
 
 	'app/views/inicio/inicioView',
 
-	// 'app/views/clientes/clientesView',
-	// 'app/views/clientes/detalleClienteView',
+	'app/views/clientes/clientesView',
+	'app/views/clientes/detalleClienteView',
 	
 	'app/views/soportes/soportesView',
 	'app/views/soportes/detalleSoporteView',
@@ -34,7 +34,7 @@ define([
 		LoginView, 
 		//VerPoliticaView,
 		InicioView, 
-		//ClientesView, DetalleClienteView,
+		ClientesView, DetalleClienteView,
 		SoportesView, DetalleSoporteView, 
 		//AltaView,
 		//UsuariosView, DetalleUsuarioView,

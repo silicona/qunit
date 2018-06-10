@@ -4,16 +4,13 @@
 
 		WEBSERVICE DE LOGIN
 
-
 	*/
-		error_reporting(E_ALL);
+
 	require_once '../lib/config.php';
 	require_once 'entidades/Cld_login.php';
-	//echo 'Dentro';
-	//exit;
 	// require_once '../lib/PasswordHash.php';
 
-
+	//$link = dblink();
 	$login    = limpia_varchar($_POST['usuario']);
 	$password = limpia_varchar($_POST['password']);
 	$accion   = limpia_varchar($_POST['accion']);
@@ -22,7 +19,6 @@
 	//salir_si_no_hash($link, $hash);
 	if($accion == 'check_login'){
 		echo json_encode( login::check_login( $link, $login, $password) );
-		//echo json_encode( 'ok' );
 		exit();
 	}
 

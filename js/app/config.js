@@ -12,7 +12,7 @@ define([
 
 		ruta_previa: window.location.hash,
 
-		hash: '',
+		hash: 'mi_hash',
 
 		parametros: '',
 

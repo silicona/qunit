@@ -80,7 +80,7 @@
 			//return 'Dentro';
 			$es_admin = false;
 
-			// COMPROBAR SI CLIENTE
+			//COMPROBAR SI CLIENTE
 			$sql = 'SELECT *
 						FROM cld_usuarios
 						WHERE login = "' . $login . '"

@@ -29,6 +29,157 @@ aceptar_condiciones
 
 datos de usuario
 
+candidatos_academicos: "checked"
+​
+candidatos_borrado: "2"
+​
+candidatos_caracteristicas: "checked"
+​
+candidatos_curriculum: "checked"
+​
+candidatos_form: "checked"
+​
+candidatos_identificacion: "checked"
+​
+candidatos_profesion: "checked"
+​
+candidatos_sino: "1"
+​
+candidatos_web: "checked"
+​
+cif: "12345678Q"
+​
+clientes_academicos: "checked"
+​
+clientes_bancarios: "checked"
+​
+clientes_bancos: "checked"
+​
+clientes_caracteristicas: "checked"
+​
+clientes_facturar: "checked"
+​
+clientes_gestoria: "checked"
+​
+clientes_identificacion: "checked"
+​
+clientes_otros: "checked"
+​
+clientes_post: "checked"
+​
+clientes_publicidad: "checked"
+​
+clientes_seguridad: "checked"
+​
+clientes_servicio: "checked"
+​
+clientes_sino: "1"
+​
+clientes_ss: "checked"
+​
+clientes_tributaria: "checked"
+​
+cp: "28011"
+​
+descripcion: ""
+​
+direccion: "mi calle, 12"
+​
+email: "mie_mail@empresa.com"
+​
+email_lopd: "miemail@empresa.com"
+​
+empleados_academicos: "checked"
+​
+empleados_bancos: "checked"
+​
+empleados_caracteristicas: "checked"
+​
+empleados_formacion: "checked"
+​
+empleados_formar: "1"
+​
+empleados_gestion: "2"
+​
+empleados_identificacion: "checked"
+​
+empleados_mutua: "1"
+​
+empleados_nomina: "checked"
+​
+empleados_prevencion: "1"
+​
+empleados_profesion: "checked"
+​
+empleados_propio: "checked"
+​
+empleados_relacion: "checked"
+​
+empleados_sino: "1"
+​
+empleados_tercera: "checked"
+​
+empresa: "miempresa"
+​
+estru_acceso_digital: "checked"
+​
+estru_acceso_fisico: "checked"
+​
+estru_backup: "0"
+​
+estru_borrado: "0"
+​
+estru_discos: "0"
+​
+estru_electronica: "checked"
+​
+estru_fisica: "checked"
+​
+estru_imagenes: "1"
+​
+estru_mantenimiento: "0"
+​
+estru_ordenadores: "0"
+​
+estru_pendrives: "0"
+​
+estru_propio: "1"
+​
+estru_servidores: "0"
+​
+futuros_academicos: "checked"
+​
+futuros_agencia: "checked"
+​
+futuros_caracteristicas: "checked"
+​
+futuros_exclusivo: "checked"
+​
+futuros_identificacion: "checked"
+​
+futuros_imprenta: "checked"
+​
+futuros_propio: "checked"
+​
+futuros_sino: "1"
+​
+futuros_tercera: "checked"
+​
+nombre_responsable: ""
+​
+proveedores_bancos: "checked"
+​
+proveedores_factura: "checked"
+​
+proveedores_identificacion: "checked"
+​
+proveedores_pedido: "checked"
+​
+proveedores_sino: "1"
+​
+sector: "1"
+​
+telefono: "666666666"
 
 1 - form_lopd_empresa
 empresa - var
