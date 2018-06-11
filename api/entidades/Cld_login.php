@@ -155,10 +155,10 @@
 
 					$arr_datos_usuario = array(
 						'status'        => 'ok',
-						'id_usuario'    => $e['id_usuario'],
-						'nombre'        => $e['nombre'],
-						//'contrato'      => $e['contrato'],
 						'hash'          => $hash,
+						'nombre'        => $e['nombre'],
+						'id_usuario'    => $e['id_usuario'],
+						'id_cliente'    => $e['id_cliente'],
 						'id_perfil'     => $e['id_perfil']
 					);
 

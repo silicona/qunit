@@ -136,39 +136,23 @@ define([
 		setPage: function(seccion, parametro){
 
 			var vista = '',
-				eq = 0;
+				eq = 0,
+				hash = window.localStorage.getItem('cld');
 
 			this.$('#vista_general').html( Templates['spinner'] );
 			// this.$('#contenido_seccion').html( Templates['spinner'] );
 
-			if( (window.localStorage.getItem('hash') != null) && ( typeof window.localStorage.getItem('hash') != 'undefined') ){
-				
-				Config.hash          = window.localStorage.getItem('hash');
-				Config.nombre        = window.localStorage.getItem('nombre');
-				
-				Config.empresa       = window.localStorage.getItem('empresa');
-				Config.oclem_admin   = window.localStorage.getItem('oclem_admin');
-				Config.tecnico       = window.localStorage.getItem('tecnico');
-				Config.comercial     = window.localStorage.getItem('comercial');
-				Config.cliente_admin = window.localStorage.getItem('cliente_admin');
-
-				if( typeof Config.obj_usuario == 'object'){
-					Config.obj_usuario  = $.parseJSON( window.localStorage.getItem('obj_usuario') );	
-				}
-				
-				if( typeof Config.obj_clientes == 'object'){
-					Config.obj_clientes = $.parseJSON( window.localStorage.getItem('obj_clientes') );
-				}
+			if(hash == '' || hash == null || hash == 'mi_hash' || !hash || !Config.id_perfil || Config.id_perfil == 0){
+				Calidad.ir_a_login();
 			}
 
-			//Calidad.check_login();
+			Calidad.check_login();
 
 			Calidad.cleanUp(this);
 			Calidad.actualizar_nombre_usuario();
 			Calidad.mostrar_footer_si_no_scroll();
 
 			
-
 			if( window.location.hash.split('/')[0] == '#lopd' && typeof window.location.hash.split('/')[1] != 'undefined' ){
 				//return true;		
 			}

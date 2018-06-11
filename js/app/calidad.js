@@ -176,16 +176,13 @@ define([
 
             establecer_config: function(obj_json){
 
-                Config.hash         = obj_json.hash;
-                Config.id_usuario   = obj_json.id_usuario;
                 Config.nombre       = obj_json.nombre;
-                //Config.apellidos    = obj_json.apellidos;
-                
-                
-                Config.id_perfil    = obj_json.id_perfil;
-                Config.perfil       = Config.obj_perfiles[ obj_json.id_perfil ];
+                Config.hash         = obj_json.hash;
+                Config.id_usuario   = obj_json.id_usuario;     
 
-                Config.id_cliente          = obj_json.id_cliente;
+                Config.perfil       = Config.obj_perfiles[ obj_json.id_perfil ];
+                Config.id_perfil    = obj_json.id_perfil;
+                Config.id_cliente   = obj_json.id_cliente;
 
             },
 
