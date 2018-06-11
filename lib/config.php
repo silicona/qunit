@@ -29,7 +29,7 @@
     define('EMAIL_ADMIN',           'cesar@respirainternet.com');
     define('NOMBRE_EMAIL_ADMIN',    'César Chas');
 
-    define('EMAIL_ADMINISTRACION',           'calidad@oclem.com');
+    define('EMAIL_ADMINISTRACION',        'calidad@oclem.com');
     define('NOMBRE_EMAIL_ADMINISTRACION', 'Calidad Oclem');
 
     define('EMAIL_INFO',           'calidad@oclem.com');

@@ -10,9 +10,11 @@
 
     <testsuites>
         <testsuite name="XStrings Test Suite">
-            <directory>tests/</directory>
-            <!-- <directory>tests/XString/</directory> -->
-            <!-- <directory>tests/entidades/</directory> -->
+            <directory>tests/</directory> 
+            <!-- 
+            <directory>tests/entidades/</directory>
+            <directory>tests/app/</directory>
+            -->
         </testsuite>
     </testsuites>
 

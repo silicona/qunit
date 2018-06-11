@@ -60,18 +60,18 @@ define([
             var filas          = '',
                 nombre_cliente = '',
                 encabezado = [
-                                '<tr>',
-                                    '<th>Empresa</th>',
-                                    '<th style="min-width:250px;">Clasificación</th>',
-                                    '<th>Nombre</th>',
-                                    '<th>Email</th>',
-                                    '<th>F. alta</th>',
-                                    '<th>Expira</th>',
-                                    '<th>Contrato</th>',
-                                    '<th>Acceso</th>',
-                                    '<th>Acciones</th>',
-                                '</tr>'
-                                ].join('');
+                    '<tr>',
+                        '<th>Empresa</th>',
+                        '<th>Localidad</th>',
+                        '<th>Email</th>',
+                        '<th>Responsable Seg.</th>',
+                        '<th>Sector</th>',
+                        '<th>LOPD</th>',
+                        '<th>Activo</th>',
+                        '<th>F. alta</th>',
+                        '<th>Acciones</th>',
+                    '</tr>'
+                ].join('');
             
             esto.obj_cliente = options.obj_cliente;
 
@@ -151,23 +151,40 @@ define([
                         }    
                     },
 
-                    {data: null, title: 'Clasificación', 
-                        render: function(data, type, full){
-
-                            return Fx.separar_comas(data.cods_clasificaciones);
-    
-                        }
-                    },
-
-                    {data: null, title: 'Nombre', 
-                        render: function(data, type, full){
-
-                            return Fx.limpia_undefined(data.nombre) + ' ' +  Fx.limpia_undefined(data.apellido1);
-                        }
-                    },
-
+                    {data: 'localidad', title: 'Localidad'},
+                    
                     {data: 'email', title: 'Email'},
                     
+                    {data: 'nombre_responsable', title: 'Responsable de seguridad'},
+
+                    {data: null, title: 'Sector', 
+                        render: function(data, type, full){
+
+                            return Config.obj_sectores[data.sector] || '';
+                        }
+                    },
+
+                    {data: 'lopd', title: 'LOPD', 
+                        render: function(data, type, full){
+
+                            var estado = [
+                                'Sin realizar',
+                                'En proceso',
+                                'Aprobada'
+                            ];
+
+                            return estado[data];
+                        }
+                    },
+
+                    { data: 'activo', title: 'Activo',
+
+                        render: function( datos ){
+
+                            return datos == 1 ? 'Si' : 'No';
+                        }
+                    },
+ 
                     {data: null, title: 'F. alta',                       
 
                         render: function(data, type, full){
@@ -178,33 +195,27 @@ define([
                         }        
                     }, 
                     
-                    {data: null, title: 'Expira',                       
+                    // {data: null, title: 'Expira',                       
                     
-                        render: function(data, type, full){
+                    //     render: function(data, type, full){
 
-                            return ['<span class="d-none">' + Fx.strtotime( data.f_baja ) + '</span>',
-                                Fx.cambiaf_a_normal( data.f_baja )
-                            ].join('');
-                        }        
-                    },  
+                    //         return ['<span class="d-none">' + Fx.strtotime( data.f_baja ) + '</span>',
+                    //             Fx.cambiaf_a_normal( data.f_baja )
+                    //         ].join('');
+                    //     }        
+                    // },  
 
-                    {data: null, title: 'Contrato',
-                        render: function(data, type, full){
-                            return Oclem.devuelve_tipo_contrato(data.id_tipo_contrato);
-                        }
-                    },
-
-                    {data: null, title: 'Acceso',
-                        render: function(data, type, full){
-                            var acceso = 'No';
-                            var f_baja_timestamp = Fx.strtotime( data.f_baja );
-                            var hoy_timestamp    = Fx.hoy_timestamp();
-                            if( (f_baja_timestamp > hoy_timestamp) || (data.f_baja == '0000-00-00') ){
-                                acceso = 'Sí';
-                            }
-                            return acceso;
-                        }
-                    }
+                    // {data: null, title: 'Acceso',
+                    //     render: function(data, type, full){
+                    //         var acceso = 'No';
+                    //         var f_baja_timestamp = Fx.strtotime( data.f_baja );
+                    //         var hoy_timestamp    = Fx.hoy_timestamp();
+                    //         if( (f_baja_timestamp > hoy_timestamp) || (data.f_baja == '0000-00-00') ){
+                    //             acceso = 'Sí';
+                    //         }
+                    //         return acceso;
+                    //     }
+                    // }
                 ]
             };
 

@@ -195,8 +195,6 @@ define([
 
 				this.$('#empresa span.empresa').text( Config.empresa );
 				
-				this.$('#btn_menu_adjudicaciones').remove();
-
 			}
 
 			if( Calidad.es_cliente_no_admin() ){
@@ -277,7 +275,7 @@ define([
 
 			}
 
-			/*
+			
 			if(seccion == 'clientes'){
 
 				if(parametro == ''){
@@ -290,7 +288,7 @@ define([
 
 					vista = 'clientes';
 
-				}else{
+				} else {
 
 					this.views['detalleClienteView'] = new DetalleClienteView({
 						id: 'seccion_detalle_cliente',
@@ -305,7 +303,7 @@ define([
 				// this.$('ul.main-menu li').eq('6').addClass('selected');
 
 			}
-			*/
+			
 
 			if(seccion == 'soporte'){
 
@@ -515,9 +513,9 @@ define([
 			//var contenedor = '#contenido_seccion';
 			var contenedor = '#vista_general';
 
-			if( vista.substr(0,7) == 'detalle' ){
-				contenedor = '#contenido_detalle';
-			}
+			// if( vista.substr(0,7) == 'detalle' ){
+			// 	contenedor = '#contenido_detalle';
+			// }
 
 			
 			// if( contenedor == '#contenido_detalle'){

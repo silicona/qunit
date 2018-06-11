@@ -1,0 +1,468 @@
+
+*** 10-06-2018 ***
+Rollback de LOPD del cliente 
+0
+
+*** 10-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: 0
+
+*** 10-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+
+*** 10-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+miempresa,
+mi calle, 12,
+madrid,
+28011,
+12345678Q,
+666666666,
+miemail@empresa.com,
+,
+miemail_lopd@empresa.com,
+1,
+
+checked,
+checked,
+0,
+0,
+0,
+checked,
+checked,
+1,
+0,
+0,
+0,
+1,
+0,
+checked,
+checked,
+checked,
+checked,
+checked,
+checked,
+checked,
+checked,
+checked,
+checked,
+checked,
+checked,
+1,
+checked,
+checked,
+checked,
+checked,
+checked,
+checked,
+checked,
+checked,
+checked,
+1,
+checked,
+checked,
+checked,
+checked,
+checked,
+1,
+2,
+checked,
+1,
+checked,
+1,
+checked,
+checked,
+checked,
+1,
+checked,
+checked,
+2,
+checked,
+checked,
+checked,
+checked,
+checked,
+1,
+checked,
+checked,
+checked,
+checked,
+checked,
+1
+
+*** 10-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+miempresa, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 10-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se actualizó el cliente
+No se ha guardado o actualizado el lopd.
+
+miempresa, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1
+, checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 10-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se actualizó el cliente
+No se ha guardado o actualizado el lopd.
+
+miempresa, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1
+, checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+miempresa, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1
+
+*** 11-06-2018 ***
+Rollback de LOPD del cliente 1
+Error del rollback: No se ha guardado o actualizado el lopd.
+
+ejemplo de error, mi calle, 12, madrid, 28011, 12345678Q, 666666666, miemail@empresa.com, , miemail_lopd@empresa.com, 1, 
+checked, checked, 0, 0, 0, checked, checked, 1, 0, 0, 0, 1, 0, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1, 2, checked, 1, checked, 1, checked, checked, checked, 1, checked, checked, 2, checked, checked, checked, checked, checked, 1, checked, checked, checked, checked, checked, 1

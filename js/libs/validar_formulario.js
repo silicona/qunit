@@ -7,21 +7,21 @@ define([
   var MiForm = {
 
   //Funciones para validación del formulario
-  valida_texto: function(mi_texto, min_long){
-    
-    if(min_long != undefined){
-      return mi_texto.length >= min_long;  
-    }
-    
-    return true;
+    valida_texto: function(mi_texto, min_long){
+      
+      if(min_long != undefined){
+        return mi_texto.length >= min_long;  
+      }
+      
+      return true;
 
-  },
+    },
 
-  is_numeric: function(n){
-      return !isNaN(parseFloat(n)) && isFinite(n);
-  },
+    is_numeric: function(n){
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    },
 
-  is_integer: function(val){
+    is_integer: function(val){
       if(val==null)
       {
           return false;
@@ -43,10 +43,10 @@ define([
           }
       }
       return true;
-  },
+    },
 
 
-  valida_iban: function(cadena) {
+    valida_iban: function(cadena) {
 
       if( typeof cadena == 'undefined' ){
         return true;
@@ -59,7 +59,7 @@ define([
 
       // limpiar cadena para comparar
       return IBAN.isValid(cadena);
-  },
+    },
 
   valida_numerico: function(mi_texto){
 

@@ -17,6 +17,8 @@ html, body {
   margin-top: 30px; }
 #app .sep50 {
   margin-top: 50px; }
+#app .d-none {
+  display: none; }
 
 #header {
   height: 65px;
@@ -44,7 +46,19 @@ html, body {
     height: 100%; }
     #header .menu_botones li {
       display: inline-block;
-      float: left; }
+      margin: 10px; }
+      #header .menu_botones li a {
+        color: #FFFFFF; }
+        #header .menu_botones li a:hover {
+          color: #BEC5C2; }
+      #header .menu_botones li .dropdown-menu {
+        background-color: #424442; }
+        #header .menu_botones li .dropdown-menu a {
+          display: block;
+          width: 50%;
+          font-size: 1.3em;
+          padding-left: 2ex;
+          padding-bottom: 1ex; }
 
 	/*	
 	.lateral {

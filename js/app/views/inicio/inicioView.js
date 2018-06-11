@@ -34,12 +34,20 @@ define([
 			this.$el.html(this.html);
 			//console.log('En Vista inicio: ', this.$el);
 
-			if( Config.hash == '' ){
+			if( Config.hash == '' || Config.hash == 'mi_hash' ){
 				
 				Calidad.ir_a_login();
 			}
 
-			//console.log( 'Desde inicio- config: ', Config);
+			console.log( 'Desde inicio- config: ', Config);
+
+			if( Calidad.es_admin() || Calidad.es_tecnico() ){
+				this.$('#boton_cliente_datos').remove();
+			}
+
+			if( Calidad.es_cliente() ){
+				this.$('#boton_cliente').remove();
+			}
 
 			return this;
 

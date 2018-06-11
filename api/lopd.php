@@ -10,7 +10,7 @@ $obj_form = limpia_undefined( $_POST['obj_form'] );
 //$obj_form = limpia_undefined( $_POST['obj_form'] );
 
 
-if( $accion == 'guardar_bruto' ){
+if( $accion == 'guardar_form' ){
 
 	if( !es_cliente($link, $hash) ){
 
@@ -23,8 +23,25 @@ if( $accion == 'guardar_bruto' ){
 		exit;
 	}
 
-	echo json_encode( Lopd::guardar_bruto($link, $obj_form) );
+	echo json_encode( Lopd::guardar_form($link, $hash, $obj_form) );
 	exit;
 }
+
+// if( $accion == 'guardar_lopd' ){
+
+// 	if( !es_cliente($link, $hash) ){
+
+// 		echo json_encode(
+// 			array(
+// 				'status' => 'ko',
+// 				'error' => 'No está autorizado para realizar una LOPD.'
+// 			)
+// 		)
+// 		exit;
+// 	}
+
+// 	echo json_encode( Lopd::guardar_lopd($link, $obj_form) );
+// 	exit;
+// }
 
 ?>

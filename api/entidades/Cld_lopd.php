@@ -1,20 +1,115 @@
 <?php
 
-class Lopd {
+class Cld_lopd {
 
 
 	public function __construct(){}
 
-	public function guardar_bruto($link, $obj_form){
+	public function guardar_lopd($link, $hash, $obj_form){
 
-		$campos = [];
-		$valores = [];
-		foreach( $obj_form as $id => $dato ){
+		$id_cliente = coger_dato( $link, 'id_cliente', 'cld_usuarios', 'hash', $hash);
+		if( $id_cliente == null ){
 
-			$campos[] = $id;
-			$valores[] = $dato;
+			return array(
+				'status' => 'ko',
+				'error' => 'No hay cliente asociado',
+			);
+			exit();
 		}
 
+		start_transaction( $link );
+		$rollback = false;
+
+		$campos_form = array(
+			'empresa',
+			'direccion',
+			'localidad',
+			'cp',
+			'cif',
+			'telefono',
+			'email',
+			'nombre_responsable',
+			'email_lopd',
+			'sector',
+			'descripcion',
+		);
+
+		$valores_form = array();
+		foreach( $obj_form as $campo => $valor ){
+			
+			$posicion = in_array($campos_form, $campo);
+			if( $posicion != -1 ){
+
+				$valores_form[$posicion] = $valor;
+				unset($obj_form[$campo]);
+			}
+		}
+
+		$where = ' WHERE id_cliente = ' . $id_cliente;
+		$cliente_act = sql_update($link, 'cld_clientes', $campos_form, $valores_form, $where);
+
+		if( !$cliente_act ){ $rollback = true; }
+
+		$campos_lopd = array();
+		$valores_lopd = array();
+		foreach( $obj_form as $campo => $valor ){
+
+			$campos_lopd[] = $campo;
+			$valores_lopd[] = $valor;
+		}
+
+		$lopd_hecha = coger_dato( $link, 'lopd', 'cld_clientes', 'id_cliente', $id_cliente);
+
+		if( $lopd_hecha == 0 ){
+
+			array_unshift( $campos_lopd, 'id_cliente' );
+			array_unshift( $valores_lopd, $id_cliente );
+
+			$id_lopd = sql_insert( $link, 'cld_lopd', $campos_lopd, $valores_lopd);
+
+			if( $id_lopd > 0 ){ 
+				$id_lopd = sql_update( $link, 'cld_clientes', ['lopd'], ['1'], ' WHERE id_cliente = ' . $id_cliente );
+			}
+
+		} elseif($lopd_hecha == 1) {
+
+			$id_lopd = sql_update( $link, 'cld_lopd', $campos_lopd, $valores_lopd, ' WHERE id_cliente = ' . $id_cliente );
+		}
+
+		if( $id_lopd == FALSE ){ $rollback = true; }
+
+		if( $rollback ){
+
+			rollback_transaction($link);
+
+				// Escribir log
+		 	$log = PHP_EOL . '*** ' . date('d-m-Y') . ' ***' . PHP_EOL;
+		 	$log .= 'Rollback de LOPD del cliente ' . $id_cliente . PHP_EOL;
+		 	$log .= 'Error del rollback: ' . $error_rollback . PHP_EOL;
+		 	$log .= implode( ", ", $valores_form ) . PHP_EOL;
+		 	$log .= implode( ", ", $valores_lopd ) . PHP_EOL;
+
+			$log_file = 'log_lopd.txt';
+			file_put_contents($log_file, $log, FILE_APPEND | LOCK_EX);
+
+		 	$error = 'Ha habido un error al guardar sus datos. Contacte con nuestros técnicos para procesar sus informes de la LOPD.';
+			
+			return array(
+				'status' => 'ko',
+				'error' => $error,
+			);
+
+		} else {
+
+			commit_transaction($link);
+
+			$mensaje = 'Sus datos se han guardado correctamente. Un técnico los revisará y se pondrá en contacto con usted próximamente.';
+
+			return array(
+				'status' => 'ok',
+				'mensaje' => $mensaje
+			);
+		}
 		
 	}
 

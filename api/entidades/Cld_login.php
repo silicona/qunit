@@ -52,22 +52,28 @@
 		public static function logout($link, $hash){
 
 			// Elimina la sesión en el hash
-			$id_usuario = coger_campo_misma_tabla($link, 'id_usuario', '4887_usuarios', 'hash', $hash);
+			$id_usuario = coger_campo_misma_tabla($link, 'id_usuario', 'cld_usuarios', 'hash', $hash);
 
 			$tabla = 'cld_usuarios';
-			$campos = array('hash','datos_locales');
+			$campos = array('hash','valores_local');
 			$valores = array('','');
 			$where = ' WHERE id_usuario = ' . $id_usuario;
 
+
+			//print_r('error:' . $where . "\n");
 			$rdo_logout = sql_update($link, $tabla, $campos, $valores, $where);
+			//print_r('error:' . mysqli_error($link) . "\n");
 
 			$rdo_logout == true ? $status = 'ok' : $status = 'ko';
 
-			echo json_encode(
+			return 
+			//echo json_encode(
 				array(
-					'status' => (string) $status
-				)
-			);
+					'status' => $status
+					// 'status' => (string) $status
+				);
+			//);
+			
 
 		}
 
@@ -76,8 +82,6 @@
 			// DEVUELVE UN ARRAY CON LOS VALORES DEL ACCESO SI EL USUARIO Y PASSWORD
 			// COINCIDEN CON EL ADMIN, CONCESIÓN O CLIENTE
 
-			//i('Dentro');
-			//return 'Dentro';
 			$es_admin = false;
 
 			//COMPROBAR SI CLIENTE
@@ -177,17 +181,13 @@
 						exit;
 					}
 					
-					$id_cliente = $e['id_cliente'];
+					//$id_cliente = $e['id_cliente'];
 
 					//$arr_datos_usuario['telefono_asociado'] = coger_campo_misma_tabla($link, 'telefono_asociado', '4887_asociados','id_asociado',$id_asociado);
 
 				}
 
 			}
-
-
-
-			
 
 			return $arr_datos_usuario;
 		

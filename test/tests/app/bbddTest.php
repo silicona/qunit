@@ -54,7 +54,7 @@
 				$cantidad = $res ? mysqli_fetch_row($res)[0] : 0;
 				
 				//$this -> assertGreaterThan( 0, $cantidad, 'Sin contacto con la BBDD: ' . mysqli_error($link) );
-				print_r($cantidad);
+				//print_r($cantidad);
 				$this -> assertEquals( 'admin', $cantidad, 'Sin contacto con la BBDD: ' . mysqli_connect_error() );
 			}
 		}
@@ -91,7 +91,6 @@
 
 			$this -> assertNotNull( $arr_variables );
 			
-			print_r(__FILE__);		
 			foreach( $arr_keys as $key ){
 
 				//$this -> assertArrayHasKey( $key, $arr_variables );
@@ -100,30 +99,30 @@
 
 		public function jjj_test_sql_insert(){
 
-			$link = self::$conexion;
-			$tabla = 'clientes';
-			$campos = array(
-				'nombre',
-				'direccion',
-				'email',
-				'prefijo',
-				'telefono',
-				'tel_tipo',
-				'comentarios'
-			);
+		// 	$link = self::$conexion;
+		// 	$tabla = 'clientes';
+		// 	$campos = array(
+		// 		'nombre',
+		// 		'direccion',
+		// 		'email',
+		// 		'prefijo',
+		// 		'telefono',
+		// 		'tel_tipo',
+		// 		'comentarios'
+		// 	);
 
-			$valores = array(
-				'Nombre de Test',
-				'Domicilio de Test',
-				'email@test.com',
-				'34',
-				'123456789',
-				'2',
-				'Comentario de Test'
-			);
+		// 	$valores = array(
+		// 		'Nombre de Test',
+		// 		'Domicilio de Test',
+		// 		'email@test.com',
+		// 		'34',
+		// 		'123456789',
+		// 		'2',
+		// 		'Comentario de Test'
+		// 	);
 
-			$this -> assertNotNull( Cliente::sql_insert($link,$tabla,$campos,$valores) );
-			$this -> assertGreaterThan( 0, Cliente::sql_insert($link,$tabla,$campos,$valores) );
+		// 	$this -> assertNotNull( Cliente::sql_insert($link,$tabla,$campos,$valores) );
+		// 	$this -> assertGreaterThan( 0, Cliente::sql_insert($link,$tabla,$campos,$valores) );
 		}
 
 

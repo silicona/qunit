@@ -57,9 +57,9 @@ define([
 
 					esto.actualizar_datos();
 
-					if(typeof esto.obj_cliente.expediente != 'undefined'){
-						esto.$('#h2_cliente').text( esto.obj_cliente.expediente + ' - ' + Fx.cambiaf_a_normal(esto.obj_cliente.f_entrada) + ' - ' + Fx.euros(esto.obj_cliente.importe) );
-					}
+					// if(typeof esto.obj_cliente.expediente != 'undefined'){
+					// 	esto.$('#h2_cliente').text( esto.obj_cliente.expediente + ' - ' + Fx.cambiaf_a_normal(esto.obj_cliente.f_entrada) + ' - ' + Fx.euros(esto.obj_cliente.importe) );
+					// }
 					
 					if( Calidad.es_cliente() ){
 						
@@ -74,12 +74,7 @@ define([
 						esto.$('#btn_descargar_contrato').remove();
 					}
 
-					//SI NO ES CONTRATO 30, 120 O 60
-					if( json_cliente.id_tipo_contrato != 1 && json_cliente.id_tipo_contrato != 2 && json_cliente.id_tipo_contrato != 4 ){
-						esto.$('#btn_descargar_contrato').remove();
-					}
-
-					esto.$('#btn_descargar_contrato').attr('href', 'pdf/' + Oclem.devuelve_enlace_contrato( json_cliente.id_tipo_contrato) );
+					//esto.$('#btn_descargar_contrato').attr('href', 'pdf/' + Calidad.devuelve_enlace_contrato( json_cliente.id_tipo_contrato) );
 					
 
 				});
@@ -87,13 +82,13 @@ define([
 
 			this.$el.html(this.html);
 
-			if( !Calidad.es_admin() && !Calidad.es_comercial() ){
+			if( !Calidad.es_admin() /*&& !Calidad.es_comercial()*/ ){
 				esto.$('.div_iban').remove();
 			}
 
-			if( Calidad.es_comercial() ){
-				this.$('.div_guardar').remove();
-			}
+			// if( Calidad.es_comercial() ){
+			// 	this.$('.div_guardar').remove();
+			// }
 
 			return this;				
 			
@@ -120,27 +115,16 @@ define([
 				}
 
 			});
+	
 
-			if( typeof esto.obj_cliente != 'undefined' ){
-				
-				console.log(esto.obj_cliente);
-
-				if( esto.obj_cliente.iban.length > 10 || esto.obj_cliente.tipo_contrato == 'clasif' ){
-					this.$('.div_enlace_contratacion').hide();
-				}else{
-					this.$('.enlace_form').attr('href', Config.base_url + '#contratacion/' + esto.obj_cliente.cod_enlace );
-				}	
-			}
-			
-
-			if( esto.obj_cliente.tipo_contrato == 'clasif'){
-				this.$('#btn_descargar_contrato').remove();
-			}
+			// if( esto.obj_cliente.tipo_contrato == 'clasif'){
+			// 	this.$('#btn_descargar_contrato').remove();
+			// }
 
 			Formulario(this);
 
-			Calidad.actualizar_combos(esto);
-			//Oclem.actualizar_fechas(esto);
+			//Calidad.actualizar_combos(esto);
+			//Calidad.actualizar_fechas(esto);
 
 		},	
 
@@ -153,7 +137,7 @@ define([
 		
 			var esto = this;
 
-			this.obj_cliente = Oclem.actualizar_obj_form( this.$('#form_anadir_cliente') );
+			this.obj_cliente = Calidad.actualizar_obj_form( this.$('#form_anadir_cliente') );
 
 			this.obj_cliente.id_cliente = this.id_cliente;
 
@@ -210,10 +194,10 @@ define([
 
 							var mensaje_alert = '';
 							
-							if( ! Oclem.es_admin() ){
+							if( ! Calidad.es_admin() ){
 								mensaje_alert = 'Sus datos se guardaron con éxito';
 								//A,B,C,D,E,F,G,H,I,J,K,L,M
-							}else{
+							} else {
 								mensaje_alert = 'Los datos del cliente se guardaron con éxito.';
 							}
 

@@ -28,66 +28,7 @@ define([
             
                     
                     Fx.form_input({
-                        label: 'Nombre',
-                        id: 'nombre',
-                        valor: '',
-                        tipo: 'text',
-                        placeholder: '',
-                        clase: 'texto obligatorio',
-                        min_char: '3',
-                        col_bs_label: 'col-sm-3',
-                        col_bs_input: 'col-sm-6',
-                    }),
-
-                    Fx.form_input({
-                        label: 'Apellido 1',
-                        id: 'apellido1',
-                        valor: '',
-                        tipo: 'text',
-                        placeholder: '',
-                        clase: 'texto obligatorio',
-                        min_char: '3',
-                        col_bs_label: 'col-sm-3',
-                        col_bs_input: 'col-sm-6',
-                    }),
-
-                    Fx.form_input({
-                        label: 'Apellido 2',
-                        id: 'apellido2',
-                        valor: '',
-                        tipo: 'text',
-                        placeholder: '',
-                        clase: 'texto',
-                        col_bs_label: 'col-sm-3',
-                        col_bs_input: 'col-sm-6',
-                    }),
-
-                    Fx.form_input({
-                        label: 'Email',
-                        id: 'email',
-                        valor: '',
-                        tipo: 'text',
-                        placeholder: '',
-                        clase: 'email obligatorio',
-                        min_char: '3',
-                        col_bs_label: 'col-sm-3',
-                        col_bs_input: 'col-sm-6',
-                    }),
-
-                    Fx.form_input({
-                        label: 'Teléfono',
-                        id: 'telefono',
-                        valor: '',
-                        tipo: 'text',
-                        placeholder: '',
-                        clase: 'telefono',
-                        min_char: '3',
-                        col_bs_label: 'col-sm-3',
-                        col_bs_input: 'col-sm-6',
-                    }),
-
-                    Fx.form_input({
-                        label: 'Empresa',
+                        label: 'Nombre de la empresa',
                         id: 'empresa',
                         valor: '',
                         tipo: 'text',
@@ -99,150 +40,149 @@ define([
                     }),
 
                     Fx.form_input({
-                        label: 'Actividad',
-                        id: 'actividad',
-                        valor: '',
-                        tipo: 'text',
-                        placeholder: '',
-                        clase: 'texto',
-                        min_char: '3',
-                        col_bs_label: 'col-sm-3',
-                        col_bs_input: 'col-sm-6',
-                    }),
-
-                    Fx.form_input({
-                        label: 'CIF',
-                        id: 'cif',
-                        valor: '',
-                        tipo: 'text',
-                        placeholder: '',
-                        clase: 'nif obligatorio',
-                        min_char: '3',
-                        col_bs_label: 'col-sm-3',
-                        col_bs_input: 'col-sm-6',
-                    }),
-
-                    Fx.form_textarea({
-                        label: 'Dirección',
+                        label: 'direccion de la empresa',
                         id: 'direccion',
+                        valor: '',
+                        tipo: 'text',
                         placeholder: '',
                         clase: 'texto obligatorio',
                         min_char: '3',
                         col_bs_label: 'col-sm-3',
-                        col_bs_textarea: 'col-sm-6',
-                    }),
-
-                    Fx.form_input({
-                        label: 'Código Postal',
-                        id: 'cp',
-                        valor: '',
-                        tipo: 'text',
-                        placeholder: '',
-                        clase: 'texto obligatorio',
-                        min_char: '5',
-                        col_bs_label: 'col-sm-3',
                         col_bs_input: 'col-sm-6',
                     }),
 
+                    '<div class="row">',
+
+                        '<div class="col-sm-6">',
+
+                            Fx.form_input({
+                                label: 'Localidad',
+                                id: 'localidad',
+                                valor: '',
+                                tipo: 'text',
+                                clase: 'texto obligatorio',
+                                placeholder: '',
+                                min_char: '3',
+                                col_bs_label: 'col-sm-6',
+                                col_bs_input: 'col-sm-6',
+                            }),
+
+                        '</div>',
+
+                        '<div class="col-sm-6">',
+
+                            Fx.form_input({
+                                label: 'Código postal',
+                                id: 'cp',
+                                valor: '',
+                                tipo: 'text',
+                                clase: 'texto cp obligatorio solo_numero',
+                                placeholder: '10001',
+                                min_char: '4',
+                                col_bs_label: 'col-sm-6',
+                                col_bs_input: 'col-sm-4',
+                            }),
+
+                        '</div>',
+
+                    '</div>',
+
+                    '<div class="row">',
+
+                        '<div class="col-sm-6">',
+
+                            Fx.form_input({
+                                label: 'CIF',
+                                id: 'cif',
+                                valor: '',
+                                tipo: 'text',
+                                clase: 'nif obligatorio',
+                                col_bs_label: 'col-sm-6',
+                                col_bs_input: 'col-sm-6',
+                            }),
+
+                        '</div>',
+
+                        '<div class="col-sm-6">',
+
+                            Fx.form_input({
+                                label: 'Teléfono',
+                                id: 'telefono',
+                                valor: '',
+                                placeholder: '645123789',
+                                tipo: 'text',
+                                clase: 'telefono solo_numero obligatorio',
+                                min_char: '3',
+                                col_bs_label: 'col-sm-6',
+                                col_bs_input: 'col-sm-4',
+                            }),
+
+                        '</div>',
+
+                    '</div>',
+
+
                     Fx.form_input({
-                        label: 'Población',
-                        id: 'poblacion',
+                        label: 'Correo electrónico de la empresa:',
+                        id: 'email',
                         valor: '',
+                        placeholder: 'email_de_empresa@suempresa.com',
                         tipo: 'text',
-                        placeholder: '',
+                        clase: 'email obligatorio',
+                        min_char: '3',
+                        col_bs_label: 'col-sm-3',
+                        col_bs_input: 'col-sm-8',
+                    }),
+
+
+                    Fx.form_input({
+                        label: 'Nombre del responsable de seguridad:',
+                        id: 'nombre_responsable',
+                        tipo: 'text',
                         clase: 'texto',
+                        min_char: '0',
                         col_bs_label: 'col-sm-3',
-                        col_bs_input: 'col-sm-6',
+                        col_bs_input: 'col-sm-8',
                     }),
 
-                    Fx.form_input({
-                        label: 'IBAN',
-                        id: 'iban',
-                        valor: '',
-                        tipo: 'text',
-                        placeholder: '',
-                        clase: 'iban',
-                        min_char: '24',
-                        col_bs_label: 'col-sm-3',
-                        col_bs_input: 'col-sm-6',
-                    }),
 
                     Fx.form_input({
-                        label: 'Clasificaciones (separe con comas, 3 letras si clasif. oficial, 2 si no oficial)',
-                        id: 'cods_clasificaciones',
+
+                        label: 'Correo electrónico para la LOPD',
+                        id: 'email_lopd',
+                        ayuda: 'Escriba el email de la persona responsable de la seguridad o, en su defecto, el email utilizado para atender las cuestiones relativas a la LOPD.',
+                        placeholder: 'email_para_lopd@suempresa.com',
                         valor: '',
                         tipo: 'text',
-                        placeholder: '',
-                        clase: 'texto',
+                        clase: 'email obligatorio',
+                        min_char: '3',
                         col_bs_label: 'col-sm-3',
-                        col_bs_input: 'col-sm-6',
+                        col_bs_input: 'col-sm-8',
+
                     }),
+
+                    Fx.form_select({
+
+                        label: '(*) Indique el sector de su empresa',
+                        id: 'sector',
+                        clase: 'obligatorio',
+                        col_bs_label: 'col-sm-3',
+                        col_bs_select: 'col-sm-8',
+                        json_valores_et: Config.obj_sectores,
+
+                    }),
+
 
                     Fx.form_textarea({
-                        label: 'Códs CPV (si existen, se mostrarán también los concursos correspondientes a estos CPV)',
-                        id: 'cods_cpv',
-                        valor: '',
-                        tipo: 'text',
-                        placeholder: 'Separar con comas, sin espacios, 8 dígitos',
+                        label: 'Descripción de la empresa:',
+                        id: 'descripcion',
+                        placeholder: 'Describa brevemente a qué se dedica su empresa',
                         clase: 'texto',
+                        min_char: '3',
                         col_bs_label: 'col-sm-3',
-                        col_bs_textarea: 'col-sm-6',
+                        col_bs_textarea: 'col-sm-8',
                     }),
 
-                    Fx.form_textarea({
-                        label: 'Códs CPV a Ignorar (los concursos con estos CPV NO se mostrarán)',
-                        id: 'cods_cpv_ignorar',
-                        valor: '',
-                        tipo: 'text',
-                        placeholder: 'Separar con comas, sin espacios, 8 dígitos',
-                        clase: 'texto',
-                        col_bs_label: 'col-sm-3',
-                        col_bs_textarea: 'col-sm-6',
-                    }),
-
-                    Fx.form_input({
-                        label: 'Lugares (separe con comas, en blanco si todos)',
-                        id: 'lugares',
-                        valor: '',
-                        tipo: 'text',
-                        placeholder: '',
-                        clase: 'texto',
-                        col_bs_label: 'col-sm-3',
-                        col_bs_input: 'col-sm-6',
-                    }),
-
-                    Fx.form_input({
-                        label: 'Importe mínimo',
-                        id: 'importe_min',
-                        valor: '',
-                        tipo: 'numerico obligatorio',
-                        placeholder: '',
-                        clase: 'texto',
-                        col_bs_label: 'col-sm-3',
-                        col_bs_input: 'col-sm-6',
-                    }),
-
-                    Fx.form_input({
-                        label: 'Importe máximo',
-                        id: 'importe_max',
-                        valor: '',
-                        tipo: 'numerico obligatorio',
-                        placeholder: '',
-                        clase: 'texto',
-                        col_bs_label: 'col-sm-3',
-                        col_bs_input: 'col-sm-6',
-                    }),
-
-                    Fx.form_input({
-                        label: 'Normas ISO (separe con comas)',
-                        id: 'normas_iso',
-                        valor: '',
-                        tipo: 'text',
-                        placeholder: '',
-                        clase: 'texto',
-                        col_bs_label: 'col-sm-3',
-                        col_bs_input: 'col-sm-6',
-                    }),
 
                     Fx.form_input_fecha({
                         label: 'Fecha de alta',
@@ -267,16 +207,6 @@ define([
                         col_bs_input: 'col-sm-6',
                     }),
 
-                    Fx.form_input({
-                        label: 'Comercial',
-                        id: 'comercial',
-                        valor: '',
-                        tipo: 'text',
-                        placeholder: '',
-                        clase: 'texto',
-                        col_bs_label: 'col-sm-3',
-                        col_bs_input: 'col-sm-6',
-                    }),
 
                     Fx.form_select({
                         label            : 'Recibir notificaciones',
@@ -302,23 +232,7 @@ define([
                     }),
 
 
-                    Fx.form_select({
-                        label            : 'Tipo de contrato',
-                        id               : 'id_tipo_contrato',
-                        clase            : 'form-control',
-                        col_bs_label     : 'col-sm-3',
-                        col_bs_select    : 'col-sm-6',
-                        json_valores_et  : {
-                            0: 'Demo',
-                            1: 'Contrato 30 - 3 meses de permanencia',
-                            2: 'Contrato 120 - 1 año de permanencia',
-                            3: 'Contrato 2000 - Premium',
-                            4: 'Contrato 60 - 6 meses de permanencia',
-                            5: 'Contrato Online6 - 6 meses de permanencia',
-                            6: 'Contrato Online3 - 3 meses de permanencia',
-                            7: 'Empresa Clasificada - 1 año de permanencia'
-                        }
-                    }),
+                
 
                     Fx.form_textarea({
                         label: 'Observaciones',
@@ -331,15 +245,6 @@ define([
                         col_bs_textarea : 'col-sm-6'
                     }),
 
-                    Fx.form_enlace({
-                        label: 'Contratación',
-                        enlace: '',
-                        id: 'enlace_contratacion',
-                        clase: 'enlace_form',
-                        target: '_blank',
-                        col_bs_label: 'col-sm-3',
-                        col_bs_input: 'col-sm-6',
-                    }),
 
                     '<div id="resp_guardar_cliente" class="resp_detalle sep50"></div>',
 

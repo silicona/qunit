@@ -4,10 +4,10 @@
      *  a partir de un id_cliente
      */
     
-    session_start();
+    //session_start();
     
     
-    class cliente{
+    class Cld_cliente {
          
 		function __construct($id_cliente){
 		 
@@ -27,7 +27,7 @@
 
 			// COGER DATOS DE 4887_clientes
 			$sql = 'SELECT *
-					FROM 4887_clientes
+					FROM cld_clientes
 					WHERE id_cliente = '.$id_cliente . '
 					LIMIT 1';
 			
@@ -47,19 +47,19 @@
 
 			}
 
-			$this -> cod_enlace = md5( $this -> email );
+			//$this -> cod_enlace = md5( $this -> email );
 			
-			$this -> tipo_contrato = devuelve_tipo_contrato( $this -> id_tipo_contrato);
+			//$this -> tipo_contrato = devuelve_tipo_contrato( $this -> id_tipo_contrato);
 			
-			i($this, 'obj_cliente');
+			//i($this, 'obj_cliente');
 
 		} // fin método cargar_cliente
 		
 
-		public static function json_clientes($hash, $opcion = ''){
+		public function json_clientes($link, $hash, $opcion = ''){
 
 			// devuelve un json con los clientes de un cliente
-			$link = conectarse(DB_HOST, DB_NOMBRE, DB_USER, DB_PASS);
+			//$link = conectarse(DB_HOST, DB_NOMBRE, DB_USER, DB_PASS);
 			$arr_clientes = array();
 
 			$id_cliente = 0;
@@ -67,12 +67,13 @@
 			
 			// Determinar fecha límite de baja			
 
-			$es_comercial = comprueba_si_comercial($link, $hash);
-			$es_tecnico   = comprueba_si_tecnico($link, $hash);
+			//$es_comercial = comprueba_si_comercial($link, $hash);
+			//$es_tecnico   = comprueba_si_tecnico($link, $hash);
 
-			if( ($hash != HASH_ADMIN) && ( !$es_comercial ) && ( !$es_tecnico ) ){
+			//if( ($hash != HASH_ADMIN) && ( !$es_comercial ) && ( !$es_tecnico ) ){
+			if( Calidad::es_cliente($link, $hash) ){
 
-				$id_cliente = devuelve_id_cliente($link, $hash);
+				$id_cliente = Calidad::devuelve_id_cliente($link, $hash);
 
 				if($id_cliente > 0){
 
@@ -90,34 +91,10 @@
 				}
 
 
-			}else{
+			} else {
 
 				// MODO ADMIN
 				$arr_ids_clientes = array();				
-
-				if($opcion == 'demos'){
-					$where = ' WHERE id_tipo_contrato = 0 AND f_baja >= CURDATE() ';
-				}
-
-				if($opcion == 'pasados'){
-					$where = ' WHERE (f_baja < CURDATE() AND (f_baja != "0000-00-00") ) ';
-				}
-
-				if($opcion == 'premium'){
-					$where = ' WHERE ( f_baja >= CURDATE() AND id_tipo_contrato = 3 ) ';
-				}
-
-				if($opcion == 'reducida'){
-					$where = ' WHERE ( f_baja >= CURDATE() AND (id_tipo_contrato = 1 OR id_tipo_contrato = 2 OR id_tipo_contrato = 4 OR id_tipo_contrato = 5 OR id_tipo_contrato = 6 ) )';
-				}
-
-				if($opcion == 'clasificadas'){
-					$where = ' WHERE ( f_baja >= CURDATE() AND id_tipo_contrato = 7 ) ';
-				}
-
-				if($opcion == 'mini'){
-					$where = ' WHERE ( f_baja >= CURDATE() AND id_tipo_contrato = 8 ) ';
-				}
 
 				if( ($opcion == 'todos') || ($opcion == '') ){
 					$where = '';
@@ -126,7 +103,7 @@
 			}
 
 			$sql = 'SELECT * 
-					FROM 4887_clientes '
+					FROM cld_clientes '
 					. $where . '
 					ORDER BY empresa '
 					. $limit ;

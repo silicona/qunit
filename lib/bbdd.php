@@ -202,8 +202,10 @@ function sql_insert($link,$tabla,$campos,$valores){
 	$mi_tabla_insert = mysqli_query($link, $sql_insert);
 	
 	if($mi_tabla_insert == false){
-		echo $sql_insert. '<br/>'.chr(13).mysqli_error($link).chr(13).' Error al insertar./n/r<br>';
-		return false;
+		//echo $sql_insert. '<br/>'.chr(13).mysqli_error($link).chr(13).' Error al insertar./n/r<br>';
+		// return $sql_insert. '<br/>'.chr(13).mysqli_error($link).chr(13).' Error al insertar./n/r<br>';
+		//return false;
+		return $sql_insert;
 	}else{
 		return mysqli_insert_id( $link );
 	}
@@ -234,6 +236,7 @@ function sql_update($link, $tabla, $campos, $valores, $where){
 	i($sql_update, 'sql_update');
 	
 	$mi_tabla_update = mysqli_query($link, $sql_update);
+	//print_r('SQL: ' . $sql_update);
 	
 	
 	if(($mi_tabla_update == false) || ($where == '')){

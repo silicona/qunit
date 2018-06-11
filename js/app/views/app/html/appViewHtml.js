@@ -35,7 +35,7 @@ define([
 
 						'<div class="dropdown-menu dropdown-menu-lg pull-right">',
 							'<a href="#usuarios/perfil" title="Accede a tu perfil">Ver Perfil</a>',
-							'<br>',
+							//'<br>',
 							'<a href="promociones" title="Promociones de Oclem Mercamadrid">Promociones (wip)</a>',            
 						'</div>',
 

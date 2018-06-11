@@ -26,15 +26,15 @@ define([
 		secciones_si: [],
 
 		events: {
-			'click #h2': 'oo',
+
 			'click .lopd_sino input' : 'abrir_opciones',
 			'click .lopd_sino #no' : 'registrar_no',
+
+			'click .tabs_lopd li a' : 'cambiar_posicion',
 			'click #botones_ant_sig ul.pagination li' : 'determinar_posicion',
+
 			'keypress .solo_numero': 'escribir_solo_numeros',
-			//'click .tabs_lopd li a' : 'establecer_hash',
-
 			'click #btn_procesar' : 'procesar',
-
 		},
 
 		initialize: function(){
@@ -47,8 +47,14 @@ define([
 
 			$(window).bind('hashchange', function(){
 			    var posicion = window.location.hash.split('/')[1];
+			    console.log('En Evento hashchange posicion:', posicion);
 
-			    console.log('En Evento hashchange posicion:', posicion)
+			    if( this.posicion != posicion ){
+
+			    	this.posicion = posicion;
+			    	
+			    }
+			    console.log( 'Hashchange This posicion', this.posicion );
 			    this.$('.tabs_lopd li a[data-pos="' + posicion + '"]').trigger('click');
 			});
 
@@ -63,7 +69,7 @@ define([
 			Formulario(this);
 
 			//window.setTimeout(function(){
-			if( window.location.hash == '#lopd'){
+			if( window.location.hash === '#lopd'){
 
 				window.location.hash = '#lopd/1';
 			}
@@ -85,9 +91,6 @@ define([
 
 		},
 
-		oo: function(){
-			console.log('Secciones', this.secciones_si);
-		},
 
 		abrir_opciones: function(e){
 
@@ -153,16 +156,24 @@ define([
 			return objeto_final;
 		},
 
+		cambiar_posicion: function(e){
+
+			this.posicion = $(e.currentTarget).attr('data-pos');
+			
+		},
+
 		determinar_posicion: function(e){
 
-			console.log('determinar', e);
+			// console.log('determinar', e);
+			// console.log('Esto', this);
+			// console.log('Esto Tabindex', this.el.tabIndex);
 			e.preventDefault();
 			//e.stopPropagation();
 
 			var className = e.currentTarget.className,
 				posicion = this.posicion;
 
-			console.log('Posicion antes', posicion);
+			//console.log('Posicion antes', posicion);
 			
 			if( className.indexOf('previous') > -1 ){
 				posicion--;
@@ -189,28 +200,23 @@ define([
 			//console.log('posicion', posicion);
 
 			this.posicion = posicion;
-
-			console.log( 'Posicion final', this.posicion );
-			//this.$('.tabs_lopd li a[data-pos="' + posicion + '"]').trigger('click');
-			
-
 			this.establecer_hash();
 
+			//console.log( 'Posicion final', this.posicion );
+			//this.$('.tabs_lopd li a[data-pos="' + posicion + '"]').trigger('click');
 		},
 
 		establecer_hash: function(){
 
-			console.log('posicion hash', this.posicion);
-			console.log('window.location.hash', window.location.hash);
+			//console.log('posicion hash', this.posicion);
+			//console.log('window.location.hash', window.location.hash);
 
 			window.location.hash = window.location.hash.split('/')[0] + '/' + this.posicion;
-			console.log('window.location.hash POST', window.location.hash);
+			//console.log('window.location.hash POST', window.location.hash);
 		},
 
 		escribir_solo_numeros: function(e){
 
-			//console.log('Evento', e);
-			//console.log('Evento key:', e.key);
 			var permitidos = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
 			if( permitidos.indexOf(e.key) == - 1 ){
 				return false;
@@ -287,9 +293,11 @@ define([
 			
 			obj_form = this.anadir_a_objeto( obj_form, obj_estru );
 			obj_form = this.anadir_a_objeto( obj_form, obj_lopd );
-			console.log('Obj_form final:', obj_form);
+			//obj_lopd = this.anadir_a_objeto( obj_estru, obj_lopd );
+			//console.log('Obj_form final:', obj_form);
 
 			this.guardar_lopd(obj_form);
+			//this.guardar_lopd(obj_form, obj_lopd);
 
 
 
@@ -330,16 +338,66 @@ define([
 
 		guardar_lopd: function(obj_form){
 
-			var resp = $.ajax({
+			var esto = this,
+				//resp_lopd,
+				campo_resp = this.$('#resp_procesar_lopd'),
+				resp = $.ajax({
 
-				type: 'POST',
-				url: Config.base_ajax + 'lopd.php',
-				data: {
-					accion: 'guardar_crudo',
-					hash: Calidad.hash(),
-					obj_form: obj_form,
+					type: 'POST',
+					url: Config.base_ajax + 'lopd.php',
+					data: {
+						accion: 'guardar_form',
+						hash: Calidad.hash(),
+						obj_form: obj_form,
+					}
+				});
+
+			resp.done(function(mi_json){
+
+				if( mi_json != ''){
+
+					var json_datos = $.JSONparse( mi_json );
+
+					if( json_datos != null || json_datos.status == 'ok'){
+
+						// resp_lopd = $.ajax({
+
+						// 	type: 'POST',
+						// 	url: config.base_ajax + 'lopd.php',
+						// 	data: {
+						// 		accion: 'guardar_lopd',
+						// 		hash: Calidad.hash();
+						// 		obj_form: obj_lopd,
+						// 	}
+						// });
+						campo_resp.html( Fx.bs_alert('Error al guardar los datos: ' + json_datos.mensaje, 'danger') );
+
+					} else {
+
+						error = json_datos.error || 'La respuesta es null';
+						campo_resp.html( Fx.bs_alert('Error al guardar los datos: ' + error, 'danger') );
+					}
 				}
+
 			});
+
+			// resp_lopd.done(function(mi_json){
+
+			// 	if( mi_json != ''){
+
+			// 		var json_datos = $.JSONparse( mi_json );
+
+			// 		if( json_datos != null || json_datos.status == 'ok'){
+
+			// 			var mensaje = 'Sus datos se han guardado correctamente. Un técnico los revisará y se pondrá en contacto con usted próximamente.';
+			// 			campo_resp.html( Fx.bs_alert(mensaje, 'success') );
+
+			// 		} else {
+
+			// 			campo_resp.html( Fx.bs_alert('Error al guardar los datos: ' + json_datos.error, 'danger') );
+			// 		}
+			// 	}
+			// })
 		},
 
 		actualizar_obj_estru: function(){

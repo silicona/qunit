@@ -206,21 +206,22 @@ define([
             
             es_admin: function(){
 
-                return ( Config.perfil == 'Admin') && ( typeof Config.admin != 'undefined') ; 
+                return ( Config.perfil == 'Admin') /*&& ( typeof Config.admin != 'undefined')*/ ; 
                 // return ( Config.cld_admin == 'true') && ( typeof Config.cld_admin != 'undefined') ; 
             },
 
             es_cliente: function(){
 
-                return ( (Config.perfil == 'Cliente' || typeof Config.admin == 'undefined' ) && 
-                          /*Config.obj_usuario.comercial == '0' &&*/ Config.tecnico == 'undefined' ) ;
+                return /*( (*/Config.id_perfil == '3' /*|| typeof Config.admin == 'undefined' ) && 
+                          Config.obj_usuario.comercial == '0' && Config.tecnico == 'undefined' )*/ ;
             },
 
             //es_comercial: function(){ return ( Config.obj_usuario.comercial == '1' ) ; },
 
             es_tecnico: function(){
 
-                return ( Config.tecnico == '1' ) ;  
+                return ( Config.id_perfil == '2' ) ;  
+                // return ( Config.tecnico == '1' ) ;  
             },
 
 

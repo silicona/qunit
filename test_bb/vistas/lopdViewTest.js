@@ -83,7 +83,7 @@ define([
 
 			//enlace_pesta.trigger('click');
 			var a = vista.$('a[href="#tab2"]').trigger('click');
-			console.log('aa', a);
+			//console.log('aa', a.trigger('click'));
 			//var pestana = $('a[aria-expanded="true"]', vista).parent();
 			assert.strictEqual( pestana, 'Su empresa', 'La pestaña inicial debería ser "Su empresa"');
 			
@@ -159,7 +159,7 @@ define([
 			var className = e.currentTarget.className,
 				posicion = this.posicion;
 
-			assert.deepEqual( posicion, 1, 'This posicion inicial es 1');
+			assert.deepEqual( this.posicion, 1, 'This posicion inicial es 1');
 			
 			if( className.indexOf('previous') > -1 ){
 				posicion--;

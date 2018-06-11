@@ -61,7 +61,7 @@ define([
 
 		//console.info('Info Config', Config);
 
-		//console.log('Log Config:',Config);
+		console.log('Config:',Config);
 	}
 	
 	/*

@@ -40,8 +40,7 @@ define([
 
 		render: function(){
 
-			/*
-			if( Oclem.es_cliente() ){
+			if( Calidad.es_cliente() ){
 				
 				// window.location.hash = '#clientes/mis_datos';
 				Backbone.history.navigate('#clientes/mis_datos', true);
@@ -49,6 +48,7 @@ define([
 			
 			}
 
+			/*
 			if( Oclem.es_tecnico() ){
 				
 				window.location.hash = '#inicio';
@@ -58,7 +58,7 @@ define([
 			*/
 			var breadcrumb = '';
 			
-			this.opcion = 'reducida';
+			this.opcion = '';
 
 			this.$el.html(this.html);
 			
@@ -90,31 +90,7 @@ define([
 			}
 			*/
 
-			if( this.opcion == 'demos'){
-				this.$('#mensaje_tabla_clientes').text('Mostrando clientes con tipo de contrato DEMO y con fecha de baja posterior a hoy.');
-			}
-
-			if( this.opcion == 'pasados'){
-				this.$('#mensaje_tabla_clientes').text('Mostrando clientes con fecha de baja anterior a hoy.');
-			}
-
-			if( this.opcion == 'premium'){
-				this.$('#mensaje_tabla_clientes').text('Mostrando clientes activos marcados como PREMIUM en su ficha de cliente.');
-			}
-
-			if( this.opcion == 'reducida'){
-				this.$('#mensaje_tabla_clientes').text('Mostrando clientes activos con contrato CON30, CON60, CON120, CON6 ó CON3.');
-			}
-
-			if( this.opcion == 'clasificadas'){
-				this.$('#mensaje_tabla_clientes').text('Mostrando clientes activos con contrato CLASIF.');
-			}
-
-			if( this.opcion == 'mini'){
-				this.$('#mensaje_tabla_clientes').text('Mostrando clientes activos con contrato CON50.');
-			}
-
-			if( this.opcion == 'todos'){
+			if( this.opcion == 'todos' || this.opcion == '' ){
 				this.$('#mensaje_tabla_clientes').text('Mostrando todos los clientes.');
 			}
 
